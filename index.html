@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel For Sri Lanka</title>
+
+    
+    <meta name="description" content="Complete Sri Lanka Travel Guide covering all 25 districts, top tourist places, beaches, waterfalls, wildlife parks, ancient temples, and travel tips by Chathura Kodithuwakku.">
+    <meta name="keywords" content="Sri Lanka travel guide, 25 districts of Sri Lanka, places to visit in Sri Lanka, Sri Lanka tourism, Sigiriya, Kandy, Ella, Mirissa, Yala, Nuwara Eliya, Jaffna, Galle, Chathura travel guide">
+    <meta name="author" content="Chathura Kodithuwakku">
+    <meta name="robots" content="index, follow">
+
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sri Lanka 25 Districts Travel Guide | Chathura">
+    <meta property="og:description" content="Explore detailed descriptions, highlights, and best visit times across all 25 districts of Sri Lanka.">
+    <meta property="og:image" content="homelogo.jpeg">
+    <meta property="og:locale" content="en_US">
+
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Travel For Sri Lanka",
+      "description": "Explore travel destinations, cultural heritage, beaches, wildlife, and mountains across all 25 districts of Sri Lanka.",
+      "author": {
+        "@type": "Person",
+        "name": "Chathura Kodithuwakku"
+      }
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #ffffff;
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .header-glass {
+            background: rgba(11, 15, 25, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #ff7200;
+        }
+
+        .place-card {
+            background: #111827;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #374151;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        @media (hover: hover) {
+            .place-card:hover {
+                border-color: #ff7200;
+            }
+        }
+
+        .district-btn {
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 13px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .district-btn:active {
+            transform: scale(0.99);
+            border-color: #ff7200;
+        }
+
+        @media (hover: hover) {
+            .district-btn:hover {
+                border-color: #ff7200;
+                background: #172033;
+                transform: translateX(4px);
+            }
+        }
+
+        .filter-btn {
+            background: #111827;
+            border: 1px solid #374151;
+            color: #cbd5e1;
+            padding: 7px 14px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: #ff7200;
+            border-color: #ff7200;
+            color: #ffffff;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .badge-number {
+            background: #ff7200;
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: 800;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        #google_translate_element select {
+            background-color: #1f2937;
+            color: #fff;
+            border: 1px solid #ff7200;
+            padding: 3px 6px;
+            border-radius: 5px;
+            font-size: 11px;
+            outline: none;
+            max-width: 115px;
+        }
+        .goog-te-banner-frame, .goog-te-balloon-frame { display: none !important; }
+        body { top: 0px !important; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <header class="header-glass sticky top-0 z-50 py-2.5 px-3 sm:px-6 md:px-16 flex flex-col gap-2.5">
+        <div class="flex items-center justify-between w-full gap-2">
+            <div onclick="switchTab('home')" class="logo flex items-center gap-2 cursor-pointer shrink-0">
+                <img src="homelogo.jpeg" alt="Chathura Logo" onerror="this.src='https://via.placeholder.com/48/ff7200/ffffff?text=SL'" class="w-9 h-9 md:w-11 md:h-11 object-contain rounded-full border border-[#ff7200]">
+                
+            </div>
+
+            <div class="flex items-center gap-1.5 sm:gap-2">
+                <div class="text-[11px] sm:text-xs bg-slate-800 border border-slate-700 px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-lg text-amber-400 font-semibold flex items-center gap-1 whitespace-nowrap">
+                    <i class="fas fa-eye"></i> <span class="hidden sm:inline">Views:</span> <span id="globalViewCount" class="text-white font-bold"></span>
+                </div>
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
+       
+        <div class="flex flex-col md:flex-row items-center justify-between w-full gap-2.5 border-t border-slate-800 pt-2">
+            <nav class="flex items-center justify-around md:justify-start gap-4 sm:gap-8 w-full md:w-auto">
+                <a onclick="switchTab('home')" class="nav-link active text-xs sm:text-sm py-1" data-tab="home">HOME</a>
+                <a onclick="switchTab('districts')" class="nav-link text-xs sm:text-sm py-1" data-tab="districts">DISTRICTS (25)</a>
+                <a onclick="switchTab('places')" class="nav-link text-xs sm:text-sm py-1" data-tab="places">PLACES (<span id="totalPlacesBadge">0</span>)</a>
+            </nav>
+
+            <div class="flex items-center bg-transparent border border-[#ff7200] rounded-lg overflow-hidden w-full md:w-auto">
+                <input type="search" id="searchInput" onkeypress="if(event.key==='Enter') performSearch()" placeholder="Search district or place, e.g. Ella, Mirissa..." class="bg-transparent px-3 py-1.5 text-xs sm:text-sm text-white outline-none w-full md:w-64">
+                <button onclick="performSearch()" class="bg-[#ff7200] px-4 py-1.5 text-white font-bold text-xs sm:text-sm hover:bg-[#e06400] active:bg-[#e06400] transition shrink-0">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="px-4 py-6 sm:p-6 md:p-12 max-w-6xl mx-auto w-full flex-1">
+        
+        <section id="home" class="tab-content active">
+            <div class="py-6 sm:py-12 md:py-20 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10">
+                <div class="max-w-xl">
+                    <span class="inline-block bg-[#ff7200]/15 text-[#ff7200] border border-[#ff7200]/40 text-[11px] sm:text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">
+                        Explore the Pearl of the Indian Ocean
+                    </span>
+                    <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight mb-4 sm:mb-6">
+                        Sri Lanka <br><span class="text-[#ff7200]">25 Districts</span> <br>Travel Guide
+                    </h1>
+                    <p class="text-slate-400 text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8">
+                        Explore detailed descriptions, cultural stories, natural wonders, and travel tips for individual destinations across all 25 districts of Sri Lanka.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-3 sm:gap-4">
+                        <button onclick="switchTab('districts')" class="bg-[#ff7200] hover:bg-white hover:text-[#ff7200] text-white font-bold text-sm sm:text-base px-6 sm:px-8 py-3.5 rounded-xl transition duration-300 shadow-lg w-full sm:w-auto">
+                            EXPLORE DISTRICTS
+                        </button>
+                        <button onclick="switchTab('places')" class="bg-slate-800 hover:bg-slate-700 text-white border border-slate-600 font-bold text-sm sm:text-base px-6 sm:px-8 py-3.5 rounded-xl transition duration-300 w-full sm:w-auto">
+                            VIEW ALL PLACES
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/50 p-5 sm:p-8 rounded-2xl border border-slate-700 max-w-md w-full text-left">
+                    <h3 class="text-lg sm:text-xl font-bold text-[#ff7200] mb-4 flex items-center gap-2">
+                        <i class="fas fa-compass"></i> Must-Visit Highlights
+                    </h3>
+                    <ul class="space-y-3 text-slate-300 font-medium text-xs sm:text-sm">
+                        <li onclick="goToDistrict('dist-kandy')" class="cursor-pointer hover:text-[#ff7200] flex items-center justify-between border-b border-slate-700/70 pb-2.5 gap-2">
+                            <span><i class="fas fa-map-marker-alt text-[#ff7200] mr-1.5"></i> Kandy – Temple of the Sacred Tooth Relic</span>
+                            <i class="fas fa-arrow-right text-xs text-slate-500 shrink-0"></i>
+                        </li>
+                        <li onclick="goToDistrict('dist-matale')" class="cursor-pointer hover:text-[#ff7200] flex items-center justify-between border-b border-slate-700/70 pb-2.5 gap-2">
+                            <span><i class="fas fa-map-marker-alt text-[#ff7200] mr-1.5"></i> Matale – Sigiriya Lion Rock Fortress</span>
+                            <i class="fas fa-arrow-right text-xs text-slate-500 shrink-0"></i>
+                        </li>
+                        <li onclick="goToDistrict('dist-matara')" class="cursor-pointer hover:text-[#ff7200] flex items-center justify-between border-b border-slate-700/70 pb-2.5 gap-2">
+                            <span><i class="fas fa-map-marker-alt text-[#ff7200] mr-1.5"></i> Matara – Mirissa Beach</span>
+                            <i class="fas fa-arrow-right text-xs text-slate-500 shrink-0"></i>
+                        </li>
+                        <li onclick="goToDistrict('dist-badulla')" class="cursor-pointer hover:text-[#ff7200] flex items-center justify-between border-b border-slate-700/70 pb-2.5 gap-2">
+                            <span><i class="fas fa-map-marker-alt text-[#ff7200] mr-1.5"></i> Badulla – Nine Arches Bridge (Ella)</span>
+                            <i class="fas fa-arrow-right text-xs text-slate-500 shrink-0"></i>
+                        </li>
+                        <li onclick="goToDistrict('dist-ratnapura')" class="cursor-pointer hover:text-[#ff7200] flex items-center justify-between gap-2">
+                            <span><i class="fas fa-map-marker-alt text-[#ff7200] mr-1.5"></i> Ratnapura – Adam’s Peak (Sri Pada)</span>
+                            <i class="fas fa-arrow-right text-xs text-slate-500 shrink-0"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="districts" class="tab-content">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-8">
+                <div class="flex items-center gap-3 sm:gap-4">
+                    <div class="h-10 w-1.5 sm:w-2 bg-[#ff7200] rounded-full shrink-0"></div>
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">All 25 Districts of Sri Lanka</h2>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-1">Tap on any district below to jump directly to its individual travel destinations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
+                <div id="districtsLeftCol" class="space-y-3"></div>
+                <div id="districtsRightCol" class="space-y-3"></div>
+            </div>
+        </section>
+
+        <section id="places" class="tab-content">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5 border-b border-slate-800 pb-4">
+                <div class="flex items-center gap-3 sm:gap-4">
+                    <div class="h-10 w-1.5 sm:w-2 bg-[#ff7200] rounded-full shrink-0"></div>
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Top Travel Places by District</h2>
+                        <p class="text-slate-400 text-xs sm:text-sm mt-1">Each destination has its own unique ID, detailed description, highlights, and best visit timing.</p>
+                    </div>
+                </div>
+                <button onclick="switchTab('districts')" class="bg-slate-800 hover:bg-[#ff7200] text-white text-xs font-bold px-4 py-2.5 rounded-lg transition self-start sm:self-auto">
+                    <i class="fas fa-th-list mr-1.5"></i> Back to District List
+                </button>
+            </div>
+
+            <div class="flex items-center gap-2 mb-6 sm:mb-8 overflow-x-auto no-scrollbar pb-1">
+                <span class="text-xs text-slate-400 font-semibold mr-1 shrink-0"><i class="fas fa-filter text-[#ff7200]"></i> Filter:</span>
+                <button onclick="filterCategory('all', this)" class="filter-btn active">All Places</button>
+                <button onclick="filterCategory('heritage', this)" class="filter-btn">Heritage & Temples</button>
+                <button onclick="filterCategory('beach', this)" class="filter-btn">Beaches & Islands</button>
+                <button onclick="filterCategory('wildlife', this)" class="filter-btn">Wildlife & Nature</button>
+                <button onclick="filterCategory('mountain', this)" class="filter-btn">Mountains & Waterfalls</button>
+            </div>
+
+            <div id="placesContainer" class="space-y-8 sm:space-y-12"></div>
+        </section>
+
+    </main>
+
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to Top" class="fixed bottom-5 right-5 bg-[#ff7200] hover:bg-orange-600 active:scale-95 text-white w-11 h-11 rounded-full shadow-xl flex items-center justify-center z-40 transition">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <footer class="bg-slate-950 text-white py-7 px-4 text-center border-t border-slate-800">
+        <span class="text-xl sm:text-2xl font-black italic text-[#ff7200]">Chathura Kodithuwakku</span>
+        <p class="text-slate-500 text-[11px] sm:text-xs mt-2 uppercase tracking-[0.15em] sm:tracking-[0.2em]">&copy; 2026 Sri Lanka Travel Digital Guide Design & Developer</p>
+    </footer>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,si,ta,hi,ar,fr,de,zh-CN',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getDatabase, ref, runTransaction } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyD5hwHDv5hapsKPdCY9vEkg9SVLLelJQaU",
+            authDomain: "travel-a76e6.firebaseapp.com",
+            projectId: "travel-a76e6",
+            storageBucket: "travel-a76e6.firebasestorage.app",
+            messagingSenderId: "167895155712",
+            appId: "1:167895155712:web:c3797a6ddfeb51a07004e5",
+            measurementId: "G-1D40FK0T51"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        const viewCountRef = ref(db, 'stats/travel_views');
+        runTransaction(viewCountRef, (currentViews) => {
+            return (currentViews || 0) + 1;
+        }).then((result) => {
+            if (result.committed) {
+                document.getElementById('globalViewCount').textContent = result.snapshot.val();
+            }
+        }).catch((error) => {
+            console.error("Error updating global views: ", error);
+            document.getElementById('globalViewCount').textContent = "1,000+";
+        });
+    </script>
+
+    <script>
+        const travelData = [
+            {
+                id: "dist-colombo",
+                number: "01",
+                name: "Colombo District",
+                province: "Western Province",
+                places: [
+                    {
+                        title: "Gangaramaya Temple",
+                        category: "heritage",
+                        image: "gangarama.jpeg",
+                        overview: "Located in the heart of Colombo 02 along the calm waters of Beira Lake, Gangaramaya Temple is one of the capital’s oldest and most influential Buddhist centers. Founded in the late 19th century by Ven. Hikkaduwe Sri Sumangala Nayaka Thera, the temple complex showcases a rich fusion of Sri Lankan, Thai, Indian, and Chinese architectural elements. Visitors can explore a sprawling collection of religious statues, antique brassware, ancient palm-leaf manuscripts, and vintage vehicles donated by devotees over the decades.",
+                        highlights: "A massive museum housing rare artifacts, vintage cars, ancient manuscripts, an ornate golden Buddha statue, and the iconic Seema Malaka meditation hall floating on the lake.",
+                        bestTime: "Early morning or late afternoon to avoid midday heat and traffic."
+                    },
+                    {
+                        title: "Colombo Lotus Tower",
+                        category: "heritage",
+                        image: "colombolotus.jpeg",
+                        overview: "Rising 351.5 meters above the Slave Island area beside Beira Lake, the Colombo Lotus Tower is the tallest self-supported structure in South Asia and a defining symbol of modern Sri Lanka. Inspired by the sacred lotus flower—a symbol of purity and prosperity in Sri Lankan culture—the tower serves both as a major telecommunications hub and as an entertainment and observation landmark. From its upper decks, visitors get sweeping views stretching across Colombo’s skyline, the port, and the Indian Ocean.",
+                        highlights: "360-degree observation deck overlooking Colombo city and the Indian Ocean, revolving restaurant, and vibrant evening LED light displays.",
+                        bestTime: "Late afternoon (5:00 PM – 8:00 PM) for sunset and city night lights."
+                    },
+                    {
+                        title: "Galle Face Green",
+                        category: "beach",
+                        image: "galleface.jpeg",
+                        overview: "Stretching roughly half a kilometer along the Indian Ocean coastline in central Colombo, Galle Face Green is an iconic urban seaside promenade originally laid out in 1859 by Governor Sir Henry Ward. Over the years, it has evolved into a lively gathering space where families, couples, joggers, and travelers come together to enjoy cool coastal breezes. It is especially famous in the evenings for local street snacks, kite flyers, and golden sunsets over the sea.",
+                        highlights: "Famous Sri Lankan street food (Isso Wade), kite flying at sunset, ocean breezes, and views of the Colombo skyline.",
+                        bestTime: "Evening hours (4:30 PM – 7:30 PM)."
+                    },
+                    {
+                        title: "Mount Lavinia Beach",
+                        category: "beach",
+                        image: "mountlavinia.jpeg",
+                        overview: "Situated about 12 kilometers south of Colombo city center, Mount Lavinia Beach is one of the closest and most popular sandy coastal getaways for city residents and tourists alike. Its name traces back to Sir Thomas Maitland, a 19th-century British governor who built a cliffside residence overlooking the cove. Today, the beachfront is lined with palm trees, casual beach shacks, and seafood restaurants, offering a relaxed coastal vibe just a short ride from urban Colombo.",
+                        highlights: "Beachfront seafood restaurants, sunset views over the Indian Ocean, and the historic Mount Lavinia Hotel overlooking the bay.",
+                        bestTime: "Late afternoon through sunset."
+                    },
+                    {
+                        title: "Viharamahadevi Park",
+                        category: "wildlife",
+                        image: "viharamahadevi.jpeg",
+                        overview: "Positioned in Cinnamon Gardens directly opposite Colombo’s white neoclassical Town Hall, Viharamahadevi Park is the oldest and largest public park in the city. Originally created during the British era as Victoria Park and later renamed after King Dutugemunu’s mother, Queen Viharamahadevi, the park provides a shady green escape from busy city streets. Towering rain trees, seasonal flower displays, and open lawns make it a peaceful spot for morning exercise and leisure walks.",
+                        highlights: "Giant flowering tropical trees, shaded walking paths, water fountains, and a towering golden Buddha statue.",
+                        bestTime: "Morning or late afternoon."
+                    },
+                    {
+                        title: "Independence Memorial Hall",
+                        category: "heritage",
+                        image: "independent.jpeg",
+                        overview: "Located at Independence Square in Colombo 07, Independence Memorial Hall is a grand national monument constructed to mark Sri Lanka’s independence from British rule in February 1948. Its open-pillared architectural style draws direct inspiration from the historic Magul Maduwa (Royal Audience Hall) of the last Kandyan kings. Surrounded by broad walkways, manicured lawns, and a subterranean museum, it is both a place of national ceremony and a popular evening hang-out.",
+                        highlights: "Stone pillars inspired by the Royal Audience Hall of Kandy, surrounding landscaped gardens, and the Independence Memorial Museum.",
+                        bestTime: "Late afternoon (4:00 PM – 6:30 PM) for pleasant weather and evening strolls."
+                    }
+                ]
+            },
+            {
+                id: "dist-gampaha",
+                number: "02",
+                name: "Gampaha District",
+                province: "Western Province",
+                places: [
+                    {
+                        title: "Kelaniya Raja Maha Vihara",
+                        category: "heritage",
+                        image: "kelaniya.jpeg",
+                        overview: "Standing along the banks of the Kelani River just outside Colombo, Kelaniya Raja Maha Vihara is one of Sri Lanka’s most sacred Buddhist places of worship. According to Buddhist tradition and ancient chronicles, Lord Buddha visited Kelaniya on his third and final journey to Sri Lanka to settle a dispute and preach the Dhamma. The temple is celebrated for its richly painted murals created in the 20th century by artist Solias Mendis, depicting pivotal events in Sri Lankan and Buddhist history.",
+                        highlights: "Exquisite modern murals by renowned artist Solias Mendis, the ancient paddy-heap shaped stupa, and the annual Duruthu Perahera.",
+                        bestTime: "Early morning or evening."
+                    },
+                    {
+                        title: "Henarathgoda Botanical Garden (Gampaha)",
+                        category: "wildlife",
+                        image: "henarathgoda.jpeg",
+                        overview: "Established in 1876 in Gampaha by the British colonial administration, Henarathgoda Botanical Garden holds a special place in Sri Lanka’s agricultural history. It was originally set up to receive and propagate Para rubber seedlings brought from Kew Gardens in London, laying the foundation for Sri Lanka’s rubber industry. Beyond its historical significance, the garden features lush tropical trees, medicinal plant plots, palm groves, and quiet pathways ideal for nature lovers.",
+                        highlights: "The original rubber tree planted in Sri Lanka, diverse medicinal plant collections, palm avenues, and tranquil lakeside seating areas.",
+                        bestTime: "Morning hours for birdwatching and shaded walks."
+                    },
+                    {
+                        title: "Negombo Beach",
+                        category: "beach",
+                        image: "negambobeach.jpeg",
+                        overview: "Located along the western coast roughly 35 kilometers north of Colombo and very close to Bandaranaike International Airport, Negombo Beach is a lively coastal stretch known for its golden sand and fishing culture. Generations of local fishermen still launch traditional outrigger canoes and boats from the shoreline each morning. Travelers frequently visit Negombo for its relaxed seaside atmosphere, fresh crab and prawn dishes, and convenient location at the start or end of an island itinerary.",
+                        highlights: "Traditional outrigger sailing canoes (Oruva), fresh seafood restaurants, and lively coastal resorts.",
+                        bestTime: "December to April for calm seas and sunny weather."
+                    },
+                    {
+                        title: "Negombo Lagoon",
+                        category: "wildlife",
+                        image: "negambo.jpeg",
+                        overview: "Stretching inland behind Negombo town, Negombo Lagoon is a vast, shallow estuarine ecosystem fed by rivers like the Attanagalu Oya and connected to the Indian Ocean by a narrow mouth. Dense mangrove swamps fringe its edges, acting as a vital breeding ground for fish, crabs, and prawns as well as a refuge for coastal birds. A slow boat ride through the lagoon reveals quiet channels, stilt fish traps, and rich local fishing traditions.",
+                        highlights: "Boat safaris through dense mangrove islands, sightings of cormorants and herons, and traditional crab and prawn fishing.",
+                        bestTime: "Early morning or late afternoon."
+                    },
+                    {
+                        title: "Hamilton Canal (Dutch Canal)",
+                        category: "heritage",
+                        image: "hamilton.jpeg",
+                        overview: "Running parallel to the coast through Negombo and linking the Kelani River basin northward toward Puttalam, the Hamilton Canal is a historic inland waterway with roots in the Dutch colonial era. Originally dug to transport cinnamon, spices, and agricultural goods safely away from rough ocean swells, it was later completed under British engineering in the early 19th century. Today, the canal adds character to Negombo’s landscape with old lock gates, bridges, and boat traffic.",
+                        highlights: "Scenic boat rides past colonial bridges, colorful fishing boats, and local riverside communities.",
+                        bestTime: "Late afternoon."
+                    }
+                ]
+            },
+            {
+                id: "dist-kalutara",
+                number: "03",
+                name: "Kalutara District",
+                province: "Western Province",
+                places: [
+                    {
+                        title: "Richmond Castle",
+                        category: "heritage",
+                        image: "richmond.jpeg",
+                        overview: "Set on a scenic hill overlooking the Kalu Ganga river near Palatota in Kalutara, Richmond Castle is a grand mansion built at the turn of the 20th century for Mudaliyar Don Arthur de Silva Wijesinghe Siriwardena. The two-story residence blends Edwardian British layout ideas with traditional Sri Lankan woodwork and Indian craftsmanship. Every detail—from carved Burmese teak staircases to imported stained glass and clever natural ventilation—reflects the opulence of a bygone era.",
+                        highlights: "Intricate teak wood carvings, stained-glass windows imported from Scotland, ventilated cooling systems, and manicured estate gardens.",
+                        bestTime: "Morning or mid-afternoon; guided tours provide rich historical context."
+                    },
+                    {
+                        title: "Brief Garden (Beruwala)",
+                        category: "wildlife",
+                        image: "briefgarden.jpeg",
+                        overview: "Tucked away inside a former rubber estate near Beruwala, Brief Garden was the private home and creative laboratory of renowned Sri Lankan landscape architect Bevis Bawa, brother of famous architect Geoffrey Bawa. Over several decades, Bevis transformed the property into an artistic maze of tropical greenery, courtyards, ponds, and hidden corners. Wandering through the grounds feels like stepping into a living sculpture garden where nature and art are seamlessly intertwined.",
+                        highlights: "Sculpted tropical gardens, secret pathways, outdoor murals, and eclectic sculptures blending art with nature.",
+                        bestTime: "Year-round during daylight hours (8:00 AM – 5:00 PM)."
+                    },
+                    {
+                        title: "Kalutara Bodhiya",
+                        category: "heritage",
+                        image: "kalutarabodiya.jpeg",
+                        overview: "Located right beside the main bridge crossing the Kalu Ganga in Kalutara town, Kalutara Bodhiya is a deeply venerated Buddhist pilgrimage site. Its sacred Bo tree is one of the 32 saplings grown from the Jaya Sri Maha Bodhi in Anuradhapura, and the site gained widespread popularity in the mid-20th century. What makes the temple architecturally unique is its large hollow stupa, which houses an interior shrine room decorated with colorful murals.",
+                        highlights: "The world’s only hollow Buddhist stupa featuring an interior shrine painted with 74 murals depicting Jataka tales.",
+                        bestTime: "Weekday mornings for peaceful temple visits."
+                    },
+                    {
+                        title: "Thudugala Ella Waterfall",
+                        category: "mountain",
+                        image: "tudugalaella.jpeg",
+                        overview: "Hidden within a rubber plantation in the Dodangoda area of Kalutara District, Thudugala Ella is a charming, lesser-known waterfall formed along a tributary of the Kalu Ganga. Rather than a towering cliff drop, it flows gracefully over wide, stepped rock ledges into inviting natural pools below. Surrounded by lush wet-zone greenery, it offers a peaceful local picnic and bathing spot away from busy tourist trails.",
+                        highlights: "Natural rock bathing pools, lush forest surroundings, and remnants of a historic colonial bathing spot.",
+                        bestTime: "Post-monsoon months for full waterfall flow."
+                    },
+                    {
+                        title: "Beruwala Beach",
+                        category: "beach",
+                        image: "beruwelabeach.jpeg",
+                        overview: "Positioned along the southwestern coast south of Kalutara, Beruwala is one of Sri Lanka’s earliest established beach holiday areas and holds deep historical roots. Centuries ago, Arab merchants established trading settlements here, and the area remains known for its historic mosque and coastal heritage. Its palm-lined golden sands and calm bays make it a relaxing spot for beach walks and coastal excursions.",
+                        highlights: "Barberyn Island Lighthouse boat trips, snorkeling over coral reefs, and the historic Kechimalai Mosque.",
+                        bestTime: "December to April."
+                    }
+                ]
+            },
+            {
+                id: "dist-kandy",
+                number: "04",
+                name: "Kandy District",
+                province: "Central Province",
+                places: [
+                    {
+                        title: "Temple of the Sacred Tooth Relic (Sri Dalada Maligawa)",
+                        category: "heritage",
+                        image: "daladamaligawa.jpeg",
+                        overview: "Situated inside the royal palace complex of Kandy—the last royal capital of Sri Lanka—the Temple of the Sacred Tooth Relic is the country’s most important Buddhist shrine and a UNESCO World Heritage site. It enshrines the sacred tooth relic of Lord Buddha, which historically symbolized sovereignty and legitimacy for Sri Lankan kings. Daily rituals accompanied by traditional Kandyan drums and wind instruments create a deeply moving cultural and spiritual atmosphere.",
+                        highlights: "Ornate Kandyan architecture, traditional drumming ceremonies (Thevava), golden canopy shrine, and views of Kandy Lake.",
+                        bestTime: "During daily Puja rituals (5:30 AM, 9:30 AM, or 6:30 PM)."
+                    },
+                    {
+                        title: "Ambuluwawa Tower (Gampola)",
+                        category: "mountain",
+                        image: "ambuluwawa.jpeg",
+                        overview: "Rising high above Gampola in Kandy District, Ambuluwawa is a designated biodiversity complex crowned by a distinctive white, tapering tower that resembles a stylized stupa. Climbing the narrow, twisting exterior staircase to the top is an exhilarating experience rewarded with wide views over central mountain ridges and river valleys. At the foot of the hill, temples, a mosque, a kovil, and a church sit together as a symbol of religious harmony.",
+                        highlights: "Narrow spiral exterior staircase, 360-degree views of surrounding mountain ranges, and a multi-religious center at the base.",
+                        bestTime: "Early morning (7:00 AM – 9:30 AM) before clouds roll in and queues form."
+                    },
+                    {
+                        title: "Royal Botanical Gardens, Peradeniya",
+                        category: "wildlife",
+                        image: "royalbotanical.jpeg",
+                        overview: "Bordered by a sweeping bend of the Mahaweli River just outside Kandy, the Royal Botanical Gardens in Peradeniya trace their origins to a royal Kandyan garden and were expanded into a botanical garden in 1821. Covering 147 acres, it is famous for its extraordinary collection of tropical plants, towering avenues, and specimen trees from around the world. It is a favorite destination for botany enthusiasts, photographers, and visitors seeking a calm walk amidst giant greenery.",
+                        highlights: "The famous Royal Palm Avenue, Giant Javan Fig Tree, Orchid House, and suspension bridge over the river.",
+                        bestTime: "Morning to early afternoon."
+                    },
+                    {
+                        title: "Udawatta Kele Sanctuary",
+                        category: "wildlife",
+                        image: "udawatta.jpeg",
+                        overview: "Covering roughly 104 hectares on a forested ridge directly behind the Temple of the Tooth, Udawatta Kele was once a royal pleasure forest known as 'Uda Wasala Watta.' Protected from heavy logging for centuries, the reserve preserves towering trees, thick climbing lianas, and rock caves once used by Buddhist monks for meditation. Despite being right next to Kandy city, its shaded trails feel remarkably quiet and wild.",
+                        highlights: "Giant lianas, ancient meditation caves, diverse endemic birds, and shaded forest trails overlooking Kandy city.",
+                        bestTime: "Early morning (6:30 AM – 10:00 AM) for peak wildlife and bird activity."
+                    },
+                    {
+                        title: "Bahiravokanda Vihara Buddha Statue",
+                        category: "heritage",
+                        image: "bahirawakanda.jpeg",
+                        overview: "Overlooking Kandy town from the summit of Bahiravokanda hill, this temple complex is immediately recognizable from afar by its massive white seated Buddha statue. Standing around 26.8 meters (88 feet) tall, the statue is one of the tallest of its kind in Sri Lanka and can be seen from many viewpoints across the city. Visiting the hill gives travelers a peaceful vantage point to take in Kandy’s valley layout and surrounding hills.",
+                        highlights: "Unobstructed aerial views of Kandy Lake, the Temple of the Tooth, and the surrounding Hunnasgiriya mountains.",
+                        bestTime: "Late afternoon through sunset."
+                    }
+                ]
+            },
+            {
+                id: "dist-matale",
+                number: "05",
+                name: "Matale District",
+                province: "Central Province",
+                places: [
+                    {
+                        title: "Sigiriya (Lion Rock Fortress)",
+                        category: "heritage",
+                        image: "sigiriya.jpeg",
+                        overview: "Rising dramatically out of the central plains in Matale District, Sigiriya is an ancient rock fortress and palace complex built during the reign of King Kashyapa (477–495 AD). The site combines ingenious urban planning—including moats, terraced gardens, and hydraulic water systems—with a steep climb up a massive column of granite. Once the royal citadel at the summit and later a monastery, Sigiriya is celebrated worldwide for its frescoes, Mirror Wall, and monumental lion gateway.",
+                        highlights: "Symmetrical water gardens, the Mirror Wall, ancient frescoes, the massive Lion’s Paws entrance, and panoramic summit ruins.",
+                        bestTime: "Early morning (opening at 6:30 AM) to climb before the midday sun."
+                    },
+                    {
+                        title: "Pidurangala Rock",
+                        category: "mountain",
+                        image: "pidurangala.jpeg",
+                        overview: "Located just a couple of kilometers north of Sigiriya, Pidurangala is a massive rock outcrop that has served as a Buddhist monastic site for over two millennia. While the climb involves scrambling over boulders near the top, it offers an unforgettable adventure and arguably the best view of Sigiriya Rock rising from the surrounding forest. Many travelers choose Pidurangala at dawn to watch the sunrise light up the landscape with Lion Rock in frame.",
+                        highlights: "Sunrise hikes, an ancient reclining brick Buddha statue, and 360-degree jungle vistas.",
+                        bestTime: "5:30 AM for sunrise or 4:30 PM for sunset."
+                    },
+                    {
+                        title: "Rangiri Dambulla Cave Temple",
+                        category: "heritage",
+                        image: "rangiridambulla.jpeg",
+                        overview: "Carved into the base of a huge overhanging rock in Dambulla within Matale District, this UNESCO World Heritage cave temple complex has been a place of continuous Buddhist worship for more than 2,100 years. Kings such as Valagamba and Nissanka Malla patronized the caves, expanding and adorning them over centuries. Inside the cool rock chambers are hundreds of Buddha statues and deities alongside extensive, vibrant wall and ceiling paintings.",
+                        highlights: "Five main caves containing 153 Buddha statues and over 2,100 square meters of intricate ceiling murals.",
+                        bestTime: "Early morning or late afternoon."
+                    },
+                    {
+                        title: "Riverston (Knuckles Mountain Range)",
+                        category: "mountain",
+                        image: "riverston.jpeg",
+                        overview: "Situated along the northern edge of the Knuckles Mountain Range in Matale District, Riverston is famous for its cool highland climate, sweeping valleys, and dramatic ridge winds. Winding mountain roads lead visitors through misty forests and open viewpoints where clouds often drift across the hills. It is a favorite destination for road trippers, nature photographers, and hikers seeking rugged highland scenery.",
+                        highlights: "The windy mountain pass peak, panoramic views over the Thelgamu Oya valley, and nearby Bambarakiri Ella waterfall.",
+                        bestTime: "January to April for clear visibility; early morning before mist rolls in."
+                    },
+                    {
+                        title: "Pitawala Pathana (Mini World's End)",
+                        category: "mountain",
+                        image: "pitawala.jpeg",
+                        overview: "Located near Riverston inside the Knuckles Conservation Forest, Pitawala Pathana is an unusual open grassland plateau sitting atop a steep escarpment. Its tough, cushion-like grass and dwarf plants have adapted to strong winds, thin soil, and shifting temperatures. Walking carefully toward the edge reveals a sudden, dramatic drop into the valley below, earning it the nickname 'Mini World’s End.'",
+                        highlights: "Dramatic drop-off viewpoint at Mini World’s End and rare endemic frog and lizard species.",
+                        bestTime: "Morning hours before heavy afternoon mist."
+                    }
+                ]
+            },
+            {
+                id: "dist-nuwaraeliya",
+                number: "06",
+                name: "Nuwara Eliya District",
+                province: "Central Province",
+                places: [
+                    {
+                        title: "Horton Plains National Park",
+                        category: "mountain",
+                        image: "horton.jpeg",
+                        overview: "Situated on Sri Lanka’s highest plateau at over 2,100 meters above sea level between Nuwara Eliya and Haputale, Horton Plains is a UNESCO World Heritage highland reserve. Its landscape combines montane cloud forests with open patana grasslands, streams, and endemic flora such as wild rhododendrons. A circular walking trail leads visitors to scenic waterfalls and dramatic cliff edges overlooking distant southern plains.",
+                        highlights: "The sheer 880-meter drop at World’s End, Baker’s Falls, and frequent sightings of Sambar deer.",
+                        bestTime: "Arrive by 6:00 AM–7:00 AM so you reach World’s End before clouds obscure the view."
+                    },
+                    {
+                        title: "Gregory Lake",
+                        category: "wildlife",
+                        image: "gregory.jpeg",
+                        overview: "Created in 1873 under Sir William Gregory, British Governor of Ceylon, by damming the waters flowing through the Nuwara Eliya basin, Gregory Lake is a scenic focal point of the hill station. Surrounded by pine and eucalyptus-lined hills and tea slopes, the lake offers a crisp, refreshing mountain atmosphere. Visitors gather along its banks for boat rides, evening walks, and family recreation.",
+                        highlights: "Swan paddle boats, jet-skiing, lakeside pony rides, and landscaped walking promenades.",
+                        bestTime: "Late afternoon."
+                    },
+                    {
+                        title: "Victoria Park (Nuwara Eliya)",
+                        category: "wildlife",
+                        image: "victoriyapark.jpeg",
+                        overview: "Located right in the heart of Nuwara Eliya town next to the post office, Victoria Park is a lush, well-kept public garden that reflects the town’s British colonial past. Originally part of the research grounds of Hakgala Botanical Garden, it became a public park in 1897 to mark Queen Victoria’s Diamond Jubilee. Cool temperatures allow temperate flowers and highland trees to thrive alongside rare hill-country birds.",
+                        highlights: "Vibrant seasonal flower beds, rare highland migratory birds like the Kashmir Flycatcher, and shaded riverside lawns.",
+                        bestTime: "February to May for blooming flowers."
+                    },
+                    {
+                        title: "Ramboda Falls",
+                        category: "mountain",
+                        image: "ramboda.jpeg",
+                        overview: "Rising to a height of 109 meters in the Pussellawa area along the route toward Nuwara Eliya, Ramboda Falls is one of Sri Lanka’s tallest and most photographed waterfalls. Formed where Panna Oya joins Ramboda Oya, the waterfall tumbles down a dark rocky slope framed by lush green hills and tea estates. Viewpoints near the main road and nearby estates offer great angles to admire the rushing water.",
+                        highlights: "Multi-tiered white water cascades surrounded by mist and scenic tea estates.",
+                        bestTime: "Morning hours for clear photography."
+                    },
+                    {
+                        title: "Moon Plains",
+                        category: "mountain",
+                        image: "moonplains.jpeg",
+                        overview: "Located just outside Nuwara Eliya near Sandathenna, Moon Plains is an expansive upland grassland and farm zone managed for conservation and scenic tourism. Because of its open elevation and lack of tall obstructions around its viewpoints, it provides wide vistas across the central highlands. Safari jeeps commonly take visitors up to designated lookout points to spot highland wildlife and mountain peaks.",
+                        highlights: "Clear views of Pidurutalagala, Single Tree Hill, Hakgala, and Namunukula peaks via safari jeep.",
+                        bestTime: "Early morning (7:00 AM – 9:30 AM)."
+                    },
+                    {
+                        title: "Lover’s Leap Waterfall",
+                        category: "mountain",
+                        image: "loversleapwaterfall.jpeg",
+                        overview: "Tucked above Nuwara Eliya on the slopes leading toward Pidurutalagala—Sri Lanka’s highest mountain—Lover’s Leap is a scenic waterfall surrounded by tea bushes. The site is tied to a local folk legend of two young lovers who leaped from the cliff rather than be separated. Reaching the falls involves a pleasant walk through tea estate paths with sweeping views over Nuwara Eliya below.",
+                        highlights: "Scenic hike through emerald tea fields and panoramic views overlooking Nuwara Eliya valley.",
+                        bestTime: "Morning hours."
+                    }
+                ]
+            },
+            {
+                id: "dist-galle",
+                number: "07",
+                name: "Galle District",
+                province: "Southern Province",
+                places: [
+                    {
+                        title: "Galle Dutch Fort",
+                        category: "heritage",
+                        image: "galldutchfort.jpeg",
+                        overview: "First fortified by the Portuguese in the late 16th century and greatly expanded by the Dutch in the 17th century, Galle Fort is the largest remaining European-built fortress in Asia and a UNESCO World Heritage site. Unlike many historic forts that are purely museum sites, Galle Fort remains a living town filled with homes, shops, museums, churches, and mosques. Its thick sea walls offer dramatic ocean views and an atmospheric walk through centuries of maritime history.",
+                        highlights: "The iconic Galle Lighthouse, 1883 Clock Tower, cobblestone streets, boutique cafes, and sunset walks along the ocean ramparts.",
+                        bestTime: "Late afternoon through sunset."
+                    },
+                    {
+                        title: "Unawatuna Beach",
+                        category: "beach",
+                        image: "unawatunabeach.jpeg",
+                        overview: "Just a short drive southeast of Galle city, Unawatuna is one of Sri Lanka’s best-known beach destinations, famous for its curved golden shoreline and lively coastal energy. An offshore coral reef helps break incoming swells, creating gentler swimming conditions in many parts of the bay. Alongside sunbathing and water activities, visitors can explore nearby coastal lanes, cafes, and laid-back guesthouses.",
+                        highlights: "Safe swimming waters, beachfront dining, diving centers, and lively coastal atmosphere.",
+                        bestTime: "December to April."
+                    },
+                    {
+                        title: "Jungle Beach (Rumassala)",
+                        category: "beach",
+                        image: "jungle.jpeg",
+                        overview: "Hidden on the sheltered side of the Rumassala headland near Unawatuna, Jungle Beach is a small, peaceful cove surrounded by dense coastal forest. Rumassala itself is steeped in Ramayana folklore, believed by legend to be a fragment of the Himalayas brought to Sri Lanka. Reaching the cove on foot or by tuk-tuk and short trail gives it a secluded, Robinson Crusoe feel.",
+                        highlights: "Snorkeling over shallow coral reefs, clear turquoise water, and lush jungle backdrop.",
+                        bestTime: "Morning hours before the small cove gets crowded."
+                    },
+                    {
+                        title: "Hikkaduwa Coral Reef & Beach",
+                        category: "beach",
+                        image: "hikkaduwa.jpeg",
+                        overview: "Located on the southwestern coast in Galle District, Hikkaduwa is famous for its coral sanctuary, surfing culture, and vibrant seaside strip. Its shallow fringing reef was declared a marine national park to protect diverse corals and marine life that draw snorkelers and glass-bottom boat visitors. Hikkaduwa is also well known for friendly sea turtles that regularly visit the shallow waters near the shore.",
+                        highlights: "Snorkeling with giant green sea turtles, glass-bottom boat rides, and surfing.",
+                        bestTime: "November to April."
+                    },
+                    {
+                        title: "Madu Ganga River Safari (Balapitiya)",
+                        category: "wildlife",
+                        image: "maduganga.jpeg",
+                        overview: "Centered around Balapitiya in northern Galle District, the Madu Ganga wetland and estuary encompasses a rich network of mangrove forests and dozens of small islands. Traditional boats glide quietly past overhanging mangrove roots, water monitor lizards, kingfishers, and traditional cinnamon-peeling workshops. It offers a calm, educational look at Sri Lanka’s coastal wetland biodiversity and village crafts.",
+                        highlights: "Boat safaris through mangrove tunnels, visiting Cinnamon Island, and exploring Kothduwa island temple.",
+                        bestTime: "Early morning or late afternoon."
+                    }
+                ]
+            },
+            {
+                id: "dist-matara",
+                number: "08",
+                name: "Matara District",
+                province: "Southern Province",
+                places: [
+                    {
+                        title: "Mirissa Beach",
+                        category: "beach",
+                        image: "mirissa.jpeg",
+                        overview: "Situated on Sri Lanka’s southern coast in Matara District, Mirissa is celebrated for its crescent-shaped golden beach, palm-fringed bay, and vibrant coastal atmosphere. It has become one of the island’s top hubs for whale and dolphin watching excursions out into the deep southern Indian Ocean. Surfers, swimmers, and sunset seekers alike love Mirissa for its mix of scenic bays and relaxed beachside dining.",
+                        highlights: "Early morning whale and dolphin watching boat tours, Parrot Rock viewpoint, and Secret Beach.",
+                        bestTime: "November to April for calm seas and peak whale sightings."
+                    },
+                    {
+                        title: "Coconut Tree Hill (Mirissa)",
+                        category: "beach",
+                        image: "cocunut.jpeg",
+                        overview: "Rising just east of Mirissa’s main bay, Coconut Tree Hill is a red-earth cliff headland covered in a dense grove of tall coconut palms overlooking the ocean. The striking contrast of reddish soil, green palm trunks, and deep blue Indian Ocean water has made it one of southern Sri Lanka’s most famous photo spots. Visitors come especially at sunrise and sunset to enjoy the view and coastal breeze.",
+                        highlights: "Iconic sunrise and sunset photography and panoramic views over Mirissa Bay.",
+                        bestTime: "Sunrise (6:00 AM) or sunset (5:30 PM)."
+                    },
+                    {
+                        title: "Dondra Head Lighthouse",
+                        category: "heritage",
+                        image: "dondraheightlight.jpeg",
+                        overview: "Located at Dondra Head—the southernmost point of Sri Lanka in Matara District—this striking white octagonal lighthouse was completed in 1889 under British rule. Standing 49 meters tall, it is the tallest lighthouse in Sri Lanka and the tallest in Southeast Asia at the time it was built. Its location where southern ocean swells meet the coast makes the surrounding headland dramatic and breezy.",
+                        highlights: "Dramatic Indian Ocean waves crashing against rocky headlands, coastal breezes, and panoramic ocean views.",
+                        bestTime: "Late afternoon for golden-hour photography."
+                    },
+                    {
+                        title: "Paravi Duwa Temple",
+                        category: "heritage",
+                        image: "paraviduwa.jpeg",
+                        overview: "Set on a small rocky island just off the shore of Matara, Paravi Duwa Temple is linked to the mainland beach by a graceful footbridge. The name 'Paravi Duwa' translates to 'Pigeon Island,' and the temple complex includes a peaceful shrine and Bodhi tree courtyard surrounded by sea air. It offers a quiet spiritual stop right beside the southern coastline.",
+                        highlights: "Ocean views from the island shrine, sea breezes, and peaceful temple courtyards.",
+                        bestTime: "Morning or late afternoon."
+                    },
+                    {
+                        title: "Matara Star Fort",
+                        category: "heritage",
+                        image: "matarastarfort.jpeg",
+                        overview: "Constructed by the Dutch in 1765 on the eastern bank of the Nilwala River in Matara, Star Fort is an unusual six-pointed star-shaped fortification built to strengthen inland defenses. Surrounded by a dry moat and entered across a small bridge, its compact geometric layout is a rare example of colonial military architecture in Sri Lanka. Today, the fort houses a small museum displaying historical maps, artifacts, and local heritage.",
+                        highlights: "Well-preserved coral-stone ramparts, a dry moat, drawbridge entrance, and regional historical museum.",
+                        bestTime: "Morning or late afternoon."
+                    },
+                    {
+                        title: "Weherahena Poorwarama Rajamaha Viharaya",
+                        category: "heritage",
+                        image: "weherahenapoorwaramaya.jpeg",
+                        overview: "Located a few kilometers inland from Matara town, Weherahena Temple is famous for combining a monumental modern Buddha statue with an extensive underground tunnel temple. Visitors walk through long subterranean passages lined with colorful paintings depicting scenes from the Buddha’s life and past births. Above ground, the towering statue and landscaped temple grounds draw pilgrims and curious travelers.",
+                        highlights: "Hand-painted subterranean tunnel walls illustrating scenes from Buddhist history and Jataka stories.",
+                        bestTime: "Morning hours."
+                    },
+                    {
+                        title: "Kirala Kele Sanctuary",
+                        category: "wildlife",
+                        image: "kiralakele.jpeg",
+                        overview: "Situated near the Nilwala River in Matara District, Kirala Kele is a rich freshwater marsh and wetland sanctuary teeming with birdlife. Lush reeds, mangroves, and marshy channels provide feeding and nesting grounds for herons, egrets, kingfishers, and swamphens. Quiet canoe rides or guided walks along the edge make it a rewarding stop for birdwatchers.",
+                        highlights: "Boat rides and nature walks spotting purple swamphens, herons, egrets, and endemic wetland flora.",
+                        bestTime: "Early morning (6:30 AM – 9:30 AM)."
+                    }
+                ]
+            },
+            {
+                id: "dist-hambantota",
+                number: "09",
+                name: "Hambantota District",
+                province: "Southern Province",
+                places: [
+                    {
+                        title: "Yala National Park",
+                        category: "wildlife",
+                        image: "yalanational.jpeg",
+                        overview: "Extending across Sri Lanka’s southeast coast largely within Hambantota District, Yala is the country’s most visited and famous national park. Its varied terrain includes dry monsoon forests, open scrublands, grassy plains, rocky outcrops, and coastal lagoons. Yala is renowned around the world for its high density of Sri Lankan leopards alongside elephants, sloth bears, crocodiles, and rich birdlife.",
+                        highlights: "Early morning jeep safaris spotting Sri Lankan leopards, sloth bears, elephants, crocodiles, and over 200 bird species.",
+                        bestTime: "February to July when water levels drop and wildlife gathers around waterholes."
+                    },
+                    {
+                        title: "Bundala National Park",
+                        category: "wildlife",
+                        image: "bundala.jpeg",
+                        overview: "Located near Hambantota town along the southern coast, Bundala National Park is a designated RAMSAR wetland of international importance and a UNESCO Biosphere Reserve. Its network of shallow brackish lagoons, salt pans, sand dunes, and thorny scrub attracts large numbers of resident and migratory waterbirds. It is a quieter, bird-focused alternative to nearby Yala for wildlife enthusiasts.",
+                        highlights: "Large flocks of migratory greater flamingos, pelicans, painted storks, and crocodiles.",
+                        bestTime: "September to March for migratory birds."
+                    },
+                    {
+                        title: "Hummanaya Blowhole (Kudawella)",
+                        category: "beach",
+                        image: "hummanaya.jpeg",
+                        overview: "Situated near Kudawella in western Hambantota District, Hummanaya is Sri Lanka’s only known blowhole and is widely cited as the second-largest in the world. When ocean waves surge into an underwater cave and push up through a narrow vertical rock shaft, seawater blasts high into the air with a booming roar. The surrounding coastal cliff park offers a viewing platform and ocean breeze.",
+                        highlights: "Water jets shooting up to 25–30 meters into the air accompanied by a deep roaring sound.",
+                        bestTime: "June to September during the southwest monsoon when ocean swells are strongest."
+                    },
+                    {
+                        title: "Mirijjawila Dry Zone Botanical Garden",
+                        category: "wildlife",
+                        image: "mirijjawiladryzone.jpeg",
+                        overview: "Spread across 300 acres in Hambantota, Mirijjawila Dry Zone Botanical Garden was created to conserve and showcase plants adapted to Sri Lanka’s dry and arid regions. Unlike the lush wet-zone gardens of Peradeniya or Hakgala, this garden highlights drought-resilient trees, medicinal species, dry-forest flora, and themed landscapes. Peaceful lakes and walking paths make it an interesting stop in the southern dry zone.",
+                        highlights: "Rare medicinal herbs, dry-zone timber trees, cactus collections, and landscaped thematic gardens.",
+                        bestTime: "Early morning or late afternoon."
+                    },
+                    {
+                        title: "Tangalle Beaches (Goyambokka & Silent Beach)",
+                        category: "beach",
+                        image: "tangalle.jpeg",
+                        overview: "Centered around the coastal town of Tangalle in Hambantota District, this stretch of southern shoreline is known for wide beaches, rocky headlands, and a slower pace than resort hubs further west. Coves like Goyambokka and Silent Beach (Amanwella beach) offer soft sand, palm shade, and scenic coastal walks. Nearby Rekawa is also famous as a protected sea turtle nesting site.",
+                        highlights: "Secluded beach walks, sea turtle nesting watches at Rekawa, and tranquil coastal resorts.",
+                        bestTime: "December to April."
+                    }
+                ]
+            },
+            {
+                id: "dist-jaffna",
+                number: "10",
+                name: "Jaffna District",
+                province: "Northern Province",
+                places: [
+                    {
+                        title: "Nallur Kandaswamy Kovil",
+                        category: "heritage",
+                        image: "nallurkovil.jpeg",
+                        overview: "Located in Nallur near Jaffna city, Nallur Kandaswamy Kovil is one of the most significant Hindu temples in Sri Lanka, dedicated to Lord Murugan. The current temple complex dates back to the 18th century on a site with ancient royal associations in the Jaffna Kingdom. Its bright yellow and gold-adorned gopuram tower, rhythmic temple music, and grand annual festival form the cultural pulse of Jaffna.",
+                        highlights: "Vibrant daily rituals, ornate temple chariots, and the famous 25-day annual Nallur Festival.",
+                        bestTime: "Early morning or evening puja times (modest dress required; men must remove shirts before entering the inner sanctum)."
+                    },
+                    {
+                        title: "Jaffna Public Library",
+                        category: "heritage",
+                        image: "jaffnapublic.jpeg",
+                        overview: "Standing beside a tranquil pond and park in central Jaffna, the Jaffna Public Library is a renowned architectural landmark and cultural institution. Founded in 1933 and housed in its distinctive white Indo-Saracenic building completed in the 1950s, it once held one of Asia’s richest collections of Tamil books and historical documents. After being destroyed in 1981 and later rebuilt, it remains a proud symbol of learning and heritage.",
+                        highlights: "Grand domed architecture, manicured front lawns, and rare historical archives.",
+                        bestTime: "Morning or late afternoon."
+                    },
+                    {
+                        title: "Jaffna Dutch Fort",
+                        category: "heritage",
+                        image: "jaffnafort.jpeg",
+                        overview: "Overlooking the Jaffna Lagoon, Jaffna Fort was originally established by the Portuguese in 1618 and later rebuilt by the Dutch into a formidable star-shaped fortress. Built largely from coral stone and surrounded by a moat, the fort played a major strategic role in northern maritime history for centuries. Walking along its broad ramparts offers wide views across the lagoon toward the surrounding islands.",
+                        highlights: "Coral-stone ramparts, deep moat, historic bastions, and sweeping lagoon views.",
+                        bestTime: "Late afternoon for cool ocean breezes."
+                    },
+                    {
+                        title: "Casuarina Beach (Karainagar)",
+                        category: "beach",
+                        image: "casuarinabeach.jpeg",
+                        overview: "Located on Karainagar island linked to the Jaffna Peninsula by a causeway, Casuarina Beach is named after the tall casuarina trees bordering the shore. Its fine white sand slopes gently into clear, shallow turquoise water that stays calm and knee-to-waist deep well out from the beach. This makes it one of the most family-friendly beaches in northern Sri Lanka.",
+                        highlights: "Crystal-clear, calm, waist-deep turquoise waters extending far offshore, ideal for safe wading and swimming.",
+                        bestTime: "January to September."
+                    },
+                    {
+                        title: "Delft Island (Neduntheevu)",
+                        category: "beach",
+                        image: "delft.jpeg",
+                        overview: "Lying in the Palk Strait off the Jaffna Peninsula and reached by ferry from Kurikadduwan, Delft Island (Neduntheevu) feels like a world apart. Flat, windswept, and crisscrossed by low coral-stone walls and palmyrah palms, the island holds remnants of Portuguese, Dutch, and British colonial outposts. Wild ponies descended from horses left during colonial times roam freely across parts of the island.",
+                        highlights: "Wild feral ponies descendants of Dutch horses, coral-stone walls, an ancient giant Baobab tree, and the mysterious Growing Stone.",
+                        bestTime: "January to September (catch the morning ferry)."
+                    },
+                    {
+                        title: "Nagadeepa Purana Viharaya (Nainativu)",
+                        category: "heritage",
+                        image: "nagadeepa.jpeg",
+                        overview: "Situated on Nainativu island in Jaffna District, Nagadeepa Purana Viharaya is one of Sri Lanka’s sixteen sacred Buddhist sites (Solosmasthana) visited by Lord Buddha. Reached by a short ferry ride from Punakari or Kurikadduwan, the tranquil temple is centered around a gleaming silver-painted stupa. Nearby on the same island sits the historic Nagapooshani Amman Temple, making Nainativu a notable site of spiritual heritage.",
+                        highlights: "Scenic boat ride across the lagoon, silver-painted stupa, and nearby historic Nagapooshani Amman Kovil.",
+                        bestTime: "Morning hours."
+                    }
+                ]
+            },
+            {
+                id: "dist-kilinochchi",
+                number: "11",
+                name: "Kilinochchi District",
+                province: "Northern Province",
+                places: [
+                    {
+                        title: "Chundikkulam National Park & Bird Sanctuary",
+                        category: "wildlife",
+                        image: "chundikkulam.jpeg",
+                        overview: "Spanning coastal lagoons, sand spits, and mangrove habitats between the Jaffna Peninsula and the northern mainland across Kilinochchi and Mullaitivu, Chundikkulam is an important bird habitat. Declared a national park in 2015 after earlier bird sanctuary status, it shelters wading birds, terns, gulls, and seasonal migrants. Its quiet coastal flats and lagoon edges appeal to birders and nature explorers.",
+                        highlights: "Flocks of flamingos, painted storks, pelicans, and quiet coastal sand dunes.",
+                        bestTime: "November to March during the migratory bird season."
+                    },
+                    {
+                        title: "Iranamadu Tank",
+                        category: "wildlife",
+                        image: "iranamadutank.jpeg",
+                        overview: "Located a few kilometers southeast of Kilinochchi town, Iranamadu Tank is a massive irrigation reservoir that supports agriculture across the surrounding plains. Originally constructed in the early 20th century and later expanded, its wide embankment and broad water surface create a peaceful rural landscape. Late in the day, the open sky and water reflections make it a scenic spot to pause along northern journeys.",
+                        highlights: "Expansive sunset reflections across the reservoir bund and peaceful countryside drives.",
+                        bestTime: "Late afternoon."
+                    },
+                    {
+                        title: "Kilinochchi War Memorial",
+                        category: "heritage",
+                        image: "kilinochchiwar.jpeg",
+                        overview: "Situated prominently near the A9 highway in Kilinochchi town, the Kilinochchi War Memorial commemorates the end of Sri Lanka’s decades-long civil conflict in 2009. Set within landscaped grounds, the monument marks a major turning point in the country’s modern history. Travelers driving along the main north–south artery often pass through the area as the region continues rebuilding and developing.",
+                        highlights: "Landscaped memorial grounds reflecting the region's modern history.",
+                        bestTime: "Morning or late afternoon."
+                    }
+                ]
+            },
+            {
+                id: "dist-mannar",
+                number: "12",
+                name: "Mannar District",
+                province: "Northern Province",
+                places: [
+                    {
+                        title: "Mannar Dutch Fort",
+                        category: "heritage",
+                        image: "mannardutchfort.jpeg",
+                        overview: "Standing near the causeway linking Mannar Island to the mainland, Mannar Fort was originally built by the Portuguese around 1560 and captured by the Dutch in 1658. Its compact square plan with four corner bastions reflects early European coastal defense design adapted to the northern sea route. Surrounded by quiet grounds and lagoon views, the fort offers a glimpse into Mannar’s strategic maritime past.",
+                        highlights: "Four intact coral-stone bastions, old colonial barracks, and panoramic views across the Mannar Lagoon.",
+                        bestTime: "December to April."
+                    },
+                    {
+                        title: "Ancient Baobab Tree (Pallimunai)",
+                        category: "wildlife",
+                        image: "baodabtree.jpeg",
+                        overview: "Growing near Pallimunai on Mannar Island, this remarkable Baobab tree is believed to be around 700 years old and native to Africa rather than Sri Lanka. Historians and botanists suggest Arab seafarers or traders brought seeds or saplings to Mannar during ancient Indian Ocean voyages. With its thick, bottle-like trunk and sprawling branches, it is a rare botanical curiosity in South Asia.",
+                        highlights: "A massive trunk measuring 19.5 meters in circumference and 7.5 meters in height.",
+                        bestTime: "Year-round during daylight hours."
+                    },
+                    {
+                        title: "Adam’s Bridge Marine National Park (Talaimannar)",
+                        category: "beach",
+                        image: "adamsbridge.jpeg",
+                        overview: "Extending westward from Talaimannar at the tip of Mannar Island toward southern India, Adam’s Bridge (also known as Rama Setu) is a chain of shoals, coral reefs, and sandbars. Protected as a marine national park, the shallow waters and shifting sandbanks support diverse marine life and shorebirds. The windswept Talaimannar point and historic lighthouse nearby add to its remote frontier atmosphere.",
+                        highlights: "Untouched sandbars, migratory shorebirds, wild donkeys, and the historic Talaimannar Lighthouse.",
+                        bestTime: "January to April."
+                    }
+                ]
+            },
+            {
+                id: "dist-vavuniya",
+                number: "13",
+                name: "Vavuniya District",
+                province: "Northern Province",
+                places: [
+                    {
+                        title: "Vavuniya Archaeological Museum",
+                        category: "heritage",
+                        image: "vavuniyaarchalogical.jpeg",
+                        overview: "Located in Vavuniya in the northern dry zone, this archaeological museum preserves sculptures, stone inscriptions, and cultural artifacts from ancient settlements in the region. Because Vavuniya lies along historic travel and trade routes between the Anuradhapura heartland and the northern peninsula, its collection reflects centuries of shared heritage. It offers visitors a concise introduction to the area’s ancient past.",
+                        highlights: "5th-to-8th-century Buddha statues, Hindu bronzes, and ancient stone carvings.",
+                        bestTime: "Morning or late afternoon."
+                    },
+                    {
+                        title: "Madukanda Vihara",
+                        category: "heritage",
+                        image: "madukandaviharaya.jpeg",
+                        overview: "Situated a short distance outside Vavuniya town, Madukanda Vihara is an ancient Buddhist monastery steeped in historical tradition. According to chronicles, the Sacred Tooth Relic rested here briefly during its journey to Anuradhapura in the 4th century AD. Quiet ruins, ancient stone pillars, and a tranquil tank setting give the temple a serene, timeless feel.",
+                        highlights: "Ancient stone pillars, serene tank surroundings, and archaeological ruins.",
+                        bestTime: "Morning hours."
+                    },
+                    {
+                        title: "Kandasamy Kovil (Vavuniya)",
+                        category: "heritage",
+                        image: "vavuniyakandaswami.jpeg",
+                        overview: "Serving as a central Hindu place of worship in Vavuniya town, Kandasamy Kovil is dedicated to Lord Murugan and showcases traditional South Indian-influenced temple design. Colorful sculptures, carved pillars, and daily prayers make it a lively cultural landmark in the district. Visitors stopping in Vavuniya can experience local devotion and temple traditions firsthand.",
+                        highlights: "Intricately carved gopuram tower and traditional religious ceremonies.",
+                        bestTime: "Early morning or evening puja times."
+                    }
+                ]
+            },
+            {
+                id: "dist-mullaitivu",
+                number: "14",
+                name: "Mullaitivu District",
+                province: "Northern Province",
+                places: [
+                    {
+                        title: "Nanthi Kadal Lagoon",
+                        category: "wildlife",
+                        image: "nanthikadal.jpeg",
+                        overview: "Bordering Mullaitivu town along the northeastern coast, Nanthi Kadal is a broad coastal lagoon separated from the Bay of Bengal by a narrow sandy spit. Calm brackish waters, coastal scrub, and wetland margins attract wading birds and support small-scale local fishing. Walking or driving near the lagoon at dusk offers peaceful views over the water.",
+                        highlights: "Rich wetland birdlife, traditional lagoon fishing boats, and peaceful sunsets.",
+                        bestTime: "March to September."
+                    },
+                    {
+                        title: "Mullaitivu Beach",
+                        category: "beach",
+                        image: "mulativubeach.jpeg",
+                        overview: "Stretching along the northeastern shoreline of Sri Lanka in Mullaitivu District, this wide beach is largely untouched by mass tourism. Cool morning breezes coming off the Bay of Bengal and long, quiet stretches of sand create a calm coastal setting. It is a place to experience unhurried eastern seaside scenery and local fishing life.",
+                        highlights: "Sunrise over the eastern ocean, quiet sandy shores, and local fishing harbors.",
+                        bestTime: "March to September."
+                    },
+                    {
+                        title: "Victory Monument (Puthukkudiyiruppu)",
+                        category: "heritage",
+                        image: "victorymonument.jpeg",
+                        overview: "Located along the main road in Mullaitivu District near Puthukkudiyiruppu, this monument marks the final stages of Sri Lanka’s civil war in 2009. Set within a clean, landscaped public space, it stands as a notable modern landmark along the northeastern route. Travelers passing through the district often see it as part of the region’s recent history.",
+                        highlights: "Open public plaza and regional historical context.",
+                        bestTime: "Morning or late afternoon."
+                    }
+                ]
+            },
+            {
+                id: "dist-batticaloa",
+                number: "15",
+                name: "Batticaloa District",
+                province: "Eastern Province",
+                places: [
+                    {
+                        title: "Pasikudah Bay",
+                        category: "beach",
+                        image: "pasikuda.jpeg",
+                        overview: "Located on the east coast in Batticaloa District, Pasikudah Bay is famous for its gentle, wide sandy shore and calm, shallow turquoise waters. A natural offshore coral reef helps protect the bay from strong ocean swells, making the water remarkably smooth for swimming and floating. Resorts developed along the beachfront offer a relaxed tropical escape during the eastern dry season.",
+                        highlights: "Calm, waist-deep crystal-clear turquoise waters extending hundreds of meters offshore, ideal for safe swimming and water sports.",
+                        bestTime: "April to September."
+                    },
+                    {
+                        title: "Kalkudah Beach",
+                        category: "beach",
+                        image: "kalkudah.jpeg",
+                        overview: "Curving right next to Pasikudah along the same protected bay in Batticaloa District, Kalkudah offers a quieter, more laid-back stretch of golden sand. Coconut palms fringe the shore, and the gentle surf creates an inviting setting for morning walks and calm dips in the sea. It is ideal for travelers who prefer a peaceful beach atmosphere.",
+                        highlights: "Uncrowded golden sands, serene beachfront walks, and clear turquoise waters.",
+                        bestTime: "April to September."
+                    },
+                    {
+                        title: "Batticaloa Dutch Fort",
+                        category: "heritage",
+                        image: "batticaloadutchfort.jpeg",
+                        overview: "Built by the Portuguese in 1628 and later taken by the Dutch, Batticaloa Fort sits on a small peninsula encircled by the waters of Batticaloa Lagoon. Its compact layout, thick walls, and shaded courtyard reflect centuries of colonial control over the eastern coast. Several government offices operate within the historic compound, keeping it active while preserving its heritage.",
+                        highlights: "Well-preserved ramparts, old colonial administrative buildings, and panoramic lagoon views.",
+                        bestTime: "Late afternoon for cool lagoon breezes."
+                    },
+                    {
+                        title: " Batticaloa Lighthouse",
+                        category: "heritage",
+                        image: "batticaloalighthouse.jpeg",
+                        overview: "Spanning the Batticaloa Lagoon south of the city center, Kallady Bridge is celebrated in local lore for the 'singing fish'—mysterious humming sounds once heard from the lagoon waters. Nearby toward the lagoon mouth stands the Batticaloa Lighthouse, guiding vessels safely along the eastern coast. Together they highlight the strong bond between Batticaloa’s people, its lagoon, and the sea.",
+                        highlights: "Evening breezes over the lagoon and scenic coastal views from the lighthouse.",
+                        bestTime: "Late afternoon through sunset."
+                    }
+                ]
+            },
+            {
+                id: "dist-ampara",
+                number: "16",
+                name: "Ampara District",
+                province: "Eastern Province",
+                places: [
+                    {
+                        title: "Arugam Bay",
+                        category: "beach",
+                        image: "arugambeach.jpeg",
+                        overview: "Located on the southeastern coast in Ampara District, Arugam Bay is world-renowned as one of Asia’s premier surfing destinations. Its curved sandy bay, warm waters, and consistent right-hand point breaks attract surfers from around the globe each season. Beyond surfing, the town has a friendly, barefoot atmosphere with beachfront cafes, surf shops, and easy access to nearby lagoons.",
+                        highlights: "International-grade surfing at Main Point, Baby Point, and Pottuvil Lagoon mangrove safaris.",
+                        bestTime: "May to September."
+                    },
+                    {
+                        title: "Elephant Rock (Arugam Bay)",
+                        category: "beach",
+                        image: "elephantrock.jpeg",
+                        overview: "Rising above the coastline a few kilometers south of Arugam Bay, Elephant Rock is a large coastal boulder formation named for its elephant-like profile. A short, straightforward climb up the rock leads to wide views over the ocean, sandy bay, and bordering jungle. Wild elephants occasionally wander through the scrub nearby, making sunset visits both scenic and exciting.",
+                        highlights: "Easy rock climb for sunset views, beginner surf waves below, and occasional wild elephant sightings nearby.",
+                        bestTime: "Late afternoon (4:30 PM – 6:15 PM)."
+                    },
+                    {
+                        title: "Kumana National Park",
+                        category: "wildlife",
+                        image: "kumananationalpark.jpeg",
+                        overview: "Adjoining Yala on the southeastern coast in Ampara District, Kumana National Park is famous above all for its birdlife and peaceful wilderness setting. Its centerpiece is Kumana Villu, a 200-hectare natural mangrove swamp and lake that draws large flocks of wading and waterbirds during nesting months. Leopards, elephants, and deer also inhabit the park’s forests and scrublands.",
+                        highlights: "Painted storks, spoonbills, pelicans, leopards, and elephants in a quieter setting than neighboring Yala.",
+                        bestTime: "April to July for peak nesting season."
+                    },
+                    {
+                        title: "Gal Oya National Park",
+                        category: "wildlife",
+                        image: "galoya.jpeg",
+                        overview: "Straddling Ampara and Monaragala districts, Gal Oya National Park protects forested hills and the massive Senanayake Samudraya reservoir built in the 1950s. Because the reservoir is dotted with small islands and surrounded by wildlife habitat, visitors can explore the park by boat as well as by jeep. Seeing elephants swim or wade along island shorelines from a boat is a standout experience.",
+                        highlights: "Watching wild elephants swim between reservoir islands by boat and spotting diverse forest birds.",
+                        bestTime: "March to August."
+                    },
+                    {
+                        title: "Magul Maha Viharaya (Lahugala)",
+                        category: "heritage",
+                        image: "magulmahaviharaya.jpeg",
+                        overview: "Set inside a quiet forest area near Lahugala in Ampara District, Magul Maha Viharaya is an ancient Buddhist monastery linked to royal Ruhuna history. Local tradition associates the site with the ceremonial wedding of King Kavan Tissa and Princess Viharamahadevi. Carved stone moonstones, pillars, and ruins remain amidst peaceful jungle surroundings.",
+                        highlights: "Intricately carved moonstones, guard stones, and ancient stone ruins surrounded by forest.",
+                        bestTime: "Morning hours."
+                    }
+                ]
+            },
+            {
+                id: "dist-trincomalee",
+                number: "17",
+                name: "Trincomalee District",
+                province: "Eastern Province",
+                places: [
+                    {
+                        title: "Nilaveli Beach",
+                        category: "beach",
+                        image: "nilaweli.jpeg",
+                        overview: "Situated about 16 kilometers north of Trincomalee town, Nilaveli Beach is a broad, inviting stretch of soft white sand and clear Indian Ocean water. Gentle waves and open coastal views make it a relaxing spot for swimming, sunbathing, and beach walks. It also serves as the main launch point for short boat rides across to Pigeon Island.",
+                        highlights: "Relaxed beachfront atmosphere, swimming, and boat departures to Pigeon Island.",
+                        bestTime: "April to October."
+                    },
+                    {
+                        title: "Pigeon Island National Park",
+                        category: "wildlife",
+                        image: "pigeon.jpeg",
+                        overview: "Lying just off the coast of Nilaveli in Trincomalee District, Pigeon Island National Park consists of two small rocky islands surrounded by coral reefs. Declared a national park in 2003, it is one of Sri Lanka’s prime marine spots for snorkeling in clear, warm water. Swimmers can spot colorful reef fish, sea turtles, and small blacktip reef sharks in shallow areas.",
+                        highlights: "Snorkeling with blacktip reef sharks, hawksbill sea turtles, and vibrant live coral reefs.",
+                        bestTime: "April to October (morning boat trips offer the clearest water)."
+                    },
+                    {
+                        title: "Marble Beach",
+                        category: "beach",
+                        image: "marble.jpeg",
+                        overview: "Tucked inside a sheltered bay south of Trincomalee town near Kinniya, Marble Beach is known for its extraordinarily calm, clear turquoise water. Because the cove is protected from heavy surf, the surface often looks glassy and smooth, reflecting light like polished marble. Soft sand and quiet bay scenery make it a peaceful spot to unwind.",
+                        highlights: "Exceptionally calm swimming cove, soft white sand, and scenic bay views.",
+                        bestTime: "April to October."
+                    },
+                    {
+                        title: "Fort Frederick & Koneswaram Temple",
+                        category: "heritage",
+                        image: "koneswaram.jpeg",
+                        overview: "Occupying the dramatic Swami Rock peninsula in Trincomalee, Fort Frederick was built in the 17th century and encloses the ancient Koneswaram Hindu Temple. Koneswaram is one of Sri Lanka’s revered Pancha Ishwarams dedicated to Lord Shiva, drawing devotees and travelers to its colorful shrines and cliffside views. Steep drop-offs into the sea and tame spotted deer wandering the grounds add to its charm.",
+                        highlights: "Sheer 130-meter cliff drops (Lover’s Leap), spotted deer roaming freely inside the fort, and colorful temple shrines.",
+                        bestTime: "Early morning or sunset."
+                    }
+                ]
+            },
+            {
+                id: "dist-kurunegala",
+                number: "18",
+                name: "Kurunegala District",
+                province: "North Western Province",
+                places: [
+                    {
+                        title: "Ethagala (Elephant Rock)  Viharaya",
+                        category: "mountain",
+                        image: "ethagala.jpeg",
+                        overview: "Rising over 300 meters above Kurunegala town, Ethagala (Elephant Rock) is the largest of several giant granite outcrops that give the city its nickname 'Athugala Pura.' Its rounded dark rock mass resembles a giant elephant kneeling beside the town, and a large white Buddha statue sits prominently near the summit. Climbing up offers sweeping views across Kurunegala Lake, tiled roofs, and distant hills.",
+                        highlights: "Sweeping aerial views of Kurunegala Lake, surrounding paddy fields, and misty mountain ranges.",
+                        bestTime: "Sunrise or sunset."
+                    },
+                    {
+                        title: "Yapahuwa Rock Fortress",
+                        category: "heritage",
+                        image: "yapahuwarock.jpeg",
+                        overview: "Rising abruptly from the plains in Kurunegala District, Yapahuwa served briefly as the capital of Sri Lanka in the late 13th century under King Bhuvanekabahu I. The fortified citadel was built atop and around a massive granite rock, protected by ramparts and a moat. Its most famous surviving feature is an ornate ceremonial stone stairway carved with lions, dancers, and floral motifs.",
+                        highlights: "Intricately carved stone lions, dancers, and musicians lining the steep ceremonial staircase.",
+                        bestTime: "Morning hours."
+                    }
+                ]
+            },
+            {
+                id: "dist-puttalam",
+                number: "19",
+                name: "Puttalam District",
+                province: "North Western Province",
+                places: [
+                    {
+                        title: "Wilpattu National Park",
+                        category: "wildlife",
+                        image: "wilpattunationalpark.jpeg",
+                        overview: "Located in the northwestern dry zone largely within Puttalam and Anuradhapura districts, Wilpattu is Sri Lanka’s largest national park. It is especially famous for its 'Villus'—natural, sand-rimmed basins and lakes that fill with rainwater and draw wildlife to their shores. Dense jungle tracks and wide open spaces give Wilpattu a wild, uncrowded safari feel.",
+                        highlights: "Elusive Sri Lankan leopards, sloth bears, spotted deer, and uncrowded wilderness trails.",
+                        bestTime: "February to October."
+                    },
+                    {
+                        title: "Kalpitiya Peninsula",
+                        category: "beach",
+                        image: "kalpitiya.jpeg",
+                        overview: "Stretching along the coast of Puttalam District between Puttalam Lagoon and the Indian Ocean, the Kalpitiya Peninsula is a haven for marine life and water sports. Strong seasonal winds create ideal conditions for kitesurfing in flat lagoon waters, while offshore waters attract dolphins and whales. Sandbars, islands, and fishing villages give the peninsula a distinct coastal character.",
+                        highlights: "Spinner dolphin and whale watching boat safaris, world-class kitesurfing in flat lagoon waters, and Bar Reef snorkeling.",
+                        bestTime: "November to April for dolphin watching; May to September for kitesurfing."
+                    },
+                    {
+                        title: "Munneswaram Temple (Chilaw)",
+                        category: "heritage",
+                        image: "munneswaram.jpeg",
+                        overview: "Situated near Chilaw in southern Puttalam District, Munneswaram is a historic Hindu temple complex with deep roots in Sri Lankan legend and religious tradition. It is recognized as one of the five ancient Pancha Ishwarams dedicated to Lord Shiva on the island. Colorful shrines, temple courtyards, and seasonal festivals make it a vibrant cultural stop.",
+                        highlights: "Vibrant Dravidian temple architecture, colorful shrines, and historic cultural festivals.",
+                        bestTime: "Morning or evening puja times."
+                    }
+                ]
+            },
+            {
+                id: "dist-anuradhapura",
+                number: "20",
+                name: "Anuradhapura District",
+                province: "North Central Province",
+                places: [
+                    {
+                        title: "Jaya Sri Maha Bodhi (Atamasthana)",
+                        category: "heritage",
+                        image: "jayasrimahabodi.jpeg",
+                        overview: "Standing at the heart of the sacred city of Anuradhapura as the foremost of the Atamasthana (Eight Sacred Sites), Jaya Sri Maha Bodhi is a sapling from the sacred Bodhi tree in Bodh Gaya under which Prince Siddhartha attained Enlightenment. Brought to Sri Lanka in the 3rd century BC by Sanghamitta Theri during the reign of King Devanampiyatissa, it is widely recognized as the oldest living human-planted tree in the world with a recorded history. Devotees in white attire gather around its raised terrace in quiet reverence.",
+                        highlights: "The oldest historically authenticated human-planted tree, sacred terrace (Uda Maluwa), and centuries of unbroken Buddhist veneration.",
+                        bestTime: "Early morning or late afternoon (wear white or modest attire covering shoulders and knees)."
+                    },
+                    {
+                        title: "Ruwanwelisaya Stupa (Atamasthana)",
+                        category: "heritage",
+                        image: "ruwanwaliseya.jpeg",
+                        overview: "Built around 140 BC by King Dutugemunu in Anuradhapura, Ruwanwelisaya (Maha Thupa) is one of the grandest ancient stupas in Sri Lanka and a central pillar of the Atamasthana. Its gleaming white dome, standing over 100 meters high, dominates the surrounding sacred precinct and gleams brightly in sunlight and evening floodlights. A continuous row of sculpted stone elephants circles the base as if supporting the monument.",
+                        highlights: "The iconic wall of hundreds of carved stone elephants surrounding the terrace, sacred relic shrine, and illuminated evening views.",
+                        bestTime: "Late afternoon through sunset."
+                    },
+                    {
+                        title: "Thuparamaya Stupa (Atamasthana)",
+                        category: "heritage",
+                        image: "thuparamaya.jpeg",
+                        overview: "Constructed in the 3rd century BC by King Devanampiyatissa at the request of Arahant Mahinda Thera, Thuparamaya is widely regarded as the oldest stupa built in Sri Lanka following the introduction of Buddhism. It is traditionally held to enshrine the right collarbone relic of Lord Buddha. Slender, capital-topped stone pillars arranged around the stupa add a distinctive architectural character to the site.",
+                        highlights: "The earliest chronicled dagaba in Sri Lanka, sacred collarbone relic tradition, and graceful stone pillars.",
+                        bestTime: "Early morning or late afternoon."
+                    },
+                    {
+                        title: "Lovamahapaya / Brazen Palace (Atamasthana)",
+                        category: "heritage",
+                        image: "lowamahapaya.jpeg",
+                        overview: "Located between the Jaya Sri Maha Bodhi and Ruwanwelisaya within the ancient Mahavihara complex, Lovamahapaya (the Brazen Palace) was built by King Dutugemunu as an Uposatha (monastic assembly) hall. Ancient chronicles describe it as a grand multi-storeyed structure originally roofed with bronze or copper tiles. Today, an impressive grid of around 1,600 standing stone pillars marks the layout of the historic hall.",
+                        highlights: "Rows of ancient stone columns in the heart of the Mahavihara precinct and royal architectural history.",
+                        bestTime: "Morning or late afternoon."
+                    },
+                    {
+                        title: "Abhayagiri Dagaba (Atamasthana)",
+                        category: "heritage",
+                        image: "abayagiriya.jpeg",
+                        overview: "Founded in the 1st century BC by King Vattagamani Abhaya (King Valagamba), Abhayagiri Dagaba is one of the largest and tallest ancient stupas in Sri Lanka and a key site of the Atamasthana. Historically, it stood at the center of the vast Abhayagiri monastic complex, which once housed thousands of monks and served as a major seat of learning. Surrounding ruins, moonstones, and ponds make the wider complex rich to explore.",
+                        highlights: "Towering ancient brick stupa, surrounding monastic ruins, and tranquil dry-zone forest setting.",
+                        bestTime: "Late afternoon for cooler temperatures and golden light."
+                    },
+                    {
+                        title: "Jetavanarama Stupa (Atamasthana)",
+                        category: "heritage",
+                        image: "jethawanaramaya.jpeg",
+                        overview: "Built during the reign of King Mahasena in the 3rd century AD within the Josavana park area of Anuradhapura, Jetavanarama Stupa is one of the monumental brick structures of the ancient world. Constructed using millions of baked bricks, its massive dome reflects the advanced engineering and masonry skills of ancient Sri Lanka. The surrounding monastery grounds preserve ruins of ancient halls and walkways.",
+                        highlights: "Massive ancient brick engineering, wide sacred courtyard, and panoramic views over Anuradhapura’s ruins.",
+                        bestTime: "Late afternoon through sunset."
+                    },
+                    {
+                        title: "Mirisaveti Stupa (Atamasthana)",
+                        category: "heritage",
+                        image: "mirissawetiya.jpeg",
+                        overview: "Erected by King Dutugemunu in Anuradhapura, Mirisaveti Stupa is one of the eight sacred Atamasthana sites and carries a well-known historical chronicle story. According to tradition, the king built the stupa on the spot where his royal sceptre containing relics remained fixed after he bathed in Tissa Wewa without sharing a chili dish ('miris') with the monks. Its restored dome and ornate entrance vahalkadas draw pilgrims year-round.",
+                        highlights: "Carved ancient vahalkadas (frontispieces), peaceful stupa courtyard, and its connection to King Dutugemunu’s reign.",
+                        bestTime: "Early morning or late afternoon."
+                    },
+                    {
+                        title: "Lankarama Stupa (Atamasthana)",
+                        category: "heritage",
+                        image: "lankaramaya.jpeg",
+                        overview: "Situated north of Thuparamaya and near Abhayagiri in Anuradhapura, Lankarama Stupa was built in the 1st century BC by King Vattagamani Abhaya. Like Thuparamaya, it is surrounded by concentric rings of stone pillars that once supported an enclosing structure over the stupa platform. Shaded by ancient trees in a quieter part of the sacred city, it offers a peaceful stop on the Atamasthana circuit.",
+                        highlights: "Concentric stone pillars around the stupa base and a quiet, shaded monastic atmosphere.",
+                        bestTime: "Morning or late afternoon."
+                    },
+                    {
+                        title: "Mihintale Sacred Mountain",
+                        category: "heritage",
+                        image: "mihintale.jpeg",
+                        overview: "Rising from the forest plains about 12 kilometers east of Anuradhapura, Mihintale is celebrated as the birthplace of Buddhism in Sri Lanka. Here, Arahat Mahinda met King Devanampiyatissa during a Poson full-moon festival in the 3rd century BC, sparking a major cultural transformation. Climbing its long stone stairway rewards visitors with ancient shrines, stupas, and broad views over the dry zone.",
+                        highlights: "1,840 granite steps lined with frangipani trees, Ambasthala Dagoba, Kantaka Chetiya, and panoramic sunset views over the dry-zone plains.",
+                        bestTime: "Late afternoon (4:00 PM – 6:30 PM) for sunset."
+                    },
+                    {
+                        title: "Isurumuniya Vihara",
+                        category: "heritage",
+                        image: "isurumuniya.jpeg",
+                        overview: "Set beside ancient Tissa Wewa in Anuradhapura, Isurumuniya is a rock temple built during the reign of King Devanampiyatissa and embellished in later centuries. The temple incorporates natural rock formations, a small stupa on top of the boulder, and carved stone panels along the rock face. Its tranquil pond and detailed sculptures make it one of the most memorable spots in the ancient city.",
+                        highlights: "The world-famous 'Isurumuniya Lovers' carving, Elephant Pond, and Royal Family sculpture.",
+                        bestTime: "Morning hours."
+                    },
+                    {
+                        title: "Ranmasu Uyana (Royal Goldfish Park)",
+                        category: "heritage",
+                        image: "ranmasuuyana.jpeg",
+                        overview: "Lying below the embankment of Tissa Wewa in Anuradhapura, Ranmasu Uyana was an ancient royal pleasure garden designed with ponds, pavilions, and shaded grounds. Alongside its peaceful park setting, it features rock-cut baths and a curious circular stone carving known as the Sakwala Chakraya. The carving has long intrigued historians and visitors with its geometric symbols and diagrams.",
+                        highlights: "Ancient rock-cut bathing ponds and the enigmatic 'Sakwala Chakraya' (Star Gate) cosmological chart carved into the boulder.",
+                        bestTime: "Morning hours."
+                    }
+                ]
+            },
+            {
+                id: "dist-polonnaruwa",
+                number: "21",
+                name: "Polonnaruwa District",
+                province: "North Central Province",
+                places: [
+                    {
+                        title: "Ancient City of Polonnaruwa (Quadrangle & Royal Palace)",
+                        category: "heritage",
+                        image: "ancientcity.jpeg",
+                        overview: "Serving as Sri Lanka’s second ancient capital mainly during the 11th and 12th centuries, Polonnaruwa preserves remarkable ruins from the Polonnaruwa Kingdom. Its compact layout makes it easy to explore by bicycle or tuk-tuk, taking in palace ruins, audience halls, brick stupas, and the tightly packed monuments of the Quadrangle. Intricate stone carvings show the artistic maturity of the era.",
+                        highlights: "The circular Polonnaruwa Vatadage relic house, Royal Palace of King Parakramabahu, and intricate stone moonstones.",
+                        bestTime: "Early morning by bicycle or tuk-tuk to explore the sprawling archaeological park comfortably."
+                    },
+                    {
+                        title: "Gal Vihara (Rock Temple)",
+                        category: "heritage",
+                        image: "galwiharaya.jpeg",
+                        overview: "Located in the northern part of ancient Polonnaruwa, Gal Vihara is a group of four colossal Buddha images carved directly into a long face of dark granite. Commissioned by King Parakramabahu I in the 12th century, the sculptures display remarkable proportion, calm expression, and drapery detail. Standing before the large reclining and standing figures is a highlight of any visit to Polonnaruwa.",
+                        highlights: "Four masterfully sculpted Buddha statues—two seated, one standing, and a 14-meter reclining Buddha.",
+                        bestTime: "Early morning or late afternoon."
+                    },
+                    {
+                        title: "Minneriya National Park",
+                        category: "wildlife",
+                        image: "minneriyanational.jpeg",
+                        overview: "Centered around the vast ancient Minneriya Tank constructed by King Mahasena in the 3rd century AD, this park in Polonnaruwa District is famous for elephant sightings. As water recedes during the dry season, fresh grass emerges along the reservoir bed, drawing large herds of wild elephants from surrounding forests. Jeep safaris here offer unforgettable views of elephants in open landscapes.",
+                        highlights: "Witnessing hundreds of wild elephants congregating on the lush reservoir grass plains during the dry season.",
+                        bestTime: "July to October for 'The Gathering'."
+                    },
+                    {
+                        title: "Kaudulla National Park",
+                        category: "wildlife",
+                        image: "kaudulla.jpeg",
+                        overview: "Situated near Minneriya in Polonnaruwa District around the historic Kaudulla Tank, this park forms part of a vital dry-zone elephant habitat network. Scrub jungle, grasslands, and tank edges provide shelter and grazing grounds for elephants, deer, birds, and other wildlife. Depending on seasonal water and grazing patterns, elephant herds move between Minneriya and Kaudulla.",
+                        highlights: "Large elephant herds, sambar deer, wild peacocks, and scenic jeep safaris.",
+                        bestTime: "August to December."
+                    },
+                    {
+                        title: "Parakrama Samudra",
+                        category: "wildlife",
+                        image: "parakramasamudra.jpeg",
+                        overview: "Bordering Polonnaruwa town, Parakrama Samudra is a massive ancient irrigation reservoir expanded by King Parakramabahu I, who famously declared that no drop of rain should reach the sea without serving humanity. Spanning thousands of acres, it looks almost like a calm inland lake bordered by trees and distant hills. A walk or drive along its bund in the late afternoon is peaceful and scenic.",
+                        highlights: "Scenic lakeside drives, cool evening breezes, and sunset views over the water.",
+                        bestTime: "Late afternoon."
+                    }
+                ]
+            },
+            {
+                id: "dist-badulla",
+                number: "22",
+                name: "Badulla District",
+                province: "Uva Province",
+                places: [
+                    {
+                        title: "Nine Arches Bridge (Ella)",
+                        category: "mountain",
+                        image: "ninearchesbridge.jpeg",
+                        overview: "Set between Ella and Demodara stations in Badulla District, the Nine Arches Bridge is one of the most iconic railway bridges in Sri Lanka. Built during the British colonial period using stone, brick, and cement without steel girders, the bridge curves gracefully above lush forest and tea slopes. Watching a train pass across the arches amidst green hills is a classic hill-country scene.",
+                        highlights: "Watching blue highland trains cross the nine arches, scenic walking trails, and lush valley photography.",
+                        bestTime: "Early morning (6:30 AM – 9:30 AM) or mid-afternoon around train schedules."
+                    },
+                    {
+                        title: "Little Adam's Peak (Ella)",
+                        category: "mountain",
+                        image: "littleadam.jpeg",
+                        overview: "Named for its similar conical shape to the sacred Adam’s Peak, Little Adam’s Peak is a popular ridge climb in Ella within Badulla District. The trail winds gently past tea bushes and trees before climbing stone steps up to breezy grassy viewpoints. From the top, visitors look out across the dramatic gorge of Ella Gap and the surrounding Uva hills.",
+                        highlights: "An easy 45-minute scenic hike through tea plantations culminating in dramatic cliff-edge viewpoints.",
+                        bestTime: "Sunrise (6:00 AM) or late afternoon."
+                    },
+                    {
+                        title: "Diyaluma Falls (Koslanda)",
+                        category: "mountain",
+                        image: "diyaluma.jpeg",
+                        overview: "Located near Koslanda on the border of Badulla and Monaragala districts, Diyaluma Falls plunges roughly 220 meters, making it Sri Lanka’s second-highest waterfall. Its name comes from Sinhala words evoking 'rapid flow of water,' creating a striking white ribbon down the rock face. Near the top of the falls, natural rock ledges form pools overlooking the valley below when conditions are safe.",
+                        highlights: "Swimming in natural rock pools overlooking the valley at Upper Diyaluma and cascading multi-tiered falls.",
+                        bestTime: "January to April."
+                    },
+                    {
+                        title: "Ravana Falls (Ella)",
+                        category: "mountain",
+                        image: "rawana.jpeg",
+                        overview: "Cascading down a rocky outcrop just outside Ella along the road toward Wellawaya, Ravana Falls is a wide, easily accessible waterfall in Badulla District. Especially full during wet weather, the water rushes over tiered rocks into a misty basin below. In local legend, the waterfall and nearby caves are associated with King Ravana from the Ramayana story.",
+                        highlights: "Easy roadside access, misty rock pools, and legendary ties to the Ramayana epic.",
+                        bestTime: "Morning hours."
+                    },
+                    {
+                        title: "Lipton’s Seat (Haputale)",
+                        category: "mountain",
+                        image: "lipton.jpeg",
+                        overview: "Perched high above Haputale in Badulla District at Dambatenne Estate, Lipton’s Seat is a scenic lookout associated with Scottish tea planter Sir Thomas Lipton. He is said to have sat here to survey the vast tea estates stretching across the hills and valleys below. Early mornings offer crisp mountain air and wide views across rolling green slopes and distant plains.",
+                        highlights: "Views spanning across five provinces on a clear morning and winding walks through Dambatenne Tea Estate.",
+                        bestTime: "Arrive before 7:30 AM before mist blankets the hills."
+                    }
+                ]
+            },
+            {
+                id: "dist-monaragala",
+                number: "23",
+                name: "Monaragala District",
+                province: "Uva Province",
+                places: [
+                    {
+                        title: "Buduruwagala Rock Temple",
+                        category: "heritage",
+                        image: "buduruwagala.jpeg",
+                        overview: "Tucked away in a quiet forested setting near Wellawaya in Monaragala District, Buduruwagala features a group of large rock-cut figures dating back roughly a millennium. Dominating the cliff face is a tall standing Buddha figure flanked by Mahayana bodhisattva and attendant sculptures. Traces of lime plaster and pigment have survived for centuries, making it a fascinating archaeological site.",
+                        highlights: "A 51-foot standing Buddha statue retaining traces of its original stucco and orange paint, surrounded by quiet forest.",
+                        bestTime: "Morning hours."
+                    },
+                    {
+                        title: "Dematamal Viharaya (Okkampitiya)",
+                        category: "heritage",
+                        image: "dematamalwiharaya.jpeg",
+                        overview: "Located near Buttala and Okkampitiya in Monaragala District, Dematamal Viharaya is an ancient temple connected to the royal history of Ruhuna. Historical chronicles link this area to Prince Saddhatissa and the early royal lineage of King Dutugemunu. Its tranquil rural setting and ancient stupa offer a quiet glimpse into southern Sri Lankan heritage.",
+                        highlights: "Ancient stupa, stone pillars, and peaceful rural surroundings.",
+                        bestTime: "Morning hours."
+                    },
+		{
+                        title: "Kataragama Sacred City (Kiri Vehera & Maha Devalaya)",
+                        category: "heritage",
+                        image: "kataragama.jpeg",
+                        overview: "Situated along the banks of the Menik Ganga in southeastern Sri Lanka, Kataragama is a deeply revered pilgrimage town visited by Buddhist, Hindu, and indigenous devotees alike. The sacred complex brings together the ancient white Kiri Vehera stupa—associated in tradition with visits by Lord Buddha and King Dutugemunu—and the historic Ruhunu Maha Kataragama Devalaya dedicated to Skanda-Murugan. Traditional rituals, oil lamps, and the lively annual Esala festival give the town a powerful spiritual energy.",
+                        highlights: "The white Kiri Vehera stupa, Ruhunu Maha Kataragama Devalaya rituals, bathing along the Menik Ganga, and the vibrant Kataragama Esala Festival.",
+                        bestTime: "Early morning or evening puja hours; July to August for the Esala Festival (modest dress required)."
+                    },
+
+                    {
+                        title: "Elle Wala Waterfall (Wellawaya)",
+                        category: "mountain",
+                        image: "ellewalawaterfall.jpeg",
+                        overview: "Hidden off the main road near Wellawaya in Monaragala District, Elle Wala is a scenic forest waterfall that flows into a clear natural pool. Surrounded by trees and rocky banks, it feels tucked away from busy highways and tourist crowds. Visitors enjoy its cool water and natural surroundings during drier months when water levels are manageable.",
+                        highlights: "Natural swimming hole, jungle trails, and a peaceful off-the-beaten-path atmosphere.",
+                        bestTime: "Dry season months (January to April and July to September) for safe swimming currents."
+                    }
+                ]
+            },
+            {
+                id: "dist-ratnapura",
+                number: "24",
+                name: "Ratnapura District",
+                province: "Sabaragamuwa Province",
+                places: [
+                    {
+                        title: "Adam’s Peak (Sri Pada)",
+                        category: "mountain",
+                        image: "sripada.jpeg",
+                        overview: "Rising to 2,243 meters at the southern edge of the central highlands, Adam’s Peak (Sri Pada) is one of Sri Lanka’s most sacred mountains and a major pilgrimage site. People of Buddhist, Hindu, Muslim, and Christian faiths revere the summit’s rock formation, known as the 'Sacred Footprint.' Thousands of pilgrims climb through the night along illuminated steps to reach the peak at dawn.",
+                        highlights: "Nighttime pilgrimage climb up thousands of illuminated steps, the sacred footprint shrine at the summit, and the famous triangular shadow cast at sunrise.",
+                        bestTime: "December to May (Pilgrimage Season) for clear skies and lit pathways."
+                    },
+                    {
+                        title: "Udawalawe National Park",
+                        category: "wildlife",
+                        image: "udawalawe.jpeg",
+                        overview: "Lying across the border of Ratnapura and Monaragala districts around the Udawalawe Reservoir, this national park is famous for abundant wild Asian elephants. Open grasslands mixed with scrub and thorn forest make elephants easier to spot here than in denser forests. The nearby Udawalawe Elephant Transit Home also cares for orphaned elephant calves before releasing them to the wild.",
+                        highlights: "Guaranteed elephant herd sightings, water buffalo, sambar deer, eagles, and the nearby Elephant Transit Home.",
+                        bestTime: "Year-round; early morning (6:00 AM) or late afternoon (3:00 PM) safaris."
+                    },
+                    {
+                        title: "Sinharaja Forest Reserve",
+                        category: "wildlife",
+                        image: "sinharaja.jpeg",
+                        overview: "Stretching across Ratnapura, Kalutara, and Matara districts, Sinharaja is Sri Lanka’s last remaining relatively untouched primary tropical rainforest and a UNESCO World Heritage site. Its dense canopy shelters a high proportion of Sri Lanka’s endemic trees, insects, amphibians, reptiles, birds, and mammals. Guided walks along forest trails offer an immersive look at tropical rainforest ecology.",
+                        highlights: "Guided rainforest treks spotting mixed-species bird flocks, purple-faced langurs, endemic reptiles, and jungle streams.",
+                        bestTime: "January to April and August to September."
+                    },
+                    {
+                        title: "Bopath Ella Waterfall (Kuruwita)",
+                        category: "mountain",
+                        image: "bopathella.jpeg",
+                        overview: "Situated near Kuruwita not far from Ratnapura town, Bopath Ella is a well-known waterfall named for its distinct shape resembling a sacred Bo (Bodhi) leaf. Water spills over a broad rocky ledge into a wide stream surrounded by lush wet-zone vegetation. Easily reachable from the main road, it is a popular stop for travelers passing through Ratnapura District.",
+                        highlights: "Easy access, misty viewing platforms, and lush wet-zone greenery.",
+                        bestTime: "Morning to mid-afternoon."
+                    }
+                ]
+            },
+            {
+                id: "dist-kegalle",
+                number: "25",
+                name: "Kegalle District",
+                province: "Sabaragamuwa Province",
+                places: [
+                    {
+                        title: "Pinnawala Elephant Orphanage",
+                        category: "wildlife",
+                        image: "pinnawala.jpeg",
+                        overview: "Established in 1975 in Kegalle District to rescue and care for orphaned or injured wild elephants, Pinnawala is one of the best-known elephant sanctuaries in Sri Lanka. Over the decades, the herd has grown significantly, including calves born at the facility. Watching the elephants walk together through the village down to the Maha Oya river to bathe is a signature experience.",
+                        highlights: "Watching the herd walk down to the Maha Oya river for their daily bath and bottle-feeding sessions for baby elephants.",
+                        bestTime: "10:00 AM or 2:00 PM to catch the river bathing sessions."
+                    },
+                    {
+                        title: "Bible Rock (Bathalegala)",
+                        category: "mountain",
+                        image: "bible.jpeg",
+                        overview: "Rising near Aranayake in Kegalle District, Bathalegala—commonly known as Bible Rock—is a distinctive flat-topped mountain resembling a giant open book. A steep, rewarding hike leads through forested slopes and rocky sections up to the broad summit plateau. From the top, hikers enjoy sweeping views across green valleys, terraced fields, and surrounding hills.",
+                        highlights: "Panoramic views of terraced paddy fields, Ambuluwawa, and surrounding mountain peaks from the summit.",
+                        bestTime: "Early morning for hiking."
+                    },
+                    {
+                        title: "Asupini Ella Waterfall",
+                        category: "mountain",
+                        image: "asupini.jpeg",
+                        overview: "Located in the Aranayake area of Kegalle District amidst hilly wet-zone scenery, Asupini Ella is a wide waterfall cascading down rocky ledges. Lush greenery and cool air surround the falls, making it a refreshing natural spot in the Sabaragamuwa hills. Its water volume is particularly impressive following rainy spells.",
+                        highlights: "Scenic forest backdrop, natural rock formations, and refreshing mountain mist.",
+                        bestTime: "Post-rainy months for full waterfall flow."
+                    }
+                ]
+            }
+        ];
+
+      function normalizeText(str) {
+            return (str || '')
+                .toLowerCase()
+                .replace(/[’']/g, "'")
+                .replace(/\s+/g, ' ')
+                .trim();
+        }
+
+        function renderContent() {
+            const leftCol = document.getElementById('districtsLeftCol');
+            const rightCol = document.getElementById('districtsRightCol');
+            const placesContainer = document.getElementById('placesContainer');
+            leftCol.innerHTML = '';
+            rightCol.innerHTML = '';
+            placesContainer.innerHTML = '';
+            let totalPlacesCount = 0;
+
+            travelData.forEach((dist, index) => {
+                totalPlacesCount += dist.places.length;
+
+                const btnHTML = `
+                    <div onclick="goToDistrict('${dist.id}')" class="district-btn group">
+                        <div class="flex items-center gap-3">
+                            <div class="badge-number">${dist.number}</div>
+                            <div>
+                                <h3 class="font-bold text-white group-hover:text-[#ff7200] transition text-sm sm:text-base">${dist.name}</h3>
+                                <span class="text-[11px] sm:text-xs text-slate-400">${dist.province} • ${dist.places.length} Places</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-right text-xs sm:text-sm text-slate-500 group-hover:text-[#ff7200] transition"></i>
+                    </div>
+                `;
+
+                if (index < 13) {
+                    leftCol.innerHTML += btnHTML;
+                } else {
+                    rightCol.innerHTML += btnHTML;
+                }
+
+                let placesCardsHTML = '';
+                dist.places.forEach((place, pIdx) => {
+                    const placeId = `${dist.id}-place-${pIdx + 1}`;
+                    const placeNum = (pIdx + 1).toString().padStart(2, '0');
+                    const catLabels = {
+                        heritage: "Heritage & Temples",
+                        beach: "Beaches & Islands",
+                        wildlife: "Wildlife & Nature",
+                        mountain: "Mountains & Waterfalls"
+                    };
+
+                    const searchableText = normalizeText(
+                        `${dist.name} ${dist.province} ${place.title} ${place.category} ${catLabels[place.category] || ''} ${place.overview} ${place.highlights} ${place.bestTime}`
+                    ).replace(/"/g, '&quot;');
+
+                    placesCardsHTML += `
+                        <article id="${placeId}" class="place-card p-4 sm:p-6 md:p-8 scroll-mt-32" data-category="${place.category}" data-search="${searchableText}">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-3.5 sm:mb-4">
+                                <div class="flex items-center gap-3 sm:gap-4">
+                                    <div class="badge-number">${placeNum}</div>
+                                    <h4 class="text-lg sm:text-xl md:text-2xl font-bold text-[#ff7200] leading-snug">${place.title}</h4>
+                                </div>
+                                <span class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider bg-slate-800 text-amber-400 border border-slate-700 px-2.5 py-1 rounded-full">
+                                    ${catLabels[place.category] || 'Destination'}
+                                </span>
+                            </div>
+
+                            <!-- Full Image Visible Without Cropping/Cutoff -->
+                            <div class="relative rounded-xl overflow-hidden mb-4 sm:mb-6 border border-slate-800 bg-slate-950 flex items-center justify-center">
+                                <img src="${place.image}" alt="${place.title}" 
+                                     class="w-full max-h-[450px] object-contain mx-auto bg-slate-950"
+                                     onerror="this.src='https://via.placeholder.com/900x400/111827/ff7200?text=${encodeURIComponent(place.title + ' (Image Not Found)')}'">
+                            </div>
+
+                            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6">
+                                ${place.overview}
+                            </p>
+
+                            <div class="bg-slate-900 border-l-4 border-[#ff7200] p-4 sm:p-5 md:p-6 rounded-r-xl space-y-2.5 sm:space-y-3">
+                                <h5 class="text-sm sm:text-base font-bold text-[#ff7200] flex items-center gap-2">
+                                    <i class="fas fa-map-pin text-xs sm:text-sm"></i> Destination Details & Travel Tips
+                                </h5>
+                                <div class="space-y-2 sm:space-y-2.5 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                    <div>
+                                        <strong class="text-white"><i class="fas fa-star text-amber-400 mr-1.5"></i> Highlights:</strong> 
+                                        ${place.highlights}
+                                    </div>
+                                    <div>
+                                        <strong class="text-white"><i class="fas fa-clock text-[#ff7200] mr-1.5"></i> Best Time to Visit:</strong> 
+                                        ${place.bestTime}
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    `;
+                });
+
+                placesContainer.innerHTML += `
+                    <div id="${dist.id}" class="district-group scroll-mt-32 pt-2 sm:pt-4">
+                        <div class="flex items-center justify-between bg-slate-800/70 border border-slate-700 px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl mb-5 sm:mb-6">
+                            <div class="flex items-center gap-2.5 sm:gap-3">
+                                <span class="bg-[#ff7200] text-white font-extrabold text-xs sm:text-sm px-2.5 py-1 rounded-lg">${dist.number}</span>
+                                <h3 class="text-lg sm:text-2xl font-extrabold text-white">${dist.name}</h3>
+                            </div>
+                            <span class="text-[11px] sm:text-xs font-semibold text-amber-400 hidden sm:inline">${dist.province}</span>
+                        </div>
+                        ${placesCardsHTML}
+                    </div>
+                `;
+            });
+
+            document.getElementById('totalPlacesBadge').textContent = totalPlacesCount;
+        }
+
+        function clearSearchHighlights() {
+            document.querySelectorAll('.district-group').forEach(group => {
+                group.style.display = 'block';
+                group.querySelectorAll('.place-card').forEach(card => {
+                    card.style.display = 'block';
+                    card.style.borderColor = '';
+                    card.style.boxShadow = '';
+                });
+            });
+            const existingBanner = document.getElementById('searchResultBanner');
+            if (existingBanner) existingBanner.remove();
+        }
+
+        function filterCategory(category, btnElement) {
+            clearSearchHighlights();
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            if (btnElement) btnElement.classList.add('active');
+
+            document.querySelectorAll('.district-group').forEach(group => {
+                const cards = group.querySelectorAll('.place-card');
+                let visibleCount = 0;
+
+                cards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                group.style.display = visibleCount > 0 ? 'block' : 'none';
+            });
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            const activeTab = document.getElementById(tabId);
+            if (activeTab) activeTab.classList.add('active');
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-tab') === tabId) {
+                    link.classList.add('active');
+                }
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function goToDistrict(districtId) {
+            const allBtn = document.querySelector('.filter-btn');
+            filterCategory('all', allBtn);
+
+            switchTab('places');
+            setTimeout(() => {
+                const target = document.getElementById(districtId);
+                if (target) {
+                    const headerOffset = document.querySelector('header')?.offsetHeight || 110;
+                    const y = target.getBoundingClientRect().top + window.pageYOffset - headerOffset - 16;
+                    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+                }
+            }, 150);
+        }
+
+        function performSearch() {
+            const rawQuery = document.getElementById('searchInput').value;
+            const query = normalizeText(rawQuery);
+            clearSearchHighlights();
+
+            if (!query) return;
+
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            const allBtn = document.querySelector('.filter-btn');
+            if (allBtn) allBtn.classList.add('active');
+
+            const matchedDistrict = travelData.find(d => normalizeText(d.name).includes(query));
+            if (matchedDistrict) {
+                goToDistrict(matchedDistrict.id);
+                return;
+            }
+
+            switchTab('places');
+            setTimeout(() => {
+                const groups = Array.from(document.querySelectorAll('.district-group'));
+                const matchedCards = [];
+
+                groups.forEach(group => {
+                    const cards = Array.from(group.querySelectorAll('.place-card'));
+                    let groupHasMatch = false;
+
+                    cards.forEach(card => {
+                        const isMatch = normalizeText(card.getAttribute('data-search')).includes(query);
+                        if (isMatch) {
+                            card.style.display = 'block';
+                            card.style.borderColor = '#ff7200';
+                            card.style.boxShadow = '0 0 22px rgba(255, 114, 0, 0.45)';
+                            matchedCards.push(card);
+                            groupHasMatch = true;
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+
+                    group.style.display = groupHasMatch ? 'block' : 'none';
+                });
+
+                const placesContainer = document.getElementById('placesContainer');
+                const existingBanner = document.getElementById('searchResultBanner');
+                if (existingBanner) existingBanner.remove();
+
+                if (matchedCards.length > 0) {
+                    const banner = document.createElement('div');
+                    banner.id = 'searchResultBanner';
+                    banner.className = 'bg-amber-500/15 border border-[#ff7200] text-amber-200 px-4 py-3 rounded-xl mb-6 flex items-center justify-between gap-3 text-xs sm:text-sm';
+                    banner.innerHTML = `
+                        <span><i class="fas fa-search text-[#ff7200] mr-2"></i>Showing <strong>${matchedCards.length}</strong> result(s) for "<strong>${rawQuery.trim()}</strong>".</span>
+                        <button onclick="clearSearchHighlights(); document.getElementById('searchInput').value='';" class="bg-[#ff7200] hover:bg-orange-600 text-white px-3 py-1 rounded-lg text-xs font-semibold">Show All</button>
+                    `;
+                    placesContainer.prepend(banner);
+
+                    const firstCard = matchedCards[0];
+                    const headerOffset = document.querySelector('header')?.offsetHeight || 110;
+                    const y = firstCard.getBoundingClientRect().top + window.pageYOffset - headerOffset - 16;
+                    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+                } else {
+                    alert("No matching district or travel destination found for: " + rawQuery.trim());
+                    clearSearchHighlights();
+                }
+            }, 150);
+        }
+
+        renderContent();
+    </script>
+</body>
+</html>
