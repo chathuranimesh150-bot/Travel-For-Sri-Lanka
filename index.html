@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Travel For Sri Lanka | Discover Sri Lanka</title>
+
+<link rel="icon" type="image/jpeg" href="tlogo.jpeg">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Ccircle cx='18' cy='18' r='16' fill='%23072c3c' stroke='%23fbbf24' stroke-width='2'/%3E%3Cpath d='M18 7C14.5 11.5 12.5 15.5 12.5 19.5C12.5 23 15 26 18 28C21 26 23.5 23 23.5 19.5C23.5 15.5 21.5 11.5 18 7Z' fill='%2338bdf8'/%3E%3Ccircle cx='18' cy='18' r='2.5' fill='%23fbbf24'/%3E%3C/svg%3E">
+
 
     <meta name="description" content="Complete Sri Lanka Travel Guide covering all 25 districts, top tourist places, beaches, waterfalls, wildlife parks, ancient temples, and travel tips.">
     <meta name="keywords" content="Sri Lanka travel guide, 25 districts of Sri Lanka, places to visit in Sri Lanka, Sri Lanka tourism, Sigiriya, Kandy, Ella, Mirissa, Yala, Nuwara Eliya, Jaffna, Galle">
@@ -45,12 +49,20 @@
             --line-soft: #e2e8f0;
         }
 
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+            touch-action: manipulation;
+        }
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--surface-soft);
             color: var(--ink-dark);
             scroll-behavior: smooth;
             -webkit-tap-highlight-color: transparent;
+            -webkit-text-size-adjust: 100%;
+            top: 0px !important;
         }
 
         .ayubowan-script {
@@ -60,40 +72,39 @@
             letter-spacing: -0.01em;
         }
 
-      
         .portal-header {
-            background: linear-gradient(180deg, rgba(4, 20, 30, 0.92) 0%, rgba(7, 44, 60, 0.88) 100%);
+            background: linear-gradient(180deg, rgba(4, 20, 30, 0.94) 0%, rgba(7, 44, 60, 0.90) 100%);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .portal-nav-link {
-            color: rgba(255, 255, 255, 0.88);
+            color: rgba(255, 255, 255, 0.9);
             font-weight: 600;
-            font-size: 12.5px;
+            font-size: 12px;
             line-height: 1.25;
             transition: color 0.2s ease;
             cursor: pointer;
+            white-space: nowrap;
         }
 
         .portal-nav-link:hover, .portal-nav-link.active {
             color: #fbbf24;
         }
 
-       
         .lang-pill {
             position: relative;
             display: inline-flex;
             align-items: center;
-            gap: 7px;
-            background: rgba(15, 23, 42, 0.45);
-            border: 1px solid rgba(255, 255, 255, 0.7);
+            gap: 5px;
+            background: rgba(15, 23, 42, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.72);
             color: #ffffff;
             border-radius: 9999px;
-            padding: 5px 12px;
-            font-size: 11px;
+            padding: 4px 10px;
+            font-size: 10.5px;
             font-weight: 700;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.03em;
             cursor: pointer;
             transition: background 0.2s ease, border-color 0.2s ease;
         }
@@ -109,8 +120,8 @@
             background: transparent;
             color: #ffffff;
             font-weight: 700;
-            font-size: 11px;
-            padding-right: 14px;
+            font-size: 10.5px;
+            padding-right: 12px;
             outline: none;
             cursor: pointer;
         }
@@ -121,22 +132,36 @@
         }
 
         
-        #google_translate_element,
+        #gtWrapper {
+            position: fixed;
+            left: -9999px;
+            top: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            opacity: 0;
+            pointer-events: none;
+        }
+
         .goog-te-banner-frame,
         .goog-te-balloon-frame,
-        .skiptranslate {
+        .skiptranslate,
+        #goog-gt-tt {
             display: none !important;
-        }
-        body {
-            top: 0px !important;
         }
 
         .hero-screen {
             position: relative;
-            min-height: 520px;
+            min-height: 460px;
             background:
-                linear-gradient(180deg, rgba(4, 20, 30, 0.58) 0%, rgba(4, 20, 30, 0.42) 50%, rgba(4, 20, 30, 0.72) 100%),
+                linear-gradient(180deg, rgba(4, 20, 30, 0.62) 0%, rgba(4, 20, 30, 0.45) 50%, rgba(4, 20, 30, 0.75) 100%),
                 url('dondraheightlight.jpeg') center/cover no-repeat;
+        }
+
+        @media (min-width: 768px) {
+            .hero-screen {
+                min-height: 520px;
+            }
         }
 
         .explore-pill {
@@ -144,12 +169,12 @@
             align-items: center;
             gap: 10px;
             border: 1.5px solid rgba(255, 255, 255, 0.85);
-            background: rgba(6, 28, 40, 0.45);
+            background: rgba(6, 28, 40, 0.5);
             backdrop-filter: blur(6px);
             color: #ffffff;
             border-radius: 9999px;
-            padding: 8px 22px 8px 8px;
-            font-size: 12px;
+            padding: 7px 20px 7px 7px;
+            font-size: 11.5px;
             font-weight: 700;
             letter-spacing: 0.12em;
             text-transform: uppercase;
@@ -163,8 +188,8 @@
         }
 
         .explore-pill .circle-arrow {
-            width: 32px;
-            height: 32px;
+            width: 30px;
+            height: 30px;
             border-radius: 9999px;
             border: 1px solid currentColor;
             display: inline-flex;
@@ -183,7 +208,7 @@
         }
 
         .sl-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-3px);
             box-shadow: 0 14px 28px rgba(15, 23, 42, 0.09);
             border-color: #99f6e4;
         }
@@ -193,7 +218,7 @@
             border: 1px solid var(--line-soft);
             border-radius: 20px;
             overflow: hidden;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             box-shadow: 0 6px 22px rgba(15, 23, 42, 0.05);
             transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
@@ -206,7 +231,7 @@
             background: var(--surface-white);
             border: 1px solid var(--line-soft);
             border-radius: 14px;
-            padding: 14px 16px;
+            padding: 13px 15px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -218,16 +243,16 @@
         .district-btn:hover {
             border-color: var(--teal-mid);
             background: #f0fdfa;
-            transform: translateX(4px);
+            transform: translateX(3px);
         }
 
         .filter-btn {
             background: var(--surface-white);
             border: 1px solid #cbd5e1;
             color: #334155;
-            padding: 8px 16px;
+            padding: 7px 14px;
             border-radius: 9999px;
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 700;
             cursor: pointer;
             white-space: nowrap;
@@ -252,14 +277,14 @@
         .badge-number {
             background: linear-gradient(135deg, #0e7490, #072c3c);
             color: #ffffff;
-            width: 34px;
-            height: 34px;
+            width: 32px;
+            height: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 9999px;
             font-weight: 800;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             flex-shrink: 0;
         }
 
@@ -273,14 +298,23 @@
 </head>
 <body class="min-h-screen flex flex-col">
 
-   
+    
     <header class="portal-header sticky top-0 z-50 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-16 flex items-center justify-between gap-4">
-            
-            <div onclick="switchTab('home')" class="flex items-center gap-2.5 cursor-pointer shrink-0">
-                <img src="homelogo.jpeg" alt="Sri Lanka Travel" onerror="this.src='https://via.placeholder.com/40/0e7490/ffffff?text=SL'" class="w-9 h-9 rounded-full object-cover border border-white/40">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-10 h-14 sm:h-16 flex items-center justify-between gap-2">
+            <!-- Brand / Logo Left with Guaranteed Fallback -->
+            <div onclick="switchTab('home')" class="flex items-center gap-2 cursor-pointer shrink-0">
+                <img id="brandLogoImg" src="homelogo.jpeg" alt="Travel For Sri Lanka Logo"
+                     onerror="handleLogoFallback(this)"
+                     class="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover border border-amber-300/70 bg-[#0e7490]">
+                <div id="brandLogoSvgFallback" class="hidden w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gradient-to-br from-[#0e7490] to-[#04141e] border border-amber-300/80 items-center justify-center shrink-0">
+                    <svg viewBox="0 0 36 36" class="w-5 h-5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="18" cy="18" r="15" stroke="#fbbf24" stroke-width="1.8"/>
+                        <path d="M18 7C14.5 11.5 12.5 15.5 12.5 19.5C12.5 23 15 26 18 28C21 26 23.5 23 23.5 19.5C23.5 15.5 21.5 11.5 18 7Z" fill="#38bdf8" fill-opacity="0.85"/>
+                        <circle cx="18" cy="18" r="2.5" fill="#fbbf24"/>
+                    </svg>
+                </div>
                 <div class="leading-none">
-                    <span class="ayubowan-script text-2xl text-white">Sri<span class="text-sky-300 font-semibold not-italic text-xs tracking-wider ml-1">LANKA</span></span>
+                    <span class="ayubowan-script text-xl sm:text-2xl text-white">Sri<span class="text-amber-300 font-sans not-italic text-[10px] sm:text-xs font-extrabold tracking-wider ml-1">LANKA</span></span>
                 </div>
             </div>
 
@@ -294,8 +328,8 @@
                 <a onclick="openCategoryFromHome('wildlife')" class="portal-nav-link">Wildlife</a>
             </nav>
 
-           
-            <div class="flex items-center gap-2.5 shrink-0">
+            
+            <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
                 <button onclick="toggleSearchBar()" title="Search" class="w-8 h-8 rounded-full hover:bg-white/10 flex items-center justify-center text-white/90 transition">
                     <i class="fas fa-search text-xs"></i>
                 </button>
@@ -307,7 +341,7 @@
 
                 
                 <div class="lang-pill">
-                    <i class="fas fa-globe text-xs text-sky-200"></i>
+                    <i class="fas fa-globe text-[11px] text-sky-200"></i>
                     <select id="customLangSelect" aria-label="Select Language" onchange="applyLanguage(this.value)">
                         <option value="en">ENGLISH</option>
                         <option value="si">SINHALA</option>
@@ -318,38 +352,42 @@
                         <option value="zh-CN">MANDARIN</option>
                         <option value="ar">ARABIC</option>
                     </select>
-                    <i class="fas fa-chevron-down text-[10px] pointer-events-none -ml-3"></i>
+                    <i class="fas fa-chevron-down text-[9px] pointer-events-none -ml-2.5"></i>
                 </div>
             </div>
         </div>
 
-       
-        <div class="flex md:hidden items-center justify-around border-t border-white/10 py-2 px-2 bg-[#051d2a]/90">
+        
+        <div class="flex md:hidden items-center justify-around border-t border-white/10 py-1.5 px-2 bg-[#051d2a]/95">
             <a onclick="switchTab('home')" class="portal-nav-link active" data-tab="home">Home</a>
             <a onclick="switchTab('districts')" class="portal-nav-link" data-tab="districts">25 Districts</a>
             <a onclick="switchTab('places')" class="portal-nav-link" data-tab="places">Places</a>
+            <a onclick="openCategoryFromHome('beach')" class="portal-nav-link">Beaches</a>
+            <a onclick="openCategoryFromHome('heritage')" class="portal-nav-link">Heritage</a>
         </div>
 
-       
-        <div id="searchDrawer" class="hidden border-t border-white/10 bg-[#051d2a] px-4 py-2.5">
+        
+        <div id="searchDrawer" class="hidden border-t border-white/10 bg-[#051d2a] px-3 sm:px-4 py-2.5">
             <div class="max-w-3xl mx-auto flex items-center bg-white rounded-xl overflow-hidden shadow">
-                <input type="search" id="searchInput" onkeypress="if(event.key==='Enter') performSearch()" placeholder="Search district or place, e.g. Ella, Sigiriya, Mirissa..." class="bg-transparent px-4 py-2 text-xs sm:text-sm text-slate-800 outline-none w-full">
-                <button onclick="performSearch()" class="bg-[#d97706] hover:bg-amber-600 px-5 py-2 text-white font-bold text-xs sm:text-sm transition shrink-0">Search</button>
+                <input type="search" id="searchInput" onkeypress="if(event.key==='Enter') performSearch()" placeholder="Search district or place, e.g. Ella, Sigiriya, Mirissa..." class="bg-transparent px-3.5 py-2 text-xs sm:text-sm text-slate-800 outline-none w-full">
+                <button onclick="performSearch()" class="bg-[#d97706] hover:bg-amber-600 px-4 sm:px-5 py-2 text-white font-bold text-xs sm:text-sm transition shrink-0">Search</button>
             </div>
         </div>
     </header>
 
-    
-    <div id="google_translate_element"></div>
+   
+    <div id="gtWrapper">
+        <div id="google_translate_element"></div>
+    </div>
 
+   
     <section id="home" class="tab-content active">
-        
-        <div class="hero-screen flex flex-col items-center justify-center text-center px-4 py-16 text-white">
+        <div class="hero-screen flex flex-col items-center justify-center text-center px-4 py-14 sm:py-16 text-white">
             <div class="max-w-4xl mx-auto">
                 <h1 class="ayubowan-script text-6xl sm:text-7xl md:text-8xl leading-none drop-shadow-lg mb-2">
                     Ayubowan
                 </h1>
-                <p class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight drop-shadow mb-8">
+                <p class="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight drop-shadow mb-7">
                     An Island Escape<br>Awaits You
                 </p>
                 <button onclick="document.getElementById('homeSections').scrollIntoView({ behavior: 'smooth' })" class="explore-pill">
@@ -359,22 +397,19 @@
             </div>
         </div>
 
-        
-        <div id="homeSections" class="px-4 py-10 sm:p-8 md:p-10 max-w-6xl mx-auto w-full space-y-14">
-
-            
+        <div id="homeSections" class="px-4 py-8 sm:p-8 md:p-10 max-w-6xl mx-auto w-full space-y-12 sm:space-y-14">
             <div>
-                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-6">
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-5 sm:mb-6">
                     <div>
-                        <span class="text-xs font-extrabold uppercase tracking-wider text-[#d97706]">Explore the Many Faces of Sri Lanka</span>
-                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Experiences for Every Explorer</h2>
+                        <span class="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-[#d97706]">Explore the Many Faces of Sri Lanka</span>
+                        <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900 mt-1">Experiences for Every Explorer</h2>
                     </div>
                     <button onclick="switchTab('places')" class="text-xs sm:text-sm font-bold text-[#072c3c] hover:underline self-start sm:self-auto">
                         View All Experiences <i class="fas fa-arrow-right ml-1"></i>
                     </button>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
                     <div onclick="openCategoryFromHome('heritage')" class="sl-card p-5 cursor-pointer">
                         <div class="w-11 h-11 rounded-xl bg-amber-100 text-[#d97706] flex items-center justify-center mb-4 text-lg">
                             <i class="fas fa-gopuram"></i>
@@ -413,19 +448,18 @@
                 </div>
             </div>
 
-           
             <div>
-                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-6">
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-5 sm:mb-6">
                     <div>
-                        <span class="text-xs font-extrabold uppercase tracking-wider text-[#d97706]">More to Discover</span>
-                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Best Places in Sri Lanka</h2>
+                        <span class="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-[#d97706]">More to Discover</span>
+                        <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900 mt-1">Best Places in Sri Lanka</h2>
                     </div>
                     <button onclick="switchTab('districts')" class="bg-white hover:bg-slate-50 text-[#072c3c] border border-slate-300 text-xs font-bold px-4 py-2 rounded-xl transition self-start sm:self-auto">
                         View All 25 Districts
                     </button>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
                     <div onclick="goToDistrict('dist-matale')" class="sl-card cursor-pointer">
                         <img src="sigiriya.jpeg" alt="Sigiriya Rock Fortress" class="w-full h-44 object-cover bg-slate-100" onerror="this.src='https://via.placeholder.com/600x350/e2e8f0/072c3c?text=Sigiriya'">
                         <div class="p-4">
@@ -464,21 +498,20 @@
                 </div>
             </div>
 
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-                <div class="sl-card p-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+                <div class="sl-card p-5 sm:p-6">
                     <p class="text-xs font-bold text-[#0e7490] uppercase mb-2">Traveler Story</p>
                     <p class="text-sm text-slate-700 leading-relaxed italic mb-4">“Wildlife safaris, ancient temples, and golden coastlines—Sri Lanka truly brings so much variety together in one island.”</p>
                     <p class="text-xs font-extrabold text-slate-900">Sofia Rossi <span class="font-normal text-slate-500">• Italy</span></p>
                 </div>
 
-                <div class="sl-card p-6">
+                <div class="sl-card p-5 sm:p-6">
                     <p class="text-xs font-bold text-[#0e7490] uppercase mb-2">Traveler Story</p>
                     <p class="text-sm text-slate-700 leading-relaxed italic mb-4">“Climbing at sunrise and walking through misty tea country felt unforgettable. Every region has its own character.”</p>
                     <p class="text-xs font-extrabold text-slate-900">Haruto Sato <span class="font-normal text-slate-500">• Japan</span></p>
                 </div>
 
-                <div class="sl-card p-6 bg-[#f0fdfa] border-[#99f6e4]">
+                <div class="sl-card p-5 sm:p-6 bg-[#f0fdfa] border-[#99f6e4]">
                     <p class="text-xs font-bold text-[#072c3c] uppercase mb-2">Plan Your Trip</p>
                     <p class="text-sm font-extrabold text-slate-900 mb-2">Essential Travel Notes</p>
                     <ul class="text-xs text-slate-700 space-y-2">
@@ -491,13 +524,13 @@
         </div>
     </section>
 
-   
+    
     <section id="districts" class="tab-content px-4 py-6 sm:p-6 md:p-10 max-w-6xl mx-auto w-full flex-1">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-8">
             <div class="flex items-center gap-3 sm:gap-4">
                 <div class="h-10 w-1.5 sm:w-2 bg-[#072c3c] rounded-full shrink-0"></div>
                 <div>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">All 25 Districts of Sri Lanka</h2>
+                    <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">All 25 Districts of Sri Lanka</h2>
                     <p class="text-slate-600 text-xs sm:text-sm mt-1">Tap on any district below to jump directly to its individual travel destinations.</p>
                 </div>
             </div>
@@ -515,11 +548,11 @@
             <div class="flex items-center gap-3 sm:gap-4">
                 <div class="h-10 w-1.5 sm:w-2 bg-[#d97706] rounded-full shrink-0"></div>
                 <div>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Top Travel Places by District</h2>
+                    <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Top Travel Places by District</h2>
                     <p class="text-slate-600 text-xs sm:text-sm mt-1">Each destination has its own unique ID, detailed description, highlights, and best visit timing.</p>
                 </div>
             </div>
-            <button onclick="switchTab('districts')" class="bg-white hover:bg-slate-50 text-[#072c3c] border border-slate-300 text-xs font-bold px-4 py-2.5 rounded-xl transition self-start sm:self-auto">
+            <button onclick="switchTab('districts')" class="bg-white hover:bg-slate-50 text-[#072c3c] border border-slate-300 text-xs font-bold px-4 py-2 rounded-xl transition self-start sm:self-auto">
                 <i class="fas fa-th-list mr-1.5"></i> Back to District List
             </button>
         </div>
@@ -536,13 +569,13 @@
         <div id="placesContainer" class="space-y-8 sm:space-y-12"></div>
     </section>
 
-    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to Top" class="fixed bottom-5 right-5 bg-[#072c3c] hover:bg-[#0e7490] active:scale-95 text-white w-11 h-11 rounded-full shadow-xl flex items-center justify-center z-40 transition">
-        <i class="fas fa-arrow-up"></i>
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to Top" class="fixed bottom-4 right-4 bg-[#072c3c] hover:bg-[#0e7490] active:scale-95 text-white w-10 h-10 sm:w-11 sm:h-11 rounded-full shadow-xl flex items-center justify-center z-40 transition">
+        <i class="fas fa-arrow-up text-xs sm:text-sm"></i>
     </button>
 
-   
-    <footer class="bg-[#051d2a] text-white py-10 px-4 border-t border-white/10 mt-auto">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-white/10 text-left">
+    
+    <footer class="bg-[#051d2a] text-white py-9 px-4 border-t border-white/10 mt-auto">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-7 pb-7 border-b border-white/10 text-left">
             <div>
                 <span class="ayubowan-script text-2xl text-white">Sri<span class="text-amber-400 font-sans not-italic text-sm font-extrabold ml-1">LANKA TRAVEL</span></span>
                 <p class="text-xs text-slate-300 mt-2 leading-relaxed">
@@ -567,21 +600,61 @@
         <p class="text-slate-400 text-[11px] mt-6 text-center uppercase tracking-[0.15em]">&copy; 2026 Sri Lanka Travel Digital Guide</p>
     </footer>
 
-    
+   
     <script type="text/javascript">
+        function handleLogoFallback(imgEl) {
+            imgEl.style.display = 'none';
+            const fallback = document.getElementById('brandLogoSvgFallback');
+            if (fallback) {
+                fallback.classList.remove('hidden');
+                fallback.classList.add('flex');
+            }
+        }
+
+        function setGoogTransCookie(langCode) {
+            const cookieVal = langCode === 'en' ? '' : `/en/${langCode}`;
+            document.cookie = `googtrans=${cookieVal}; path=/`;
+            document.cookie = `googtrans=${cookieVal}; domain=${window.location.hostname}; path=/`;
+        }
+
+        function triggerGoogleTranslateCombo(langCode, attempts = 0) {
+            const gtCombo = document.querySelector('#google_translate_element select.goog-te-combo') || document.querySelector('select.goog-te-combo');
+            if (gtCombo) {
+                gtCombo.value = langCode;
+                gtCombo.dispatchEvent(new Event('change', { bubbles: true }));
+                return true;
+            }
+            if (attempts < 25) {
+                setTimeout(() => triggerGoogleTranslateCombo(langCode, attempts + 1), 200);
+            }
+            return false;
+        }
+
+        function applyLanguage(langCode) {
+            setGoogTransCookie(langCode);
+            const applied = triggerGoogleTranslateCombo(langCode, 0);
+            if (!applied && langCode !== 'en') {
+                setTimeout(() => {
+                    const stillNotApplied = !(document.querySelector('select.goog-te-combo')?.value === langCode);
+                    if (stillNotApplied) {
+                        window.location.reload();
+                    }
+                }, 1400);
+            }
+        }
+
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
                 includedLanguages: 'en,si,ta,hi,ar,fr,de,zh-CN',
                 autoDisplay: false
             }, 'google_translate_element');
-        }
 
-        function applyLanguage(langCode) {
-            const gtCombo = document.querySelector('.goog-te-combo');
-            if (gtCombo) {
-                gtCombo.value = langCode;
-                gtCombo.dispatchEvent(new Event('change'));
+            const match = document.cookie.match(/(?:^|;\s*)googtrans=\/en\/([^;]+)/);
+            if (match && match[1]) {
+                const selectEl = document.getElementById('customLangSelect');
+                if (selectEl) selectEl.value = match[1];
+                triggerGoogleTranslateCombo(match[1], 0);
             }
         }
 
@@ -593,7 +666,7 @@
             }
         }
     </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
@@ -1824,7 +1897,7 @@
                             <div class="flex flex-wrap items-center justify-between gap-2 mb-3.5 sm:mb-4">
                                 <div class="flex items-center gap-3 sm:gap-4">
                                     <div class="badge-number">${placeNum}</div>
-                                    <h4 class="text-lg sm:text-xl md:text-2xl font-extrabold text-[#072c3c] leading-snug">${place.title}</h4>
+                                    <h4 class="text-base sm:text-xl md:text-2xl font-extrabold text-[#072c3c] leading-snug">${place.title}</h4>
                                 </div>
                                 <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider bg-amber-50 text-[#b45309] border border-amber-200 px-3 py-1 rounded-full">
                                     ${catLabels[place.category] || 'Destination'}
@@ -1833,7 +1906,7 @@
 
                             <div class="relative rounded-2xl overflow-hidden mb-4 sm:mb-6 border border-slate-200 bg-slate-100 flex items-center justify-center">
                                 <img src="${place.image}" alt="${place.title}"
-                                     class="w-full max-h-[450px] object-contain mx-auto bg-slate-100"
+                                     class="w-full max-h-[320px] sm:max-h-[450px] object-cover sm:object-contain mx-auto bg-slate-100"
                                      onerror="this.src='https://via.placeholder.com/900x400/e2e8f0/072c3c?text=${encodeURIComponent(place.title + ' (Image Not Found)')}'">
                             </div>
 
@@ -1865,7 +1938,7 @@
                         <div class="flex items-center justify-between bg-white border border-slate-200 px-4 sm:px-5 py-3 sm:py-3.5 rounded-2xl mb-5 sm:mb-6 shadow-sm">
                             <div class="flex items-center gap-2.5 sm:gap-3">
                                 <span class="bg-[#072c3c] text-white font-extrabold text-xs sm:text-sm px-2.5 py-1 rounded-lg">${dist.number}</span>
-                                <h3 class="text-lg sm:text-2xl font-extrabold text-slate-900">${dist.name}</h3>
+                                <h3 class="text-base sm:text-2xl font-extrabold text-slate-900">${dist.name}</h3>
                             </div>
                             <span class="text-[11px] sm:text-xs font-bold text-[#0e7490] hidden sm:inline">${dist.province}</span>
                         </div>
@@ -2020,4 +2093,3 @@
     </script>
 </body>
 </html>
-
