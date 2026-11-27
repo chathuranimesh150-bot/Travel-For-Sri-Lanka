@@ -35,7 +35,7 @@
     </div>
 
     <!-- Main Admin Dashboard -->
-    <div id="adminDashboard" class="hidden max-w-4xl mx-auto p-4 sm:p-6 space-y-6">
+    <div id="adminDashboard" class="hidden max-w-5xl mx-auto p-4 sm:p-6 space-y-6">
         <header class="flex flex-wrap items-center justify-between gap-3 bg-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-5">
             <div>
                 <span class="text-[11px] font-bold uppercase tracking-wider text-amber-400">Bank Account: 5269173</span>
@@ -56,6 +56,7 @@
             <div>
                 <span class="text-xs font-bold text-emerald-300 uppercase">New Code Ready to Send:</span>
                 <div id="latestCodeText" class="text-2xl sm:text-3xl font-mono font-extrabold text-white tracking-wider mt-1">SL25-XXXXX</div>
+                <div id="latestCodeMeta" class="text-xs text-emerald-200/80 mt-0.5"></div>
             </div>
             <div class="flex flex-wrap gap-2">
                 <button onclick="copyLatestCode()" class="bg-white text-slate-950 font-extrabold text-xs px-4 py-2.5 rounded-xl hover:bg-slate-200 transition cursor-pointer">
@@ -83,6 +84,20 @@
             </div>
         </div>
 
+        <!-- Customer Payment Orders & Slip Verification (Live Firebase Sync) -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+            <div class="px-4 py-3 border-b border-slate-800 flex flex-wrap items-center justify-between gap-2">
+                <div>
+                    <h2 class="text-sm font-extrabold text-white">Customer Orders & Payment Slips</h2>
+                    <p class="text-[11px] text-slate-400">Check BOC (5269173) slip & click "Auto Generate & Send" to create a unique code and open customer WhatsApp</p>
+                </div>
+                <span class="text-[11px] text-amber-300 font-mono">Path: <code>payment_orders/</code></span>
+            </div>
+            <div id="ordersList" class="divide-y divide-slate-800 max-h-[520px] overflow-y-auto">
+                <div class="p-6 text-center text-xs text-slate-400">Loading customer orders...</div>
+            </div>
+        </div>
+
         <!-- Codes List -->
         <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
             <div class="px-4 py-3 border-b border-slate-800 flex items-center justify-between">
@@ -97,7 +112,7 @@
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { getDatabase, ref, set, remove, onValue } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+        import { getDatabase, ref, set, update, remove, onValue } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
         // Change this PIN to your own secret password!
         const ADMIN_PIN = "2026";
@@ -115,6 +130,8 @@
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
 
+        let cachedOrders = {};
+
         window.handleAdminLogin = function(e) {
             e.preventDefault();
             const val = document.getElementById('adminPinInput').value.trim();
@@ -122,6 +139,7 @@
                 document.getElementById('loginBox').classList.add('hidden');
                 document.getElementById('adminDashboard').classList.remove('hidden');
                 listenCodes();
+                listenOrders();
             } else {
                 document.getElementById('loginErr').classList.remove('hidden');
             }
@@ -134,6 +152,28 @@
                 part += chars.charAt(Math.floor(Math.random() * chars.length));
             }
             return "SL25-" + part;
+        }
+
+        function formatPhoneForWa(rawPhone) {
+            let digits = (rawPhone || "").replace(/\D/g, "");
+            if (!digits) return "";
+            if (digits.startsWith("0")) {
+                return "94" + digits.substring(1);
+            }
+            if (!digits.startsWith("94") && digits.length === 9) {
+                return "94" + digits;
+            }
+            return digits;
+        }
+
+        function buildWhatsAppMessage(code, custName = "", orderId = "") {
+            const greeting = custName ? `Ayubowan ${custName}!` : "Thank you for your payment!";
+            const orderLine = orderId ? ` (Order: ${orderId})` : "";
+            return encodeURIComponent(
+                `${greeting}${orderLine} Here is your one-time Access Code for the Sri Lanka 25 Districts PDF Guide:\n\n` +
+                `Code: ${code}\n\n` +
+                `Open https://travelforsrilanka.com -> Click "PDF Guide" -> Enter the code to download/save your PDF.`
+            );
         }
 
         window.generateSingleCode = async function() {
@@ -157,18 +197,78 @@
             if (last) showLatestCode(last);
         };
 
-        function showLatestCode(code) {
+        function showLatestCode(code, custName = "", waPhone = "", orderId = "") {
             document.getElementById('latestCodeBox').classList.remove('hidden');
             document.getElementById('latestCodeText').textContent = code;
-            const msg = encodeURIComponent(
-                `Thank you for your payment! Here is your one-time Access Code for the Sri Lanka 25 Districts PDF Guide:
-
-Code: ${code}
-
-Open https://travelforsrilanka.com -> Click "PDF Guide" -> Enter the code to download/save your PDF.`
-            );
-            document.getElementById('waShareBtn').href = `https://wa.me/?text=${msg}`;
+            const metaEl = document.getElementById('latestCodeMeta');
+            if (metaEl) {
+                metaEl.textContent = custName
+                    ? `Assigned to ${custName}${orderId ? " • " + orderId : ""}${waPhone ? " • WhatsApp: +" + waPhone : ""}`
+                    : "General unused code ready to send";
+            }
+            const msg = buildWhatsAppMessage(code, custName, orderId);
+            document.getElementById('waShareBtn').href = waPhone
+                ? `https://wa.me/${waPhone}?text=${msg}`
+                : `https://wa.me/?text=${msg}`;
         }
+
+        window.openSlipPreview = function(orderId) {
+            const order = cachedOrders[orderId];
+            if (!order || !order.slipBase64) {
+                alert("No slip file attached for this order.");
+                return;
+            }
+            const isPdf = (order.slipFileType || "").includes("pdf") || (order.slipFileName || "").toLowerCase().endsWith(".pdf");
+            const win = window.open("", "_blank");
+            if (!win) {
+                alert("Please allow pop-ups to view the payment slip.");
+                return;
+            }
+            if (isPdf) {
+                win.document.write(`<html><head><title>Slip - ${order.orderId || orderId}</title></head><body style="margin:0;background:#0f172a;"><iframe src="${order.slipBase64}" style="width:100vw;height:100vh;border:none;"></iframe></body></html>`);
+            } else {
+                win.document.write(`<html><head><title>Slip - ${order.orderId || orderId}</title></head><body style="margin:0;background:#0f172a;display:flex;align-items:center;justify-content:center;min-height:100vh;"><img src="${order.slipBase64}" style="max-width:95vw;max-height:95vh;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.5);"/></body></html>`);
+            }
+            win.document.close();
+        };
+
+        window.autoGenerateAndSendToCustomer = async function(orderId) {
+            const order = cachedOrders[orderId];
+            if (!order) return;
+
+            const code = randomCodeString();
+            const nowIso = new Date().toISOString();
+            const custName = order.fullName || "Traveler";
+            const waPhone = formatPhoneForWa(order.phone);
+
+            try {
+                await set(ref(db, `access_codes/${code}`), {
+                    used: false,
+                    orderId: orderId,
+                    customerName: custName,
+                    customerPhone: order.phone || "",
+                    createdAt: nowIso
+                });
+
+                await update(ref(db, `payment_orders/${orderId}`), {
+                    status: "approved",
+                    assignedCode: code,
+                    approvedAt: nowIso
+                });
+
+                showLatestCode(code, custName, waPhone, orderId);
+
+                const msg = buildWhatsAppMessage(code, custName, orderId);
+                const waUrl = waPhone
+                    ? `https://wa.me/${waPhone}?text=${msg}`
+                    : `https://wa.me/?text=${msg}`;
+
+                window.open(waUrl, "_blank", "noopener");
+            } catch (err) {
+                console.error("Failed to generate/send code:", err);
+                alert("Error saving code to Firebase. Check console or database rules.");
+            }
+        };
 
         window.copyLatestCode = function() {
             const code = document.getElementById('latestCodeText').textContent;
@@ -186,6 +286,65 @@ Open https://travelforsrilanka.com -> Click "PDF Guide" -> Enter the code to dow
                 await remove(ref(db, `access_codes/${code}`));
             }
         };
+
+        function listenOrders() {
+            const ordersRef = ref(db, 'payment_orders');
+            onValue(ordersRef, (snapshot) => {
+                const ordersEl = document.getElementById('ordersList');
+                const data = snapshot.val();
+                cachedOrders = data || {};
+
+                if (!data) {
+                    ordersEl.innerHTML = '<div class="p-6 text-center text-xs text-slate-400">No customer orders received yet.</div>';
+                    return;
+                }
+
+                const entries = Object.entries(data).reverse();
+                let html = "";
+
+                entries.forEach(([orderId, order]) => {
+                    const isApproved = order.status === "approved";
+                    const hasSlip = Boolean(order.slipBase64);
+                    const slipSizeKb = order.slipFileSize ? (order.slipFileSize / 1024).toFixed(1) + " KB" : "";
+
+                    html += `
+                        <div class="p-4 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:bg-slate-800/40">
+                            <div class="space-y-1 text-xs">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <span class="font-mono font-extrabold text-amber-300">${order.orderId || orderId}</span>
+                                    <span class="font-bold text-white text-sm">${order.fullName || "-"}</span>
+                                    <span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold uppercase ${isApproved ? 'bg-emerald-500/20 text-emerald-300' : 'bg-amber-500/20 text-amber-300'}">
+                                        ${order.status || "pending"}
+                                    </span>
+                                    ${order.assignedCode ? `<span class="font-mono text-xs bg-slate-800 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/30">${order.assignedCode}</span>` : ""}
+                                </div>
+                                <p class="text-slate-300">
+                                    <strong>Phone:</strong> ${order.phone || "-"} |
+                                    <strong>From:</strong> ${order.senderAccountHolder || "-"} (${order.senderBankName || "-"} • ${order.senderAccountNo || "-"})
+                                </p>
+                                ${order.transferRef ? `<p class="text-slate-400"><strong>Ref Note:</strong> ${order.transferRef}</p>` : ""}
+                                <p class="text-slate-400">
+                                    <strong>Slip:</strong> ${hasSlip ? `<span class="text-emerald-300 font-semibold">${order.slipFileName || "Uploaded Slip"} (${slipSizeKb})</span>` : `<span class="text-rose-400">Not uploaded</span>`}
+                                </p>
+                            </div>
+
+                            <div class="flex flex-wrap items-center gap-2 shrink-0">
+                                ${hasSlip ? `
+                                    <button onclick="openSlipPreview('${orderId}')" class="bg-slate-800 hover:bg-slate-700 text-sky-300 font-bold text-xs px-3 py-2 rounded-xl border border-slate-700 cursor-pointer">
+                                        <i class="fas fa-eye mr-1"></i> View Slip
+                                    </button>
+                                ` : ""}
+                                <button onclick="autoGenerateAndSendToCustomer('${orderId}')" class="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-extrabold text-xs px-3.5 py-2 rounded-xl shadow transition cursor-pointer">
+                                    <i class="fab fa-whatsapp mr-1"></i> ${isApproved ? "Regenerate & Send" : "Auto Generate & Send"}
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                ordersEl.innerHTML = html;
+            });
+        }
 
         function listenCodes() {
             const codesRef = ref(db, 'access_codes');
@@ -214,7 +373,7 @@ Open https://travelforsrilanka.com -> Click "PDF Guide" -> Enter the code to dow
                             <div>
                                 <div class="font-mono font-extrabold text-sm sm:text-base ${isUsed ? 'text-slate-500 line-through' : 'text-white'}">${code}</div>
                                 <div class="text-[11px] text-slate-400">
-                                    ${isUsed ? `Used: ${info.usedAt ? new Date(info.usedAt).toLocaleString() : 'Yes'}` : 'Ready for customer'}
+                                    ${isUsed ? `Used: ${info.usedAt ? new Date(info.usedAt).toLocaleString() : 'Yes'}` : `${info.customerName ? 'Assigned to ' + info.customerName : 'Ready for customer'}`}
                                 </div>
                             </div>
                             <div class="flex items-center gap-2">
@@ -237,3 +396,7 @@ Open https://travelforsrilanka.com -> Click "PDF Guide" -> Enter the code to dow
     </script>
 </body>
 </html>
+           
+   
+
+   
