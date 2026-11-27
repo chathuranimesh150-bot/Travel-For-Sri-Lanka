@@ -3,22 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel For Sri Lanka</title>
+    <title>Travel For Sri Lanka | Discover Sri Lanka</title>
 
-    
-    <meta name="description" content="Complete Sri Lanka Travel Guide covering all 25 districts, top tourist places, beaches, waterfalls, wildlife parks, ancient temples, and travel tips by Chathura Kodithuwakku.">
-    <meta name="keywords" content="Sri Lanka travel guide, 25 districts of Sri Lanka, places to visit in Sri Lanka, Sri Lanka tourism, Sigiriya, Kandy, Ella, Mirissa, Yala, Nuwara Eliya, Jaffna, Galle, Chathura travel guide">
+    <meta name="description" content="Complete Sri Lanka Travel Guide covering all 25 districts, top tourist places, beaches, waterfalls, wildlife parks, ancient temples, and travel tips.">
+    <meta name="keywords" content="Sri Lanka travel guide, 25 districts of Sri Lanka, places to visit in Sri Lanka, Sri Lanka tourism, Sigiriya, Kandy, Ella, Mirissa, Yala, Nuwara Eliya, Jaffna, Galle">
     <meta name="author" content="Chathura Kodithuwakku">
     <meta name="robots" content="index, follow">
 
-    
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Sri Lanka 25 Districts Travel Guide | Chathura">
+    <meta property="og:title" content="Sri Lanka 25 Districts Travel Guide | Discover Sri Lanka">
     <meta property="og:description" content="Explore detailed descriptions, highlights, and best visit times across all 25 districts of Sri Lanka.">
     <meta property="og:image" content="homelogo.jpeg">
     <meta property="og:locale" content="en_US">
 
-    
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -35,85 +32,203 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
-        
-        body { 
-            font-family: 'Inter', sans-serif;
-            background-color: #0b0f19;
-            color: #ffffff;
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --teal-deep: #072c3c;
+            --teal-mid: #0e7490;
+            --amber-warm: #d97706;
+            --surface-white: #ffffff;
+            --surface-soft: #f4f7f9;
+            --ink-dark: #0f172a;
+            --ink-muted: #475569;
+            --line-soft: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--surface-soft);
+            color: var(--ink-dark);
             scroll-behavior: smooth;
             -webkit-tap-highlight-color: transparent;
         }
 
-        .header-glass {
-            background: rgba(11, 15, 25, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #1e293b;
+        .ayubowan-script {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-style: italic;
+            font-weight: 700;
+            letter-spacing: -0.01em;
         }
 
-        .nav-link {
-            text-decoration: none;
-            color: #fff;
-            font-family: Arial, sans-serif;
+      
+        .portal-header {
+            background: linear-gradient(180deg, rgba(4, 20, 30, 0.92) 0%, rgba(7, 44, 60, 0.88) 100%);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .portal-nav-link {
+            color: rgba(255, 255, 255, 0.88);
             font-weight: 600;
-            letter-spacing: 1px;
-            transition: 0.3s ease;
+            font-size: 12.5px;
+            line-height: 1.25;
+            transition: color 0.2s ease;
             cursor: pointer;
         }
 
-        .nav-link:hover, .nav-link.active {
-            color: #ff7200;
+        .portal-nav-link:hover, .portal-nav-link.active {
+            color: #fbbf24;
+        }
+
+       
+        .lang-pill {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(15, 23, 42, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            color: #ffffff;
+            border-radius: 9999px;
+            padding: 5px 12px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .lang-pill:hover {
+            background: rgba(255, 255, 255, 0.14);
+            border-color: #ffffff;
+        }
+
+        .lang-pill select {
+            appearance: none;
+            -webkit-appearance: none;
+            background: transparent;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 11px;
+            padding-right: 14px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .lang-pill select option {
+            background: #072c3c;
+            color: #ffffff;
+        }
+
+        
+        #google_translate_element,
+        .goog-te-banner-frame,
+        .goog-te-balloon-frame,
+        .skiptranslate {
+            display: none !important;
+        }
+        body {
+            top: 0px !important;
+        }
+
+        .hero-screen {
+            position: relative;
+            min-height: 520px;
+            background:
+                linear-gradient(180deg, rgba(4, 20, 30, 0.58) 0%, rgba(4, 20, 30, 0.42) 50%, rgba(4, 20, 30, 0.72) 100%),
+                url('dondraheightlight.jpeg') center/cover no-repeat;
+        }
+
+        .explore-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1.5px solid rgba(255, 255, 255, 0.85);
+            background: rgba(6, 28, 40, 0.45);
+            backdrop-filter: blur(6px);
+            color: #ffffff;
+            border-radius: 9999px;
+            padding: 8px 22px 8px 8px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: all 0.25s ease;
+            cursor: pointer;
+        }
+
+        .explore-pill:hover {
+            background: #ffffff;
+            color: #072c3c;
+        }
+
+        .explore-pill .circle-arrow {
+            width: 32px;
+            height: 32px;
+            border-radius: 9999px;
+            border: 1px solid currentColor;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+        }
+
+        .sl-card {
+            background: var(--surface-white);
+            border: 1px solid var(--line-soft);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .sl-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 28px rgba(15, 23, 42, 0.09);
+            border-color: #99f6e4;
         }
 
         .place-card {
-            background: #111827;
-            border-radius: 16px;
+            background: var(--surface-white);
+            border: 1px solid var(--line-soft);
+            border-radius: 20px;
             overflow: hidden;
-            border: 1px solid #374151;
             margin-bottom: 24px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            box-shadow: 0 6px 22px rgba(15, 23, 42, 0.05);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
 
-        @media (hover: hover) {
-            .place-card:hover {
-                border-color: #ff7200;
-            }
+        .place-card:hover {
+            border-color: #0e7490;
         }
 
         .district-btn {
-            background: #111827;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
-            padding: 13px 16px;
+            background: var(--surface-white);
+            border: 1px solid var(--line-soft);
+            border-radius: 14px;
+            padding: 14px 16px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             cursor: pointer;
+            box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
             transition: all 0.2s ease;
         }
 
-        .district-btn:active {
-            transform: scale(0.99);
-            border-color: #ff7200;
-        }
-
-        @media (hover: hover) {
-            .district-btn:hover {
-                border-color: #ff7200;
-                background: #172033;
-                transform: translateX(4px);
-            }
+        .district-btn:hover {
+            border-color: var(--teal-mid);
+            background: #f0fdfa;
+            transform: translateX(4px);
         }
 
         .filter-btn {
-            background: #111827;
-            border: 1px solid #374151;
-            color: #cbd5e1;
-            padding: 7px 14px;
+            background: var(--surface-white);
+            border: 1px solid #cbd5e1;
+            color: #334155;
+            padding: 8px 16px;
             border-radius: 9999px;
             font-size: 12px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             white-space: nowrap;
             flex-shrink: 0;
@@ -121,8 +236,8 @@
         }
 
         .filter-btn:hover, .filter-btn.active {
-            background: #ff7200;
-            border-color: #ff7200;
+            background: var(--teal-deep);
+            border-color: var(--teal-deep);
             color: #ffffff;
         }
 
@@ -135,18 +250,17 @@
         }
 
         .badge-number {
-            background: #ff7200;
-            color: #fff;
-            width: 32px;
-            height: 32px;
+            background: linear-gradient(135deg, #0e7490, #072c3c);
+            color: #ffffff;
+            width: 34px;
+            height: 34px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
+            border-radius: 9999px;
             font-weight: 800;
             font-size: 0.8rem;
             flex-shrink: 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
 
         .tab-content {
@@ -155,168 +269,328 @@
         .tab-content.active {
             display: block;
         }
-
-        #google_translate_element select {
-            background-color: #1f2937;
-            color: #fff;
-            border: 1px solid #ff7200;
-            padding: 3px 6px;
-            border-radius: 5px;
-            font-size: 11px;
-            outline: none;
-            max-width: 115px;
-        }
-        .goog-te-banner-frame, .goog-te-balloon-frame { display: none !important; }
-        body { top: 0px !important; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
 
-    <header class="header-glass sticky top-0 z-50 py-2.5 px-3 sm:px-6 md:px-16 flex flex-col gap-2.5">
-        <div class="flex items-center justify-between w-full gap-2">
-            <div onclick="switchTab('home')" class="logo flex items-center gap-2 cursor-pointer shrink-0">
-                <img src="homelogo.jpeg" alt="Chathura Logo" onerror="this.src='https://via.placeholder.com/48/ff7200/ffffff?text=SL'" class="w-9 h-9 md:w-11 md:h-11 object-contain rounded-full border border-[#ff7200]">
-                
+   
+    <header class="portal-header sticky top-0 z-50 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-16 flex items-center justify-between gap-4">
+            
+            <div onclick="switchTab('home')" class="flex items-center gap-2.5 cursor-pointer shrink-0">
+                <img src="homelogo.jpeg" alt="Sri Lanka Travel" onerror="this.src='https://via.placeholder.com/40/0e7490/ffffff?text=SL'" class="w-9 h-9 rounded-full object-cover border border-white/40">
+                <div class="leading-none">
+                    <span class="ayubowan-script text-2xl text-white">Sri<span class="text-sky-300 font-semibold not-italic text-xs tracking-wider ml-1">LANKA</span></span>
+                </div>
             </div>
 
-            <div class="flex items-center gap-1.5 sm:gap-2">
-                <div class="text-[11px] sm:text-xs bg-slate-800 border border-slate-700 px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-lg text-amber-400 font-semibold flex items-center gap-1 whitespace-nowrap">
-                    <i class="fas fa-eye"></i> <span class="hidden sm:inline">Views:</span> <span id="globalViewCount" class="text-white font-bold"></span>
-                </div>
-                <div id="google_translate_element"></div>
-            </div>
-        </div>
-       
-        <div class="flex flex-col md:flex-row items-center justify-between w-full gap-2.5 border-t border-slate-800 pt-2">
-            <nav class="flex items-center justify-around md:justify-start gap-4 sm:gap-8 w-full md:w-auto">
-                <a onclick="switchTab('home')" class="nav-link active text-xs sm:text-sm py-1" data-tab="home">HOME</a>
-                <a onclick="switchTab('districts')" class="nav-link text-xs sm:text-sm py-1" data-tab="districts">DISTRICTS (25)</a>
-                <a onclick="switchTab('places')" class="nav-link text-xs sm:text-sm py-1" data-tab="places">PLACES (<span id="totalPlacesBadge">0</span>)</a>
+            
+            <nav class="hidden md:flex items-center gap-6">
+                <a onclick="switchTab('home')" class="portal-nav-link active" data-tab="home">Home</a>
+                <a onclick="switchTab('districts')" class="portal-nav-link" data-tab="districts">25 Districts</a>
+                <a onclick="switchTab('places')" class="portal-nav-link" data-tab="places">What To Do (<span id="totalPlacesBadge">0</span>)</a>
+                <a onclick="openCategoryFromHome('heritage')" class="portal-nav-link">Heritage</a>
+                <a onclick="openCategoryFromHome('beach')" class="portal-nav-link">Beaches</a>
+                <a onclick="openCategoryFromHome('wildlife')" class="portal-nav-link">Wildlife</a>
             </nav>
 
-            <div class="flex items-center bg-transparent border border-[#ff7200] rounded-lg overflow-hidden w-full md:w-auto">
-                <input type="search" id="searchInput" onkeypress="if(event.key==='Enter') performSearch()" placeholder="Search district or place, e.g. Ella, Mirissa..." class="bg-transparent px-3 py-1.5 text-xs sm:text-sm text-white outline-none w-full md:w-64">
-                <button onclick="performSearch()" class="bg-[#ff7200] px-4 py-1.5 text-white font-bold text-xs sm:text-sm hover:bg-[#e06400] active:bg-[#e06400] transition shrink-0">Search</button>
+           
+            <div class="flex items-center gap-2.5 shrink-0">
+                <button onclick="toggleSearchBar()" title="Search" class="w-8 h-8 rounded-full hover:bg-white/10 flex items-center justify-center text-white/90 transition">
+                    <i class="fas fa-search text-xs"></i>
+                </button>
+
+                <div class="hidden sm:flex items-center gap-1 text-[11px] text-amber-300 font-semibold bg-white/10 px-2.5 py-1 rounded-full">
+                    <i class="fas fa-eye text-[10px]"></i>
+                    <span id="globalViewCount" class="text-white font-bold"></span>
+                </div>
+
+                
+                <div class="lang-pill">
+                    <i class="fas fa-globe text-xs text-sky-200"></i>
+                    <select id="customLangSelect" aria-label="Select Language" onchange="applyLanguage(this.value)">
+                        <option value="en">ENGLISH</option>
+                        <option value="si">SINHALA</option>
+                        <option value="ta">TAMIL</option>
+                        <option value="hi">HINDI</option>
+                        <option value="fr">FRENCH</option>
+                        <option value="de">DEUTSCH</option>
+                        <option value="zh-CN">MANDARIN</option>
+                        <option value="ar">ARABIC</option>
+                    </select>
+                    <i class="fas fa-chevron-down text-[10px] pointer-events-none -ml-3"></i>
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="flex md:hidden items-center justify-around border-t border-white/10 py-2 px-2 bg-[#051d2a]/90">
+            <a onclick="switchTab('home')" class="portal-nav-link active" data-tab="home">Home</a>
+            <a onclick="switchTab('districts')" class="portal-nav-link" data-tab="districts">25 Districts</a>
+            <a onclick="switchTab('places')" class="portal-nav-link" data-tab="places">Places</a>
+        </div>
+
+       
+        <div id="searchDrawer" class="hidden border-t border-white/10 bg-[#051d2a] px-4 py-2.5">
+            <div class="max-w-3xl mx-auto flex items-center bg-white rounded-xl overflow-hidden shadow">
+                <input type="search" id="searchInput" onkeypress="if(event.key==='Enter') performSearch()" placeholder="Search district or place, e.g. Ella, Sigiriya, Mirissa..." class="bg-transparent px-4 py-2 text-xs sm:text-sm text-slate-800 outline-none w-full">
+                <button onclick="performSearch()" class="bg-[#d97706] hover:bg-amber-600 px-5 py-2 text-white font-bold text-xs sm:text-sm transition shrink-0">Search</button>
             </div>
         </div>
     </header>
 
-    <main class="px-4 py-6 sm:p-6 md:p-12 max-w-6xl mx-auto w-full flex-1">
+    
+    <div id="google_translate_element"></div>
+
+    <section id="home" class="tab-content active">
         
-        <section id="home" class="tab-content active">
-            <div class="py-6 sm:py-12 md:py-20 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10">
-                <div class="max-w-xl">
-                    <span class="inline-block bg-[#ff7200]/15 text-[#ff7200] border border-[#ff7200]/40 text-[11px] sm:text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">
-                        Explore the Pearl of the Indian Ocean
-                    </span>
-                    <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight mb-4 sm:mb-6">
-                        Sri Lanka <br><span class="text-[#ff7200]">25 Districts</span> <br>Travel Guide
-                    </h1>
-                    <p class="text-slate-400 text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8">
-                        Explore detailed descriptions, cultural stories, natural wonders, and travel tips for individual destinations across all 25 districts of Sri Lanka.
-                    </p>
-                    <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-3 sm:gap-4">
-                        <button onclick="switchTab('districts')" class="bg-[#ff7200] hover:bg-white hover:text-[#ff7200] text-white font-bold text-sm sm:text-base px-6 sm:px-8 py-3.5 rounded-xl transition duration-300 shadow-lg w-full sm:w-auto">
-                            EXPLORE DISTRICTS
-                        </button>
-                        <button onclick="switchTab('places')" class="bg-slate-800 hover:bg-slate-700 text-white border border-slate-600 font-bold text-sm sm:text-base px-6 sm:px-8 py-3.5 rounded-xl transition duration-300 w-full sm:w-auto">
-                            VIEW ALL PLACES
-                        </button>
+        <div class="hero-screen flex flex-col items-center justify-center text-center px-4 py-16 text-white">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="ayubowan-script text-6xl sm:text-7xl md:text-8xl leading-none drop-shadow-lg mb-2">
+                    Ayubowan
+                </h1>
+                <p class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight drop-shadow mb-8">
+                    An Island Escape<br>Awaits You
+                </p>
+                <button onclick="document.getElementById('homeSections').scrollIntoView({ behavior: 'smooth' })" class="explore-pill">
+                    <span class="circle-arrow"><i class="fas fa-arrow-down"></i></span>
+                    <span>EXPLORE</span>
+                </button>
+            </div>
+        </div>
+
+        
+        <div id="homeSections" class="px-4 py-10 sm:p-8 md:p-10 max-w-6xl mx-auto w-full space-y-14">
+
+            
+            <div>
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-6">
+                    <div>
+                        <span class="text-xs font-extrabold uppercase tracking-wider text-[#d97706]">Explore the Many Faces of Sri Lanka</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Experiences for Every Explorer</h2>
                     </div>
+                    <button onclick="switchTab('places')" class="text-xs sm:text-sm font-bold text-[#072c3c] hover:underline self-start sm:self-auto">
+                        View All Experiences <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
                 </div>
 
-                <div class="bg-slate-800/50 p-5 sm:p-8 rounded-2xl border border-slate-700 max-w-md w-full text-left">
-                    <h3 class="text-lg sm:text-xl font-bold text-[#ff7200] mb-4 flex items-center gap-2">
-                        <i class="fas fa-compass"></i> Must-Visit Highlights
-                    </h3>
-                    <ul class="space-y-3 text-slate-300 font-medium text-xs sm:text-sm">
-                        <li onclick="goToDistrict('dist-kandy')" class="cursor-pointer hover:text-[#ff7200] flex items-center justify-between border-b border-slate-700/70 pb-2.5 gap-2">
-                            <span><i class="fas fa-map-marker-alt text-[#ff7200] mr-1.5"></i> Kandy – Temple of the Sacred Tooth Relic</span>
-                            <i class="fas fa-arrow-right text-xs text-slate-500 shrink-0"></i>
-                        </li>
-                        <li onclick="goToDistrict('dist-matale')" class="cursor-pointer hover:text-[#ff7200] flex items-center justify-between border-b border-slate-700/70 pb-2.5 gap-2">
-                            <span><i class="fas fa-map-marker-alt text-[#ff7200] mr-1.5"></i> Matale – Sigiriya Lion Rock Fortress</span>
-                            <i class="fas fa-arrow-right text-xs text-slate-500 shrink-0"></i>
-                        </li>
-                        <li onclick="goToDistrict('dist-matara')" class="cursor-pointer hover:text-[#ff7200] flex items-center justify-between border-b border-slate-700/70 pb-2.5 gap-2">
-                            <span><i class="fas fa-map-marker-alt text-[#ff7200] mr-1.5"></i> Matara – Mirissa Beach</span>
-                            <i class="fas fa-arrow-right text-xs text-slate-500 shrink-0"></i>
-                        </li>
-                        <li onclick="goToDistrict('dist-badulla')" class="cursor-pointer hover:text-[#ff7200] flex items-center justify-between border-b border-slate-700/70 pb-2.5 gap-2">
-                            <span><i class="fas fa-map-marker-alt text-[#ff7200] mr-1.5"></i> Badulla – Nine Arches Bridge (Ella)</span>
-                            <i class="fas fa-arrow-right text-xs text-slate-500 shrink-0"></i>
-                        </li>
-                        <li onclick="goToDistrict('dist-ratnapura')" class="cursor-pointer hover:text-[#ff7200] flex items-center justify-between gap-2">
-                            <span><i class="fas fa-map-marker-alt text-[#ff7200] mr-1.5"></i> Ratnapura – Adam’s Peak (Sri Pada)</span>
-                            <i class="fas fa-arrow-right text-xs text-slate-500 shrink-0"></i>
-                        </li>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <div onclick="openCategoryFromHome('heritage')" class="sl-card p-5 cursor-pointer">
+                        <div class="w-11 h-11 rounded-xl bg-amber-100 text-[#d97706] flex items-center justify-center mb-4 text-lg">
+                            <i class="fas fa-gopuram"></i>
+                        </div>
+                        <h3 class="font-extrabold text-base text-slate-900 mb-1.5">Heritage & Culture</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-3">Ancient royal cities, sacred stupas, rock fortresses, and timeless island traditions.</p>
+                        <span class="text-xs font-bold text-[#0e7490]">Explore Heritage →</span>
+                    </div>
+
+                    <div onclick="openCategoryFromHome('beach')" class="sl-card p-5 cursor-pointer">
+                        <div class="w-11 h-11 rounded-xl bg-cyan-100 text-[#0e7490] flex items-center justify-center mb-4 text-lg">
+                            <i class="fas fa-umbrella-beach"></i>
+                        </div>
+                        <h3 class="font-extrabold text-base text-slate-900 mb-1.5">Pristine Escapes</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-3">Golden beaches, surfing bays, coral reefs, and tropical island getaways.</p>
+                        <span class="text-xs font-bold text-[#0e7490]">Explore Beaches →</span>
+                    </div>
+
+                    <div onclick="openCategoryFromHome('wildlife')" class="sl-card p-5 cursor-pointer">
+                        <div class="w-11 h-11 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-4 text-lg">
+                            <i class="fas fa-paw"></i>
+                        </div>
+                        <h3 class="font-extrabold text-base text-slate-900 mb-1.5">Wildlife & Nature</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-3">National parks, elephant herds, rainforests, lagoons, and botanical gardens.</p>
+                        <span class="text-xs font-bold text-[#0e7490]">Explore Wildlife →</span>
+                    </div>
+
+                    <div onclick="openCategoryFromHome('mountain')" class="sl-card p-5 cursor-pointer">
+                        <div class="w-11 h-11 rounded-xl bg-sky-100 text-sky-800 flex items-center justify-center mb-4 text-lg">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <h3 class="font-extrabold text-base text-slate-900 mb-1.5">Hill Country & Falls</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-3">Misty tea hills, scenic viewpoints, mountain trails, and cascading waterfalls.</p>
+                        <span class="text-xs font-bold text-[#0e7490]">Explore Highlands →</span>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div>
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-6">
+                    <div>
+                        <span class="text-xs font-extrabold uppercase tracking-wider text-[#d97706]">More to Discover</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Best Places in Sri Lanka</h2>
+                    </div>
+                    <button onclick="switchTab('districts')" class="bg-white hover:bg-slate-50 text-[#072c3c] border border-slate-300 text-xs font-bold px-4 py-2 rounded-xl transition self-start sm:self-auto">
+                        View All 25 Districts
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <div onclick="goToDistrict('dist-matale')" class="sl-card cursor-pointer">
+                        <img src="sigiriya.jpeg" alt="Sigiriya Rock Fortress" class="w-full h-44 object-cover bg-slate-100" onerror="this.src='https://via.placeholder.com/600x350/e2e8f0/072c3c?text=Sigiriya'">
+                        <div class="p-4">
+                            <span class="text-[11px] font-bold text-[#d97706] uppercase">Matale, Sri Lanka</span>
+                            <h3 class="font-extrabold text-base text-slate-900 mt-0.5">Sigiriya Rock Fortress</h3>
+                            <p class="text-xs text-slate-600 mt-1 line-clamp-2">Ancient palace ruins, frescoes, landscaped gardens, and sweeping views.</p>
+                        </div>
+                    </div>
+
+                    <div onclick="goToDistrict('dist-badulla')" class="sl-card cursor-pointer">
+                        <img src="ninearchesbridge.jpeg" alt="Nine Arches Bridge Ella" class="w-full h-44 object-cover bg-slate-100" onerror="this.src='https://via.placeholder.com/600x350/e2e8f0/072c3c?text=Ella'">
+                        <div class="p-4">
+                            <span class="text-[11px] font-bold text-[#d97706] uppercase">Ella • Badulla</span>
+                            <h3 class="font-extrabold text-base text-slate-900 mt-0.5">Nine Arches Bridge</h3>
+                            <p class="text-xs text-slate-600 mt-1 line-clamp-2">Misty tea hills, lush forest slopes, and iconic highland railway views.</p>
+                        </div>
+                    </div>
+
+                    <div onclick="goToDistrict('dist-kandy')" class="sl-card cursor-pointer">
+                        <img src="daladamaligawa.jpeg" alt="Temple of the Sacred Tooth Relic" class="w-full h-44 object-cover bg-slate-100" onerror="this.src='https://via.placeholder.com/600x350/e2e8f0/072c3c?text=Kandy'">
+                        <div class="p-4">
+                            <span class="text-[11px] font-bold text-[#d97706] uppercase">Kandy, Sri Lanka</span>
+                            <h3 class="font-extrabold text-base text-slate-900 mt-0.5">Temple of the Tooth</h3>
+                            <p class="text-xs text-slate-600 mt-1 line-clamp-2">Sacred heritage shrine, traditional drumming, and royal Kandyan history.</p>
+                        </div>
+                    </div>
+
+                    <div onclick="goToDistrict('dist-matara')" class="sl-card cursor-pointer">
+                        <img src="mirissa.jpeg" alt="Mirissa Beach" class="w-full h-44 object-cover bg-slate-100" onerror="this.src='https://via.placeholder.com/600x350/e2e8f0/072c3c?text=Mirissa'">
+                        <div class="p-4">
+                            <span class="text-[11px] font-bold text-[#d97706] uppercase">Mirissa • Matara</span>
+                            <h3 class="font-extrabold text-base text-slate-900 mt-0.5">Mirissa Beach</h3>
+                            <p class="text-xs text-slate-600 mt-1 line-clamp-2">Golden southern sands, coastal sunsets, and unforgettable ocean moments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div class="sl-card p-6">
+                    <p class="text-xs font-bold text-[#0e7490] uppercase mb-2">Traveler Story</p>
+                    <p class="text-sm text-slate-700 leading-relaxed italic mb-4">“Wildlife safaris, ancient temples, and golden coastlines—Sri Lanka truly brings so much variety together in one island.”</p>
+                    <p class="text-xs font-extrabold text-slate-900">Sofia Rossi <span class="font-normal text-slate-500">• Italy</span></p>
+                </div>
+
+                <div class="sl-card p-6">
+                    <p class="text-xs font-bold text-[#0e7490] uppercase mb-2">Traveler Story</p>
+                    <p class="text-sm text-slate-700 leading-relaxed italic mb-4">“Climbing at sunrise and walking through misty tea country felt unforgettable. Every region has its own character.”</p>
+                    <p class="text-xs font-extrabold text-slate-900">Haruto Sato <span class="font-normal text-slate-500">• Japan</span></p>
+                </div>
+
+                <div class="sl-card p-6 bg-[#f0fdfa] border-[#99f6e4]">
+                    <p class="text-xs font-bold text-[#072c3c] uppercase mb-2">Plan Your Trip</p>
+                    <p class="text-sm font-extrabold text-slate-900 mb-2">Essential Travel Notes</p>
+                    <ul class="text-xs text-slate-700 space-y-2">
+                        <li><i class="fas fa-calendar-check text-[#0e7490] mr-1.5"></i> West & South coasts: Dec–Apr; East coast: Apr–Oct.</li>
+                        <li><i class="fas fa-phone-volume text-[#d97706] mr-1.5"></i> Tourism Hotline: <strong>1912</strong> • Ambulance: <strong>1990</strong></li>
+                        <li><i class="fas fa-globe text-[#0e7490] mr-1.5"></i> Official Portal: <a href="https://www.srilanka.travel/" target="_blank" rel="noopener" class="underline font-semibold text-[#072c3c]">srilanka.travel</a></li>
                     </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="districts" class="tab-content">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-8">
-                <div class="flex items-center gap-3 sm:gap-4">
-                    <div class="h-10 w-1.5 sm:w-2 bg-[#ff7200] rounded-full shrink-0"></div>
-                    <div>
-                        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">All 25 Districts of Sri Lanka</h2>
-                        <p class="text-slate-400 text-xs sm:text-sm mt-1">Tap on any district below to jump directly to its individual travel destinations.</p>
-                    </div>
+   
+    <section id="districts" class="tab-content px-4 py-6 sm:p-6 md:p-10 max-w-6xl mx-auto w-full flex-1">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-8">
+            <div class="flex items-center gap-3 sm:gap-4">
+                <div class="h-10 w-1.5 sm:w-2 bg-[#072c3c] rounded-full shrink-0"></div>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">All 25 Districts of Sri Lanka</h2>
+                    <p class="text-slate-600 text-xs sm:text-sm mt-1">Tap on any district below to jump directly to its individual travel destinations.</p>
                 </div>
             </div>
+        </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
-                <div id="districtsLeftCol" class="space-y-3"></div>
-                <div id="districtsRightCol" class="space-y-3"></div>
-            </div>
-        </section>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
+            <div id="districtsLeftCol" class="space-y-3"></div>
+            <div id="districtsRightCol" class="space-y-3"></div>
+        </div>
+    </section>
 
-        <section id="places" class="tab-content">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5 border-b border-slate-800 pb-4">
-                <div class="flex items-center gap-3 sm:gap-4">
-                    <div class="h-10 w-1.5 sm:w-2 bg-[#ff7200] rounded-full shrink-0"></div>
-                    <div>
-                        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Top Travel Places by District</h2>
-                        <p class="text-slate-400 text-xs sm:text-sm mt-1">Each destination has its own unique ID, detailed description, highlights, and best visit timing.</p>
-                    </div>
+    
+    <section id="places" class="tab-content px-4 py-6 sm:p-6 md:p-10 max-w-6xl mx-auto w-full flex-1">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5 border-b border-slate-200 pb-4">
+            <div class="flex items-center gap-3 sm:gap-4">
+                <div class="h-10 w-1.5 sm:w-2 bg-[#d97706] rounded-full shrink-0"></div>
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Top Travel Places by District</h2>
+                    <p class="text-slate-600 text-xs sm:text-sm mt-1">Each destination has its own unique ID, detailed description, highlights, and best visit timing.</p>
                 </div>
-                <button onclick="switchTab('districts')" class="bg-slate-800 hover:bg-[#ff7200] text-white text-xs font-bold px-4 py-2.5 rounded-lg transition self-start sm:self-auto">
-                    <i class="fas fa-th-list mr-1.5"></i> Back to District List
-                </button>
             </div>
+            <button onclick="switchTab('districts')" class="bg-white hover:bg-slate-50 text-[#072c3c] border border-slate-300 text-xs font-bold px-4 py-2.5 rounded-xl transition self-start sm:self-auto">
+                <i class="fas fa-th-list mr-1.5"></i> Back to District List
+            </button>
+        </div>
 
-            <div class="flex items-center gap-2 mb-6 sm:mb-8 overflow-x-auto no-scrollbar pb-1">
-                <span class="text-xs text-slate-400 font-semibold mr-1 shrink-0"><i class="fas fa-filter text-[#ff7200]"></i> Filter:</span>
-                <button onclick="filterCategory('all', this)" class="filter-btn active">All Places</button>
-                <button onclick="filterCategory('heritage', this)" class="filter-btn">Heritage & Temples</button>
-                <button onclick="filterCategory('beach', this)" class="filter-btn">Beaches & Islands</button>
-                <button onclick="filterCategory('wildlife', this)" class="filter-btn">Wildlife & Nature</button>
-                <button onclick="filterCategory('mountain', this)" class="filter-btn">Mountains & Waterfalls</button>
-            </div>
+        <div class="flex items-center gap-2 mb-6 sm:mb-8 overflow-x-auto no-scrollbar pb-1">
+            <span class="text-xs text-slate-600 font-bold mr-1 shrink-0"><i class="fas fa-filter text-[#0e7490]"></i> Filter:</span>
+            <button id="filter-all" onclick="filterCategory('all', this)" class="filter-btn active">All Places</button>
+            <button id="filter-heritage" onclick="filterCategory('heritage', this)" class="filter-btn">Heritage & Temples</button>
+            <button id="filter-beach" onclick="filterCategory('beach', this)" class="filter-btn">Beaches & Islands</button>
+            <button id="filter-wildlife" onclick="filterCategory('wildlife', this)" class="filter-btn">Wildlife & Nature</button>
+            <button id="filter-mountain" onclick="filterCategory('mountain', this)" class="filter-btn">Mountains & Waterfalls</button>
+        </div>
 
-            <div id="placesContainer" class="space-y-8 sm:space-y-12"></div>
-        </section>
+        <div id="placesContainer" class="space-y-8 sm:space-y-12"></div>
+    </section>
 
-    </main>
-
-    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to Top" class="fixed bottom-5 right-5 bg-[#ff7200] hover:bg-orange-600 active:scale-95 text-white w-11 h-11 rounded-full shadow-xl flex items-center justify-center z-40 transition">
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to Top" class="fixed bottom-5 right-5 bg-[#072c3c] hover:bg-[#0e7490] active:scale-95 text-white w-11 h-11 rounded-full shadow-xl flex items-center justify-center z-40 transition">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <footer class="bg-slate-950 text-white py-7 px-4 text-center border-t border-slate-800">
-        <span class="text-xl sm:text-2xl font-black italic text-[#ff7200]">Chathura Kodithuwakku</span>
-        <p class="text-slate-500 text-[11px] sm:text-xs mt-2 uppercase tracking-[0.15em] sm:tracking-[0.2em]">&copy; 2026 Sri Lanka Travel Digital Guide Design & Developer</p>
+   
+    <footer class="bg-[#051d2a] text-white py-10 px-4 border-t border-white/10 mt-auto">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-white/10 text-left">
+            <div>
+                <span class="ayubowan-script text-2xl text-white">Sri<span class="text-amber-400 font-sans not-italic text-sm font-extrabold ml-1">LANKA TRAVEL</span></span>
+                <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                    Discover a land of timeless heritage, vibrant festivals, wildlife reserves, and unforgettable island experiences across all 25 districts.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-xs font-extrabold uppercase tracking-wider text-amber-300 mb-3">Quick Navigation</h4>
+                <ul class="space-y-2 text-xs text-slate-200">
+                    <li><button onclick="switchTab('home')" class="hover:text-amber-300 transition">Home Overview</button></li>
+                    <li><button onclick="switchTab('districts')" class="hover:text-amber-300 transition">All 25 Districts</button></li>
+                    <li><button onclick="switchTab('places')" class="hover:text-amber-300 transition">All Destinations</button></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xs font-extrabold uppercase tracking-wider text-amber-300 mb-3">Emergency & Tourism Info</h4>
+                <p class="text-xs text-slate-200 mb-1">Tourism Hotline: <strong class="text-white">1912</strong></p>
+                <p class="text-xs text-slate-200 mb-3">Ambulance Service: <strong class="text-white">1990</strong></p>
+                <p class="text-xs text-slate-300">Designed & Developed by <span class="italic font-bold text-amber-400">Chathura Kodithuwakku</span></p>
+            </div>
+        </div>
+        <p class="text-slate-400 text-[11px] mt-6 text-center uppercase tracking-[0.15em]">&copy; 2026 Sri Lanka Travel Digital Guide</p>
     </footer>
 
+    
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
                 includedLanguages: 'en,si,ta,hi,ar,fr,de,zh-CN',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                 autoDisplay: false
             }, 'google_translate_element');
+        }
+
+        function applyLanguage(langCode) {
+            const gtCombo = document.querySelector('.goog-te-combo');
+            if (gtCombo) {
+                gtCombo.value = langCode;
+                gtCombo.dispatchEvent(new Event('change'));
+            }
+        }
+
+        function toggleSearchBar() {
+            const drawer = document.getElementById('searchDrawer');
+            drawer.classList.toggle('hidden');
+            if (!drawer.classList.contains('hidden')) {
+                setTimeout(() => document.getElementById('searchInput')?.focus(), 60);
+            }
         }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -899,7 +1173,7 @@
                         title: "Kilinochchi War Memorial",
                         category: "heritage",
                         image: "kilinochchiwar.jpeg",
-                        overview: "Situated prominently near the A9 highway in Kilinochchi town, the Kilinochchi War Memorial commemorates the end of Sri Lanka’s decades-long civil conflict in 2009. Set within landscaped grounds, the monument marks a major turning point in the country’s modern history. Travelers driving along the main north–south artery often pass through the area as the region continues rebuilding and developing.",
+                        overview: "Situated prominently near the A9 highway in Kilinochchi town, the Kilinochchi War Memorial commemorates the end of Sri Lanka’s decades-long civil conflict in 2009. Set within landscaped grounds, the monument marks a major turning point in the country’s modern history. Travelers passing through the district often see it as part of the region’s recent history.",
                         highlights: "Landscaped memorial grounds reflecting the region's modern history.",
                         bestTime: "Morning or late afternoon."
                     }
@@ -1032,7 +1306,7 @@
                         bestTime: "Late afternoon for cool lagoon breezes."
                     },
                     {
-                        title: " Batticaloa Lighthouse",
+                        title: "Batticaloa Lighthouse",
                         category: "heritage",
                         image: "batticaloalighthouse.jpeg",
                         overview: "Spanning the Batticaloa Lagoon south of the city center, Kallady Bridge is celebrated in local lore for the 'singing fish'—mysterious humming sounds once heard from the lagoon waters. Nearby toward the lagoon mouth stands the Batticaloa Lighthouse, guiding vessels safely along the eastern coast. Together they highlight the strong bond between Batticaloa’s people, its lagoon, and the sea.",
@@ -1136,7 +1410,7 @@
                 province: "North Western Province",
                 places: [
                     {
-                        title: "Ethagala (Elephant Rock)  Viharaya",
+                        title: "Ethagala (Elephant Rock) Viharaya",
                         category: "mountain",
                         image: "ethagala.jpeg",
                         overview: "Rising over 300 meters above Kurunegala town, Ethagala (Elephant Rock) is the largest of several giant granite outcrops that give the city its nickname 'Athugala Pura.' Its rounded dark rock mass resembles a giant elephant kneeling beside the town, and a large white Buddha statue sits prominently near the summit. Climbing up offers sweeping views across Kurunegala Lake, tiled roofs, and distant hills.",
@@ -1399,7 +1673,7 @@
                         highlights: "Ancient stupa, stone pillars, and peaceful rural surroundings.",
                         bestTime: "Morning hours."
                     },
-		{
+                    {
                         title: "Kataragama Sacred City (Kiri Vehera & Maha Devalaya)",
                         category: "heritage",
                         image: "kataragama.jpeg",
@@ -1407,7 +1681,6 @@
                         highlights: "The white Kiri Vehera stupa, Ruhunu Maha Kataragama Devalaya rituals, bathing along the Menik Ganga, and the vibrant Kataragama Esala Festival.",
                         bestTime: "Early morning or evening puja hours; July to August for the Esala Festival (modest dress required)."
                     },
-
                     {
                         title: "Elle Wala Waterfall (Wellawaya)",
                         category: "mountain",
@@ -1492,7 +1765,7 @@
             }
         ];
 
-      function normalizeText(str) {
+        function normalizeText(str) {
             return (str || '')
                 .toLowerCase()
                 .replace(/[’']/g, "'")
@@ -1517,11 +1790,11 @@
                         <div class="flex items-center gap-3">
                             <div class="badge-number">${dist.number}</div>
                             <div>
-                                <h3 class="font-bold text-white group-hover:text-[#ff7200] transition text-sm sm:text-base">${dist.name}</h3>
-                                <span class="text-[11px] sm:text-xs text-slate-400">${dist.province} • ${dist.places.length} Places</span>
+                                <h3 class="font-bold text-slate-900 group-hover:text-[#0e7490] transition text-sm sm:text-base">${dist.name}</h3>
+                                <span class="text-[11px] sm:text-xs text-slate-500">${dist.province} • ${dist.places.length} Places</span>
                             </div>
                         </div>
-                        <i class="fas fa-chevron-right text-xs sm:text-sm text-slate-500 group-hover:text-[#ff7200] transition"></i>
+                        <i class="fas fa-chevron-right text-xs sm:text-sm text-slate-400 group-hover:text-[#0e7490] transition"></i>
                     </div>
                 `;
 
@@ -1547,39 +1820,38 @@
                     ).replace(/"/g, '&quot;');
 
                     placesCardsHTML += `
-                        <article id="${placeId}" class="place-card p-4 sm:p-6 md:p-8 scroll-mt-32" data-category="${place.category}" data-search="${searchableText}">
+                        <article id="${placeId}" class="place-card p-4 sm:p-6 md:p-8 scroll-mt-24" data-category="${place.category}" data-search="${searchableText}">
                             <div class="flex flex-wrap items-center justify-between gap-2 mb-3.5 sm:mb-4">
                                 <div class="flex items-center gap-3 sm:gap-4">
                                     <div class="badge-number">${placeNum}</div>
-                                    <h4 class="text-lg sm:text-xl md:text-2xl font-bold text-[#ff7200] leading-snug">${place.title}</h4>
+                                    <h4 class="text-lg sm:text-xl md:text-2xl font-extrabold text-[#072c3c] leading-snug">${place.title}</h4>
                                 </div>
-                                <span class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider bg-slate-800 text-amber-400 border border-slate-700 px-2.5 py-1 rounded-full">
+                                <span class="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider bg-amber-50 text-[#b45309] border border-amber-200 px-3 py-1 rounded-full">
                                     ${catLabels[place.category] || 'Destination'}
                                 </span>
                             </div>
 
-                            <!-- Full Image Visible Without Cropping/Cutoff -->
-                            <div class="relative rounded-xl overflow-hidden mb-4 sm:mb-6 border border-slate-800 bg-slate-950 flex items-center justify-center">
-                                <img src="${place.image}" alt="${place.title}" 
-                                     class="w-full max-h-[450px] object-contain mx-auto bg-slate-950"
-                                     onerror="this.src='https://via.placeholder.com/900x400/111827/ff7200?text=${encodeURIComponent(place.title + ' (Image Not Found)')}'">
+                            <div class="relative rounded-2xl overflow-hidden mb-4 sm:mb-6 border border-slate-200 bg-slate-100 flex items-center justify-center">
+                                <img src="${place.image}" alt="${place.title}"
+                                     class="w-full max-h-[450px] object-contain mx-auto bg-slate-100"
+                                     onerror="this.src='https://via.placeholder.com/900x400/e2e8f0/072c3c?text=${encodeURIComponent(place.title + ' (Image Not Found)')}'">
                             </div>
 
-                            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6">
+                            <p class="text-slate-700 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6">
                                 ${place.overview}
                             </p>
 
-                            <div class="bg-slate-900 border-l-4 border-[#ff7200] p-4 sm:p-5 md:p-6 rounded-r-xl space-y-2.5 sm:space-y-3">
-                                <h5 class="text-sm sm:text-base font-bold text-[#ff7200] flex items-center gap-2">
-                                    <i class="fas fa-map-pin text-xs sm:text-sm"></i> Destination Details & Travel Tips
+                            <div class="bg-[#f8fafc] border-l-4 border-[#0e7490] p-4 sm:p-5 md:p-6 rounded-r-xl space-y-2.5 sm:space-y-3 border border-slate-200/80">
+                                <h5 class="text-sm sm:text-base font-extrabold text-[#072c3c] flex items-center gap-2">
+                                    <i class="fas fa-map-pin text-xs sm:text-sm text-[#d97706]"></i> Destination Details & Travel Tips
                                 </h5>
-                                <div class="space-y-2 sm:space-y-2.5 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                <div class="space-y-2 sm:space-y-2.5 text-xs sm:text-sm text-slate-700 leading-relaxed">
                                     <div>
-                                        <strong class="text-white"><i class="fas fa-star text-amber-400 mr-1.5"></i> Highlights:</strong> 
+                                        <strong class="text-slate-900"><i class="fas fa-star text-[#d97706] mr-1.5"></i> Highlights:</strong>
                                         ${place.highlights}
                                     </div>
                                     <div>
-                                        <strong class="text-white"><i class="fas fa-clock text-[#ff7200] mr-1.5"></i> Best Time to Visit:</strong> 
+                                        <strong class="text-slate-900"><i class="fas fa-clock text-[#0e7490] mr-1.5"></i> Best Time to Visit:</strong>
                                         ${place.bestTime}
                                     </div>
                                 </div>
@@ -1589,13 +1861,13 @@
                 });
 
                 placesContainer.innerHTML += `
-                    <div id="${dist.id}" class="district-group scroll-mt-32 pt-2 sm:pt-4">
-                        <div class="flex items-center justify-between bg-slate-800/70 border border-slate-700 px-4 sm:px-5 py-3 sm:py-3.5 rounded-xl mb-5 sm:mb-6">
+                    <div id="${dist.id}" class="district-group scroll-mt-24 pt-2 sm:pt-4">
+                        <div class="flex items-center justify-between bg-white border border-slate-200 px-4 sm:px-5 py-3 sm:py-3.5 rounded-2xl mb-5 sm:mb-6 shadow-sm">
                             <div class="flex items-center gap-2.5 sm:gap-3">
-                                <span class="bg-[#ff7200] text-white font-extrabold text-xs sm:text-sm px-2.5 py-1 rounded-lg">${dist.number}</span>
-                                <h3 class="text-lg sm:text-2xl font-extrabold text-white">${dist.name}</h3>
+                                <span class="bg-[#072c3c] text-white font-extrabold text-xs sm:text-sm px-2.5 py-1 rounded-lg">${dist.number}</span>
+                                <h3 class="text-lg sm:text-2xl font-extrabold text-slate-900">${dist.name}</h3>
                             </div>
-                            <span class="text-[11px] sm:text-xs font-semibold text-amber-400 hidden sm:inline">${dist.province}</span>
+                            <span class="text-[11px] sm:text-xs font-bold text-[#0e7490] hidden sm:inline">${dist.province}</span>
                         </div>
                         ${placesCardsHTML}
                     </div>
@@ -1640,12 +1912,20 @@
             });
         }
 
+        function openCategoryFromHome(category) {
+            switchTab('places');
+            setTimeout(() => {
+                const targetBtn = document.getElementById(`filter-${category}`);
+                filterCategory(category, targetBtn || null);
+            }, 80);
+        }
+
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
             const activeTab = document.getElementById(tabId);
             if (activeTab) activeTab.classList.add('active');
 
-            document.querySelectorAll('.nav-link').forEach(link => {
+            document.querySelectorAll('.portal-nav-link').forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('data-tab') === tabId) {
                     link.classList.add('active');
@@ -1655,14 +1935,14 @@
         }
 
         function goToDistrict(districtId) {
-            const allBtn = document.querySelector('.filter-btn');
+            const allBtn = document.getElementById('filter-all');
             filterCategory('all', allBtn);
 
             switchTab('places');
             setTimeout(() => {
                 const target = document.getElementById(districtId);
                 if (target) {
-                    const headerOffset = document.querySelector('header')?.offsetHeight || 110;
+                    const headerOffset = document.querySelector('header')?.offsetHeight || 80;
                     const y = target.getBoundingClientRect().top + window.pageYOffset - headerOffset - 16;
                     window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
                 }
@@ -1677,7 +1957,7 @@
             if (!query) return;
 
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            const allBtn = document.querySelector('.filter-btn');
+            const allBtn = document.getElementById('filter-all');
             if (allBtn) allBtn.classList.add('active');
 
             const matchedDistrict = travelData.find(d => normalizeText(d.name).includes(query));
@@ -1699,8 +1979,8 @@
                         const isMatch = normalizeText(card.getAttribute('data-search')).includes(query);
                         if (isMatch) {
                             card.style.display = 'block';
-                            card.style.borderColor = '#ff7200';
-                            card.style.boxShadow = '0 0 22px rgba(255, 114, 0, 0.45)';
+                            card.style.borderColor = '#d97706';
+                            card.style.boxShadow = '0 0 0 3px rgba(217, 119, 6, 0.25)';
                             matchedCards.push(card);
                             groupHasMatch = true;
                         } else {
@@ -1718,15 +1998,15 @@
                 if (matchedCards.length > 0) {
                     const banner = document.createElement('div');
                     banner.id = 'searchResultBanner';
-                    banner.className = 'bg-amber-500/15 border border-[#ff7200] text-amber-200 px-4 py-3 rounded-xl mb-6 flex items-center justify-between gap-3 text-xs sm:text-sm';
+                    banner.className = 'bg-amber-50 border border-amber-300 text-amber-950 px-4 py-3 rounded-xl mb-6 flex items-center justify-between gap-3 text-xs sm:text-sm';
                     banner.innerHTML = `
-                        <span><i class="fas fa-search text-[#ff7200] mr-2"></i>Showing <strong>${matchedCards.length}</strong> result(s) for "<strong>${rawQuery.trim()}</strong>".</span>
-                        <button onclick="clearSearchHighlights(); document.getElementById('searchInput').value='';" class="bg-[#ff7200] hover:bg-orange-600 text-white px-3 py-1 rounded-lg text-xs font-semibold">Show All</button>
+                        <span><i class="fas fa-search text-[#d97706] mr-2"></i>Showing <strong>${matchedCards.length}</strong> result(s) for "<strong>${rawQuery.trim()}</strong>".</span>
+                        <button onclick="clearSearchHighlights(); document.getElementById('searchInput').value='';" class="bg-[#072c3c] hover:bg-[#0e7490] text-white px-3 py-1 rounded-lg text-xs font-semibold">Show All</button>
                     `;
                     placesContainer.prepend(banner);
 
                     const firstCard = matchedCards[0];
-                    const headerOffset = document.querySelector('header')?.offsetHeight || 110;
+                    const headerOffset = document.querySelector('header')?.offsetHeight || 80;
                     const y = firstCard.getBoundingClientRect().top + window.pageYOffset - headerOffset - 16;
                     window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
                 } else {
@@ -1740,3 +2020,4 @@
     </script>
 </body>
 </html>
+
