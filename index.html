@@ -2,23 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Travel For Sri Lanka | Discover Sri Lanka</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel For Sri Lanka | Official 25 Districts Travel Guide & Trip Planner</title>
 
 <link rel="icon" type="image/jpeg" href="tlogo.jpeg">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Ccircle cx='18' cy='18' r='16' fill='%23072c3c' stroke='%23fbbf24' stroke-width='2'/%3E%3Cpath d='M18 7C14.5 11.5 12.5 15.5 12.5 19.5C12.5 23 15 26 18 28C21 26 23.5 23 23.5 19.5C23.5 15.5 21.5 11.5 18 7Z' fill='%2338bdf8'/%3E%3Ccircle cx='18' cy='18' r='2.5' fill='%23fbbf24'/%3E%3C/svg%3E">
 
 
-    <meta name="description" content="Complete Sri Lanka Travel Guide covering all 25 districts, top tourist places, beaches, waterfalls, wildlife parks, ancient temples, and travel tips.">
-    <meta name="keywords" content="Sri Lanka travel guide, 25 districts of Sri Lanka, places to visit in Sri Lanka, Sri Lanka tourism, Sigiriya, Kandy, Ella, Mirissa, Yala, Nuwara Eliya, Jaffna, Galle">
+    <meta name="description" content="Explore Sri Lanka across all 25 districts: Sigiriya, Kandy, Ella, Mirissa, Yala, Jaffna, Galle, beaches, waterfalls, wildlife safaris, and downloadable PDF travel guide.">
+    <meta name="keywords" content="Sri Lanka, Sri Lanka travel guide, visit Sri Lanka, 25 districts of Sri Lanka, places to visit in Sri Lanka, Sri Lanka tourism, Sigiriya, Kandy, Ella, Mirissa, Yala, Nuwara Eliya, Jaffna, Galle">
     <meta name="author" content="Chathura Kodithuwakku">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="googlebot" content="index, follow">
+    <meta name="geo.region" content="LK">
+    <meta name="geo.placename" content="Sri Lanka">
+    <link rel="canonical" href="https://travelforsrilanka.com/">
 
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Travel For Sri Lanka">
+    <meta property="og:url" content="https://travelforsrilanka.com/">
     <meta property="og:title" content="Sri Lanka 25 Districts Travel Guide | Discover Sri Lanka">
     <meta property="og:description" content="Explore detailed descriptions, highlights, and best visit times across all 25 districts of Sri Lanka.">
-    <meta property="og:image" content="homelogo.jpeg">
+    <meta property="og:image" content="https://travelforsrilanka.com/homelogo.jpeg">
     <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sri Lanka 25 Districts Travel Guide | Discover Sri Lanka">
+    <meta name="twitter:description" content="Complete travel guide covering all 25 districts of Sri Lanka, top destinations, and printable PDF guide.">
+    <meta name="twitter:image" content="https://travelforsrilanka.com/homelogo.jpeg">
 
     <script type="application/ld+json">
     {
@@ -301,7 +312,7 @@
     
     <header class="portal-header sticky top-0 z-50 text-white">
         <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-10 h-14 sm:h-16 flex items-center justify-between gap-2">
-            <!-- Brand / Logo Left with Guaranteed Fallback -->
+            
             <div onclick="switchTab('home')" class="flex items-center gap-2 cursor-pointer shrink-0">
                 <img id="brandLogoImg" src="homelogo.jpeg" alt="Travel For Sri Lanka Logo"
                      onerror="handleLogoFallback(this)"
@@ -330,6 +341,11 @@
 
             
             <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+                <button onclick="openPaidGuideModal()" class="bg-[#d97706] hover:bg-amber-600 text-white text-[10.5px] sm:text-xs font-extrabold px-2.5 sm:px-3.5 py-1.5 rounded-full shadow flex items-center gap-1.5 transition cursor-pointer">
+                    <i class="fas fa-file-pdf text-xs"></i>
+                    <span>PDF Guide</span>
+                </button>
+
                 <button onclick="toggleSearchBar()" title="Search" class="w-8 h-8 rounded-full hover:bg-white/10 flex items-center justify-center text-white/90 transition">
                     <i class="fas fa-search text-xs"></i>
                 </button>
@@ -390,10 +406,16 @@
                 <p class="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight drop-shadow mb-7">
                     An Island Escape<br>Awaits You
                 </p>
-                <button onclick="document.getElementById('homeSections').scrollIntoView({ behavior: 'smooth' })" class="explore-pill">
-                    <span class="circle-arrow"><i class="fas fa-arrow-down"></i></span>
-                    <span>EXPLORE</span>
-                </button>
+                <div class="flex flex-wrap items-center justify-center gap-3">
+                    <button onclick="document.getElementById('homeSections').scrollIntoView({ behavior: 'smooth' })" class="explore-pill">
+                        <span class="circle-arrow"><i class="fas fa-arrow-down"></i></span>
+                        <span>EXPLORE</span>
+                    </button>
+                    <button onclick="openPaidGuideModal()" class="inline-flex items-center gap-2 bg-[#d97706] hover:bg-amber-600 text-white font-extrabold text-xs tracking-wider uppercase px-5 py-3 rounded-full shadow-lg transition cursor-pointer">
+                        <i class="fas fa-download"></i>
+                        <span>Get 25-District PDF Guide</span>
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -495,6 +517,27 @@
                             <p class="text-xs text-slate-600 mt-1 line-clamp-2">Golden southern sands, coastal sunsets, and unforgettable ocean moments.</p>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Paid Digital Guide & Trip Planner Banner -->
+            <div class="rounded-2xl bg-gradient-to-r from-[#072c3c] via-[#0b3e54] to-[#0e7490] text-white p-6 sm:p-8 shadow-xl border border-cyan-800/60 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                <div class="space-y-2 max-w-2xl">
+                    <span class="inline-block text-[11px] font-extrabold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-300/40 px-3 py-1 rounded-full">
+                        Offline Edition • All 25 Districts
+                    </span>
+                    <h3 class="text-xl sm:text-2xl font-extrabold leading-snug">
+                        Download the Complete Sri Lanka 25-District PDF Guide & Itineraries
+                    </h3>
+                    <p class="text-xs sm:text-sm text-cyan-100 leading-relaxed">
+                        Get all 25 districts, top attractions, best visiting months, 7/10/14-day travel itineraries, and daily budget sheets in one clean printable PDF. Complete direct bank transfer & get instant access code.
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row md:flex-col items-stretch sm:items-center md:items-end gap-2.5 shrink-0 w-full md:w-auto">
+                    <button onclick="openPaidGuideModal()" class="bg-[#d97706] hover:bg-amber-600 text-white font-extrabold text-xs sm:text-sm px-6 py-3.5 rounded-xl shadow-lg transition cursor-pointer text-center">
+                        <i class="fas fa-lock-open mr-1.5"></i> Unlock PDF Guide (Rs. 1,500 / $5)
+                    </button>
+                    <span class="text-[11px] text-cyan-200 text-center md:text-right">Direct Bank Transfer & Instant Access Code</span>
                 </div>
             </div>
 
@@ -668,9 +711,197 @@
     </script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+
+    <div id="paidGuideModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+        <div class="bg-white text-slate-900 rounded-2xl max-w-lg w-full p-5 sm:p-6 shadow-2xl border border-slate-200 my-auto">
+            <div class="flex items-start justify-between gap-3 mb-4 pb-3 border-b border-slate-100">
+                <div>
+                    <span class="text-[11px] font-extrabold uppercase tracking-wider text-[#d97706]">Complete Digital Edition • $5.00 USD / Rs. 1,500</span>
+                    <h3 class="text-lg sm:text-xl font-extrabold text-[#072c3c]">Sri Lanka 25 Districts PDF Guide</h3>
+                </div>
+                <button onclick="closePaidGuideModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center font-bold cursor-pointer">&times;</button>
+            </div>
+
+           
+            <div class="grid grid-cols-2 gap-2 bg-slate-100 p-1 rounded-xl mb-4 text-xs font-extrabold">
+                <button type="button" id="stepBtn1" onclick="goCheckoutStep(1)" class="py-2 px-3 rounded-lg bg-[#072c3c] text-white transition cursor-pointer">
+                    1. Your Details & Transfer
+                </button>
+                <button type="button" id="stepBtn2" onclick="goCheckoutStep(2)" class="py-2 px-3 rounded-lg text-slate-600 hover:text-slate-900 transition cursor-pointer">
+                    2. Upload Slip & Pay Now
+                </button>
+            </div>
+
+            
+            <form id="checkoutStep1Form" onsubmit="saveCustomerAndProceed(event)" class="space-y-3 text-xs sm:text-sm">
+                <div class="bg-cyan-50/80 border border-cyan-200 rounded-xl p-3 text-xs text-slate-700">
+                    <p class="font-extrabold text-[#072c3c]"><i class="fas fa-user-check text-[#0e7490] mr-1"></i> Step 1: Enter Your Details & Bank Account Info</p>
+                    <p class="text-[11px] text-slate-600 mt-0.5">Your details are saved securely so we can verify your bank transfer slip and send your Access Code immediately.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <div>
+                        <label class="block font-bold text-slate-700 text-xs mb-1">Full Name *</label>
+                        <input type="text" id="custFullName" required placeholder="e.g. Kasun Perera" class="w-full border border-slate-300 rounded-xl px-3 py-2 text-xs sm:text-sm outline-none focus:border-[#0e7490]">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-slate-700 text-xs mb-1">WhatsApp / Phone Number *</label>
+                        <input type="tel" id="custPhone" required placeholder="e.g. 0771234567" class="w-full border border-slate-300 rounded-xl px-3 py-2 text-xs sm:text-sm outline-none focus:border-[#0e7490]">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block font-bold text-slate-700 text-xs mb-1">Email Address (Optional)</label>
+                    <input type="email" id="custEmail" placeholder="you@example.com" class="w-full border border-slate-300 rounded-xl px-3 py-2 text-xs sm:text-sm outline-none focus:border-[#0e7490]">
+                </div>
+
+                <div class="pt-1 border-t border-slate-100">
+                    <p class="text-[11px] font-extrabold uppercase tracking-wider text-[#0e7490] mb-2">Your Bank Account Details (Sender Account)</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <div>
+                            <label class="block font-bold text-slate-700 text-xs mb-1">Your Bank Name *</label>
+                            <select id="custBankName" required class="w-full border border-slate-300 rounded-xl px-3 py-2 text-xs sm:text-sm outline-none focus:border-[#0e7490] bg-white">
+                                <option value="">Select Your Bank</option>
+                                <option value="National Savings Bank (NSB)">National Savings Bank (NSB)</option>
+                                <option value="Bank of Ceylon (BOC)">Bank of Ceylon (BOC)</option>
+                                <option value="People's Bank">People's Bank</option>
+                                <option value="Commercial Bank">Commercial Bank</option>
+                                <option value="Hatton National Bank (HNB)">Hatton National Bank (HNB)</option>
+                                <option value="Sampath Bank">Sampath Bank</option>
+                                <option value="Seylan Bank">Seylan Bank</option>
+                                <option value="Nations Trust Bank (NTB)">Nations Trust Bank (NTB)</option>
+                                <option value="DFCC Bank">DFCC Bank</option>
+                                <option value="NDB Bank">NDB Bank</option>
+                                <option value="Pan Asia Bank">Pan Asia Bank</option>
+                                <option value="Union Bank">Union Bank</option>
+                                <option value="Amana Bank">Amana Bank</option>
+                                <option value="Cargills Bank">Cargills Bank</option>
+                                <option value="International / Other Bank">International / Other Bank</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-700 text-xs mb-1">Your Account Number *</label>
+                            <input type="text" id="custAccNumber" required placeholder="Enter your account no." class="w-full border border-slate-300 rounded-xl px-3 py-2 text-xs sm:text-sm font-mono outline-none focus:border-[#0e7490]">
+                        </div>
+                    </div>
+                    <div class="mt-2.5">
+                        <label class="block font-bold text-slate-700 text-xs mb-1">Account Holder Name *</label>
+                        <input type="text" id="custAccHolder" required placeholder="Name on your bank account" class="w-full border border-slate-300 rounded-xl px-3 py-2 text-xs sm:text-sm outline-none focus:border-[#0e7490]">
+                    </div>
+                </div>
+
+                <p id="step1Msg" class="text-xs text-rose-600 hidden"></p>
+
+                <button type="submit" id="saveAndContinueBtn" class="w-full bg-[#072c3c] hover:bg-[#0e7490] text-white font-extrabold py-3 rounded-xl shadow transition cursor-pointer flex items-center justify-center gap-2">
+                    <span>Save Details & Continue to Pay</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+
+           
+            <div id="checkoutStep2Panel" class="hidden space-y-3">
+                <!-- Saved Customer Summary -->
+                <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-3 text-xs space-y-1">
+                    <div class="flex items-center justify-between">
+                        <span class="font-extrabold text-emerald-900"><i class="fas fa-check-circle text-emerald-600 mr-1"></i> Details Saved • Order <span id="displayOrderId" class="font-mono">ORD-0000</span></span>
+                        <button type="button" onclick="goCheckoutStep(1)" class="text-[11px] font-bold text-[#0e7490] hover:underline cursor-pointer">Edit</button>
+                    </div>
+                    <p class="text-slate-700"><strong>From:</strong> <span id="summarySenderInfo">-</span></p>
+                </div>
+
+               
+                <div class="bg-slate-50 border-2 border-[#072c3c]/20 rounded-xl p-3.5 text-xs space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="font-extrabold text-[#072c3c] text-sm"><i class="fas fa-university text-[#d97706] mr-1.5"></i> Transfer To This Account</span>
+                        <span class="text-[10px] font-extrabold bg-amber-100 text-amber-900 px-2.5 py-0.5 rounded-full">Rs. 1,500 / $5.00</span>
+                    </div>
+                    <div class="grid grid-cols-1 gap-1.5 bg-white border border-slate-200 rounded-lg p-2.5">
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-500">Bank Name:</span>
+                            <span class="font-extrabold text-slate-900">Bank Of Ceylon (BOC)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-500">Account Name:</span>
+                            <span class="font-extrabold text-slate-900">CN Kodithuwakku</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-1 border-t border-slate-100">
+                            <span class="text-slate-500">Account Number:</span>
+                            <div class="flex items-center gap-2">
+                                <span id="bankAccNumber" class="font-mono font-extrabold text-sm text-[#072c3c]">5269173</span>
+                                <button type="button" onclick="copyBankAccount()" class="bg-slate-100 hover:bg-slate-200 text-[#0e7490] font-bold px-2 py-0.5 rounded text-[11px] cursor-pointer">
+                                    <i class="fas fa-copy mr-0.5"></i> Copy
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-500">Branch:</span>
+                            <span class="font-bold text-slate-800">Matara / Southern Province</span>
+                        </div>
+                    </div>
+                    <p class="text-[11px] text-slate-600 leading-relaxed">
+                        Transfer <strong>Rs. 1,500 ($5.00)</strong> using your banking app (BOC, Sampath, HNB, Commercial, NSB, FriMi, etc.) to Account <strong>5269173</strong>, upload your <strong>PDF slip or receipt screenshot</strong> below, and click <strong>Pay Now</strong>.
+                    </p>
+                </div>
+
+                <div>
+                    <label class="block font-bold text-slate-700 text-xs mb-1">Bank Transfer Reference / Slip Note (Optional)</label>
+                    <input type="text" id="transferRefInput" placeholder="e.g. CEFT Ref #123456 or Paid via Sampath Vishwa" class="w-full border border-slate-300 rounded-xl px-3 py-2 text-xs outline-none focus:border-[#0e7490]">
+                </div>
+
+                <!-- PDF / Image Payment Slip Upload -->
+                <div class="bg-amber-50/70 border border-amber-200/80 rounded-xl p-3 space-y-2">
+                    <div class="flex items-center justify-between gap-2">
+                        <label for="paymentSlipInput" class="block font-extrabold text-[#072c3c] text-xs">
+                            <i class="fas fa-file-upload text-[#d97706] mr-1"></i> Upload Payment Slip (PDF or Screenshot) *
+                        </label>
+                        <span class="text-[10px] font-bold text-slate-500">Max 1.5 MB</span>
+                    </div>
+                    <input type="file" id="paymentSlipInput" accept=".pdf,application/pdf,image/png,image/jpeg,image/jpg,image/webp"
+                           onchange="handleSlipFileChange(this)"
+                           class="w-full border border-slate-300 rounded-xl px-2.5 py-2 text-xs bg-white file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-[#072c3c] file:text-white hover:file:bg-[#0e7490] cursor-pointer">
+                    <div id="slipPreviewBox" class="hidden bg-white border border-emerald-200 rounded-lg p-2 flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-2 min-w-0">
+                            <i id="slipFileIcon" class="fas fa-file-pdf text-rose-600 text-base shrink-0"></i>
+                            <div class="min-w-0">
+                                <p id="slipFileNameText" class="text-[11px] font-bold text-slate-800 truncate"></p>
+                                <p id="slipFileSizeText" class="text-[10px] text-emerald-700 font-semibold"></p>
+                            </div>
+                        </div>
+                        <button type="button" onclick="clearUploadedSlip()" class="text-[11px] font-bold text-rose-600 hover:underline shrink-0 cursor-pointer">
+                            Remove
+                        </button>
+                    </div>
+                    <p id="slipErrorMsg" class="text-[11px] text-rose-600 font-semibold hidden"></p>
+                </div>
+
+               
+                <button type="button" id="finalPayNowBtn" onclick="completeDirectTransferPayNow()"
+                        class="w-full bg-[#d97706] hover:bg-amber-600 text-white font-extrabold text-sm py-3.5 rounded-xl shadow-lg transition cursor-pointer flex items-center justify-center gap-2">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Pay Now & Send Transfer Confirmation</span>
+                </button>
+                <p id="payNowStatusMsg" class="text-xs text-emerald-700 font-semibold hidden text-center"></p>
+            </div>
+
+            
+            <div class="mt-4 pt-4 border-t border-slate-200">
+                <label class="block text-xs font-extrabold text-[#072c3c] mb-1.5">
+                    Already have an Access Code? Enter below to Unlock & Print/Save PDF:
+                </label>
+                <div class="flex gap-2">
+                    <input type="text" id="accessCodeInput" placeholder="e.g. SL25-XXXX" class="w-full border border-slate-300 rounded-xl px-3 py-2 text-xs sm:text-sm font-mono uppercase outline-none focus:border-[#0e7490]">
+                    <button type="button" id="unlockPdfBtn" onclick="verifyAndUnlockPdf()" class="bg-[#072c3c] hover:bg-[#0e7490] text-white font-extrabold text-xs px-4 py-2 rounded-xl shrink-0 transition cursor-pointer">
+                        Unlock PDF
+                    </button>
+                </div>
+                <p id="codeVerifyMsg" class="text-xs mt-1.5 hidden"></p>
+            </div>
+        </div>
+    </div>
+
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { getDatabase, ref, runTransaction } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+        import { getDatabase, ref, get, set, update, runTransaction } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyD5hwHDv5hapsKPdCY9vEkg9SVLLelJQaU",
@@ -696,6 +927,88 @@
             console.error("Error updating global views: ", error);
             document.getElementById('globalViewCount').textContent = "1,000+";
         });
+
+        window.verifyAndUnlockPdf = async function () {
+            const inputEl = document.getElementById('accessCodeInput');
+            const msgEl = document.getElementById('codeVerifyMsg');
+            const btnEl = document.getElementById('unlockPdfBtn');
+            const rawCode = (inputEl?.value || '').trim().toUpperCase();
+
+            msgEl.classList.remove('hidden', 'text-rose-600', 'text-emerald-600');
+
+            if (!rawCode) {
+                msgEl.textContent = 'Please enter your Access Code first.';
+                msgEl.classList.add('text-rose-600');
+                return;
+            }
+
+            if (window.location.protocol === 'file:') {
+                msgEl.textContent = 'Tip: Open via GitHub Pages (https://) or http://localhost so Firebase verification is not blocked by file:// mode.';
+                msgEl.classList.add('text-rose-600');
+            }
+
+            btnEl.disabled = true;
+            btnEl.textContent = 'Checking...';
+
+            try {
+                // Support both root path (SL25-XXXX) and access_codes/SL25-XXXX
+                let targetRef = ref(db, rawCode);
+                let snap = await get(targetRef);
+
+                if (!snap.exists()) {
+                    targetRef = ref(db, `access_codes/${rawCode}`);
+                    snap = await get(targetRef);
+                }
+
+                if (!snap.exists()) {
+                    msgEl.textContent = 'Invalid Access Code. Please check the code or send your bank slip on WhatsApp.';
+                    msgEl.classList.add('text-rose-600');
+                    return;
+                }
+
+                const codeData = snap.val();
+                if (codeData && codeData.used === true) {
+                    msgEl.textContent = 'This Access Code has already been used.';
+                    msgEl.classList.add('text-rose-600');
+                    return;
+                }
+
+               
+                await runTransaction(targetRef, (current) => {
+                    if (!current || current.used === true) return current;
+                    return { ...current, used: true, usedAt: new Date().toISOString() };
+                });
+
+                msgEl.textContent = 'Access verified! Opening printable PDF guide...';
+                msgEl.classList.add('text-emerald-600');
+                generatePrintableGuide();
+            } catch (err) {
+                console.error('Access code verification error:', err);
+                msgEl.textContent = 'Could not verify code right now. Make sure the site is hosted on HTTPS/localhost and Firebase rules allow read/write.';
+                msgEl.classList.add('text-rose-600');
+            } finally {
+                btnEl.disabled = false;
+                btnEl.textContent = 'Unlock PDF';
+            }
+        };
+
+        window.saveOrderToFirebase = async function (orderData) {
+            const orderRef = ref(db, `payment_orders/${orderData.orderId}`);
+            await set(orderRef, orderData);
+        };
+
+        window.confirmOrderPaidInFirebase = async function (orderId, transferRef, slipData) {
+            const orderRef = ref(db, `payment_orders/${orderId}`);
+            await update(orderRef, {
+                status: 'payment_submitted',
+                transferRef: transferRef || 'Direct Bank Transfer',
+                slipFileName: slipData?.fileName || null,
+                slipFileType: slipData?.fileType || null,
+                slipFileSize: slipData?.fileSize || null,
+                slipBase64: slipData?.base64 || null,
+                submittedAt: new Date().toISOString()
+            });
+        };
     </script>
 
     <script>
@@ -2087,6 +2400,296 @@
                     clearSearchHighlights();
                 }
             }, 150);
+        }
+
+        // Merchant WhatsApp Number (Sri Lanka format without +)
+        const MERCHANT_WHATSAPP = "94728458058";
+        let currentSavedOrder = null;
+        let uploadedSlipData = null;
+
+        function openPaidGuideModal() {
+            document.getElementById('paidGuideModal')?.classList.remove('hidden');
+            // Restore previously saved customer details if available in localStorage
+            try {
+                const cached = JSON.parse(localStorage.getItem('sl25_customer_draft') || 'null');
+                if (cached) {
+                    if (cached.fullName) document.getElementById('custFullName').value = cached.fullName;
+                    if (cached.phone) document.getElementById('custPhone').value = cached.phone;
+                    if (cached.email) document.getElementById('custEmail').value = cached.email;
+                    if (cached.bankName) document.getElementById('custBankName').value = cached.bankName;
+                    if (cached.accNumber) document.getElementById('custAccNumber').value = cached.accNumber;
+                    if (cached.accHolder) document.getElementById('custAccHolder').value = cached.accHolder;
+                }
+            } catch (e) {}
+        }
+
+        function closePaidGuideModal() {
+            document.getElementById('paidGuideModal')?.classList.add('hidden');
+        }
+
+        function goCheckoutStep(step) {
+            const step1Form = document.getElementById('checkoutStep1Form');
+            const step2Panel = document.getElementById('checkoutStep2Panel');
+            const btn1 = document.getElementById('stepBtn1');
+            const btn2 = document.getElementById('stepBtn2');
+
+            if (step === 2 && !currentSavedOrder) {
+                const msgEl = document.getElementById('step1Msg');
+                msgEl.textContent = 'Please fill and save your details first before proceeding to Pay Now.';
+                msgEl.classList.remove('hidden');
+                return;
+            }
+
+            if (step === 1) {
+                step1Form.classList.remove('hidden');
+                step2Panel.classList.add('hidden');
+                btn1.className = 'py-2 px-3 rounded-lg bg-[#072c3c] text-white transition cursor-pointer';
+                btn2.className = 'py-2 px-3 rounded-lg text-slate-600 hover:text-slate-900 transition cursor-pointer';
+            } else {
+                step1Form.classList.add('hidden');
+                step2Panel.classList.remove('hidden');
+                btn2.className = 'py-2 px-3 rounded-lg bg-[#072c3c] text-white transition cursor-pointer';
+                btn1.className = 'py-2 px-3 rounded-lg text-slate-600 hover:text-slate-900 transition cursor-pointer';
+            }
+        }
+
+        function copyBankAccount() {
+            const acc = document.getElementById('bankAccNumber')?.textContent?.trim() || '5269173';
+            navigator.clipboard?.writeText(acc);
+            alert('Account Number ' + acc + ' (BOC - CN Kodithuwakku) copied!');
+        }
+
+        async function saveCustomerAndProceed(event) {
+            event.preventDefault();
+            const msgEl = document.getElementById('step1Msg');
+            const btn = document.getElementById('saveAndContinueBtn');
+            msgEl.classList.add('hidden');
+
+            const orderId = 'ORD-' + Math.floor(100000 + Math.random() * 900000);
+            const orderData = {
+                orderId: orderId,
+                fullName: document.getElementById('custFullName').value.trim(),
+                phone: document.getElementById('custPhone').value.trim(),
+                email: document.getElementById('custEmail').value.trim(),
+                senderBankName: document.getElementById('custBankName').value,
+                senderAccountNo: document.getElementById('custAccNumber').value.trim(),
+                senderAccountHolder: document.getElementById('custAccHolder').value.trim(),
+                beneficiaryBank: 'BANK OF CEYLON (BOC)',
+                beneficiaryAccountNo: '5269173',
+                beneficiaryName: 'CN Kodithuwakku',
+                amountLKR: 1500,
+                status: 'details_saved',
+                createdAt: new Date().toISOString()
+            };
+
+            // Save draft locally in browser
+            try {
+                localStorage.setItem('sl25_customer_draft', JSON.stringify({
+                    fullName: orderData.fullName,
+                    phone: orderData.phone,
+                    email: orderData.email,
+                    bankName: orderData.senderBankName,
+                    accNumber: orderData.senderAccountNo,
+                    accHolder: orderData.senderAccountHolder
+                }));
+            } catch (e) {}
+
+            btn.disabled = true;
+            btn.innerHTML = '<span>Saving Details...</span>';
+
+            try {
+                if (typeof window.saveOrderToFirebase === 'function') {
+                    await window.saveOrderToFirebase(orderData);
+                }
+            } catch (err) {
+                console.warn('Could not sync order to Firebase yet (offline/file mode):', err);
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<span>Save Details & Continue to Pay</span> <i class="fas fa-arrow-right"></i>';
+            }
+
+            currentSavedOrder = orderData;
+            document.getElementById('displayOrderId').textContent = orderData.orderId;
+            document.getElementById('summarySenderInfo').textContent =
+                `${orderData.senderAccountHolder} (${orderData.senderBankName} - ${orderData.senderAccountNo})`;
+
+            goCheckoutStep(2);
+        }
+
+        function readFileAsDataUrl(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = () => reject(new Error('Failed to read slip file'));
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function clearUploadedSlip() {
+            uploadedSlipData = null;
+            const inputEl = document.getElementById('paymentSlipInput');
+            const previewBox = document.getElementById('slipPreviewBox');
+            const errEl = document.getElementById('slipErrorMsg');
+            if (inputEl) inputEl.value = '';
+            if (previewBox) previewBox.classList.add('hidden');
+            if (errEl) errEl.classList.add('hidden');
+        }
+
+        async function handleSlipFileChange(inputEl) {
+            const previewBox = document.getElementById('slipPreviewBox');
+            const nameText = document.getElementById('slipFileNameText');
+            const sizeText = document.getElementById('slipFileSizeText');
+            const iconEl = document.getElementById('slipFileIcon');
+            const errEl = document.getElementById('slipErrorMsg');
+
+            uploadedSlipData = null;
+            previewBox?.classList.add('hidden');
+            errEl?.classList.add('hidden');
+
+            const file = inputEl?.files?.[0];
+            if (!file) return;
+
+            const isPdf = file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf');
+            const isImage = file.type.startsWith('image/');
+
+            if (!isPdf && !isImage) {
+                errEl.textContent = 'Invalid file format. Please upload a PDF slip or an image (JPG, PNG, WEBP).';
+                errEl.classList.remove('hidden');
+                inputEl.value = '';
+                return;
+            }
+
+            // 1.5 MB limit so Realtime Database stores the slip smoothly
+            const maxBytes = 1.5 * 1024 * 1024;
+            if (file.size > maxBytes) {
+                errEl.textContent = 'File is too large (max 1.5 MB). Please upload a smaller PDF/screenshot.';
+                errEl.classList.remove('hidden');
+                inputEl.value = '';
+                return;
+            }
+
+            try {
+                const base64 = await readFileAsDataUrl(file);
+                uploadedSlipData = {
+                    fileName: file.name,
+                    fileType: file.type || (isPdf ? 'application/pdf' : 'image/jpeg'),
+                    fileSize: file.size,
+                    base64: base64
+                };
+
+                const sizeKb = (file.size / 1024).toFixed(1);
+                if (iconEl) {
+                    iconEl.className = isPdf
+                        ? 'fas fa-file-pdf text-rose-600 text-base shrink-0'
+                        : 'fas fa-file-image text-sky-600 text-base shrink-0';
+                }
+                if (nameText) nameText.textContent = file.name;
+                if (sizeText) sizeText.textContent = `Ready to submit • ${sizeKb} KB`;
+                previewBox?.classList.remove('hidden');
+            } catch (err) {
+                errEl.textContent = 'Could not read the selected file. Please try again.';
+                errEl.classList.remove('hidden');
+                inputEl.value = '';
+            }
+        }
+
+        async function completeDirectTransferPayNow() {
+            if (!currentSavedOrder) {
+                goCheckoutStep(1);
+                return;
+            }
+
+            const btn = document.getElementById('finalPayNowBtn');
+            const statusEl = document.getElementById('payNowStatusMsg');
+            const slipErrEl = document.getElementById('slipErrorMsg');
+            const slipInput = document.getElementById('paymentSlipInput');
+            const transferRef = document.getElementById('transferRefInput')?.value.trim() || '';
+
+            slipErrEl?.classList.add('hidden');
+            statusEl?.classList.add('hidden');
+
+            if (!uploadedSlipData) {
+                if (slipErrEl) {
+                    slipErrEl.textContent = 'Please upload your bank transfer PDF slip or screenshot before clicking Pay Now.';
+                    slipErrEl.classList.remove('hidden');
+                }
+                slipInput?.focus();
+                return;
+            }
+
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Uploading Slip & Saving Order...</span>';
+
+            let firebaseSaved = false;
+            try {
+                if (typeof window.confirmOrderPaidInFirebase === 'function') {
+                    await window.confirmOrderPaidInFirebase(currentSavedOrder.orderId, transferRef, uploadedSlipData);
+                    firebaseSaved = true;
+                }
+            } catch (err) {
+                console.warn('Firebase update skipped:', err);
+            }
+
+            const waText = encodeURIComponent(
+                `Hello Chathura, I have transferred $5 (Rs. 1,500) for the Sri Lanka 25 Districts PDF Guide.\n\n` +
+                `*Order ID:* ${currentSavedOrder.orderId}\n` +
+                `*Customer Name:* ${currentSavedOrder.fullName}\n` +
+                `*Phone:* ${currentSavedOrder.phone}\n` +
+                `*From Bank:* ${currentSavedOrder.senderBankName}\n` +
+                `*From Account No:* ${currentSavedOrder.senderAccountNo} (${currentSavedOrder.senderAccountHolder})\n` +
+                `*To Account:* 5269173 (BOC - CN Kodithuwakku)\n` +
+                (transferRef ? `*Transfer Ref:* ${transferRef}\n` : ``) +
+                `*Uploaded Slip:* ${uploadedSlipData.fileName} (${firebaseSaved ? 'Saved in System' : 'Attach on WhatsApp'})\n\n` +
+                `Please verify my payment slip and send my one-time PDF Access Code.`
+            );
+
+            statusEl.textContent = firebaseSaved
+                ? `Slip uploaded & Order ${currentSavedOrder.orderId} saved! Opening WhatsApp...`
+                : `Order ${currentSavedOrder.orderId} prepared! Opening WhatsApp (please also attach your slip in chat)...`;
+            statusEl.classList.remove('hidden');
+
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fas fa-paper-plane"></i> <span>Pay Now & Send Transfer Confirmation</span>';
+
+            window.open(`https://wa.me/${MERCHANT_WHATSAPP}?text=${waText}`, '_blank', 'noopener');
+        }
+
+        function generatePrintableGuide() {
+            const win = window.open('', '_blank');
+            if (!win) {
+                alert('Please allow pop-ups in your browser to open the printable PDF guide.');
+                return;
+            }
+            let bodyHtml = `
+                <html><head><title>Sri Lanka 25 Districts Travel Guide</title>
+                <style>
+                    body { font-family: Arial, sans-serif; color: #0f172a; padding: 28px; line-height: 1.5; }
+                    h1 { color: #072c3c; border-bottom: 3px solid #d97706; padding-bottom: 8px; }
+                    h2 { color: #072c3c; margin-top: 26px; background: #f1f5f9; padding: 8px 12px; border-left: 4px solid #0e7490; }
+                    .place { margin: 14px 0; padding-bottom: 12px; border-bottom: 1px solid #e2e8f0; page-break-inside: avoid; }
+                    .place h3 { margin: 0 0 6px; color: #0e7490; }
+                    .meta { font-size: 13px; color: #334155; }
+                </style></head><body>
+                <h1>Travel For Sri Lanka — Complete 25 Districts Travel Guide</h1>
+                <p><strong>Compiled by:</strong> Chathura Kodithuwakku | <strong>Website:</strong> travelforsrilanka.com</p>
+            `;
+            travelData.forEach(d => {
+                bodyHtml += `<h2>${d.number}. ${d.name} (${d.province})</h2>`;
+                d.places.forEach((p, idx) => {
+                    bodyHtml += `
+                        <div class="place">
+                            <h3>${idx + 1}. ${p.title}</h3>
+                            <p>${p.overview}</p>
+                            <p class="meta"><strong>Highlights:</strong> ${p.highlights}<br>
+                            <strong>Best Time to Visit:</strong> ${p.bestTime}</p>
+                        </div>
+                    `;
+                });
+            });
+            bodyHtml += `<script>window.onload = function(){ window.print(); };<\/script></body></html>`;
+            win.document.open();
+            win.document.write(bodyHtml);
+            win.document.close();
         }
 
         renderContent();
